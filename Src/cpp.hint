@@ -1,0 +1,2 @@
+#define CRAZYU_API __declspec(dllexport)
+#define CRAZYU_API __declspec(dllimport)
