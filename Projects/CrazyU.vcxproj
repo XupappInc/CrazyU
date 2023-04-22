@@ -128,12 +128,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>ExportEngine_d.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -146,7 +148,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Src\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -154,6 +156,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>ExportEngine.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -167,6 +171,7 @@
   <ItemGroup>
     <ClCompile Include="..\Src\CrazyU.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
+    <ClCompile Include="..\Src\main.cpp" />
     <ClCompile Include="..\Src\pch.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
