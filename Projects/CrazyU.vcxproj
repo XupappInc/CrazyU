@@ -126,15 +126,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;CRAZYU_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>ExportEngine_d.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SeparityExports_d.dll;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -146,9 +146,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;CRAZYU_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -156,7 +156,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>ExportEngine.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SeparityExports.dll;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -166,13 +166,11 @@
   <ItemGroup>
     <ClInclude Include="..\Src\CrazyU.h" />
     <ClInclude Include="..\Src\framework.h" />
-    <ClInclude Include="..\Src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\CrazyU.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\main.cpp" />
-    <ClCompile Include="..\Src\pch.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
