@@ -55,170 +55,170 @@ using namespace Separity;
 int main() {
 
 	
-	//ManagerManager* mm = Separity::ManagerManager::getInstance();
+	ManagerManager* mm = Separity::ManagerManager::getInstance();
 
-	////InputManager* inputManager = Separity::InputManager::getInstance();
-	//EntityManager* entityManager = Separity::EntityManager::getInstance();
-	//UIManager* uiManager = Separity::UIManager::getInstance();
+	//InputManager* inputManager = Separity::InputManager::getInstance();
+	EntityManager* entityManager = Separity::EntityManager::getInstance();
+	UIManager* uiManager = Separity::UIManager::getInstance();
 
-	////GetComponentWrapper::registerInLua();
+	//GetComponentWrapper::registerInLua();
 
-	//SceneManager* sceneMenager = Separity::SceneManager::getInstance();
-	//sceneMenager->loadScene("scene.lua");
+	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
+	sceneMenager->loadScene("scene.lua");
 
-	//// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
+	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
-	//// Entity* listener = entityManager->addEntity(_grp_GENERAL);
-	//// auto* sonido = listener->addComponent<AudioSource>("Assets//piano.wav",
-	////                                                    "callmemaybe", false);
+	// Entity* listener = entityManager->addEntity(_grp_GENERAL);
+	// auto* sonido = listener->addComponent<AudioSource>("Assets//piano.wav",
+	//                                                    "callmemaybe", false);
 
-	//Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
-	//sinbad->getComponent<Transform>()->translate({-15, 60, 12});
-	//sinbad->addComponent<MeshRenderer>("Sinbad.mesh");
+	Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
+	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
+	sinbad->addComponent<MeshRenderer>("Sinbad.mesh");
 
-	//// luaManager->loadScript("prueba", sinbad);
+	// luaManager->loadScript("prueba", sinbad);
 
-	//Entity* guile = entityManager->addEntity(_grp_GENERAL);
-	//guile->getComponent<Transform>()->translate({0, 10, 12});
-	//guile->getComponent<Transform>()->setScale(3);
-	//guile->addComponent<MeshRenderer>("guille.mesh");
+	Entity* guile = entityManager->addEntity(_grp_GENERAL);
+	guile->getComponent<Transform>()->translate({0, 10, 12});
+	guile->getComponent<Transform>()->setScale(3);
+	guile->addComponent<MeshRenderer>("guille.mesh");
 
-	//Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
-	//sinbad->addChild(sinbad3);
-	//sinbad3->getComponent<Transform>()->translate({0, 5, 0});
-	//// sinbad3->getComponent<Transform>()->roll(90);
-	//sinbad3->addComponent<MeshRenderer>("Sinbad.mesh");
+	Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
+	sinbad->addChild(sinbad3);
+	sinbad3->getComponent<Transform>()->translate({0, 5, 0});
+	// sinbad3->getComponent<Transform>()->roll(90);
+	sinbad3->addComponent<MeshRenderer>("Sinbad.mesh");
 
-	//colliderParams params;
-	//params.colShape = CUBE;
-	//params.height = 10;
-	//params.width = 5;
-	//params.depth = 5;
-	//params.isTrigger = false;
+	colliderParams params;
+	params.colShape = CUBE;
+	params.height = 10;
+	params.width = 5;
+	params.depth = 5;
+	params.isTrigger = false;
 
-	//sinbad->addComponent<Collider>(params);
-	//sinbad->addComponent<RigidBody>(DYNAMIC, 10);
-	//auto animSinbad = sinbad->addComponent<Animator>();
+	sinbad->addComponent<Collider>(params);
+	sinbad->addComponent<RigidBody>(DYNAMIC, 10);
+	auto animSinbad = sinbad->addComponent<Animator>();
 
-	//Entity* luz = entityManager->addEntity(_grp_GENERAL);
-	//auto luzGlobal = luz->addComponent<Light>(DIRECTIONAL_LIGHT);
-	//luzGlobal->setDiffuse({0.7, 0.7, 0.7});
-	//auto luzTr = luz->getComponent<Transform>();
-	//luzTr->translate({0, 100, 0});
+	Entity* luz = entityManager->addEntity(_grp_GENERAL);
+	auto luzGlobal = luz->addComponent<Light>(DIRECTIONAL_LIGHT);
+	luzGlobal->setDiffuse({0.7, 0.7, 0.7});
+	auto luzTr = luz->getComponent<Transform>();
+	luzTr->translate({0, 100, 0});
 
-	//Entity* luzAux = entityManager->addEntity(_grp_GENERAL);
-	//auto luzAux1 = luzAux->addComponent<Light>(DIRECTIONAL_LIGHT);
-	//auto luzTr2 = luzAux->getComponent<Transform>();
-	//luzTr2->translate({0, 100, 0});
-	//luzAux1->setDirection({0, 0, -1});
-	//luzAux1->setDiffuse({0.5, 0, 0.5});
+	Entity* luzAux = entityManager->addEntity(_grp_GENERAL);
+	auto luzAux1 = luzAux->addComponent<Light>(DIRECTIONAL_LIGHT);
+	auto luzTr2 = luzAux->getComponent<Transform>();
+	luzTr2->translate({0, 100, 0});
+	luzAux1->setDirection({0, 0, -1});
+	luzAux1->setDiffuse({0.5, 0, 0.5});
 
-	//Entity* button = entityManager->addEntity(_grp_GENERAL);
-	// Button* but =
-	//    button->addComponent<Button>("BotonPrueba", 200, 200, 200, 200,
-	//                                          "World_ap.15");
+	Entity* button = entityManager->addEntity(_grp_GENERAL);
+	 Button* but =
+	    button->addComponent<Button>("BotonPrueba", 200, 200, 200, 200,
+	                                          "World_ap.15");
 
 
-	////// VEHICULO
-	////Entity* coche = entityManager->addEntity(_grp_GENERAL);
-	////coche->getComponent<Transform>()->translate({0, 10, 0});
-	////coche->getComponent<Transform>()->setScale(1);
-	////coche->addComponent<MeshRenderer>("Cube.001.mesh");
-	////VehicleMovement* coche_vehiculo = coche->addComponent<VehicleMovement>();
+	//// VEHICULO
+	//Entity* coche = entityManager->addEntity(_grp_GENERAL);
+	//coche->getComponent<Transform>()->translate({0, 10, 0});
+	//coche->getComponent<Transform>()->setScale(1);
+	//coche->addComponent<MeshRenderer>("Cube.001.mesh");
+	//VehicleMovement* coche_vehiculo = coche->addComponent<VehicleMovement>();
 
-	////colliderParams paramsCoche;
-	////paramsCoche.colShape = CUBE;
-	////paramsCoche.height = 2;
-	////paramsCoche.width = 2;
-	////paramsCoche.depth = 3;
-	////paramsCoche.isTrigger = false;
+	//colliderParams paramsCoche;
+	//paramsCoche.colShape = CUBE;
+	//paramsCoche.height = 2;
+	//paramsCoche.width = 2;
+	//paramsCoche.depth = 3;
+	//paramsCoche.isTrigger = false;
 
-	////coche->addComponent<Collider>(paramsCoche);
-	////coche->addComponent<RigidBody>(DYNAMIC, 100);
+	//coche->addComponent<Collider>(paramsCoche);
+	//coche->addComponent<RigidBody>(DYNAMIC, 100);
 
-	//mm->initComponents();
+	mm->initComponents();
 
-	//Camera* cam_cam = RenderManager::getInstance()->getCamera();
-	//Entity* camera = cam_cam->getEntity();
-	//Transform* cam_tr = camera->getComponent<Transform>();
-	//// cam_tr->pitch(-90);
+	Camera* cam_cam = RenderManager::getInstance()->getCamera();
+	Entity* camera = cam_cam->getEntity();
+	Transform* cam_tr = camera->getComponent<Transform>();
+	// cam_tr->pitch(-90);
 
-	////coche->addChild(camera);
-	//cam_tr->setPosition(0, 15, 5);
+	//coche->addChild(camera);
+	cam_tr->setPosition(0, 15, 5);
 
-	////Spyutils::VirtualTimer* timer = new Spyutils::VirtualTimer();
-	//uint32_t deltaTime = 0;
-	//bool quit = false;
+	//Spyutils::VirtualTimer* timer = new Spyutils::VirtualTimer();
+	uint32_t deltaTime = 0;
+	bool quit = false;
 
-	//while(!quit) {
-	//	cam_cam = RenderManager::getInstance()->getCamera();
-	//	camera = cam_cam->getEntity();
-	//	cam_tr = camera->getComponent<Transform>();
+	while(!quit) {
+		cam_cam = RenderManager::getInstance()->getCamera();
+		camera = cam_cam->getEntity();
+		cam_tr = camera->getComponent<Transform>();
 
-	//	//timer->reset();
+		//timer->reset();
 
-	//	//int xMouse = inputManager->getMousePos().first;
-	//	//int yMouse = inputManager->getMousePos().second;
-	//	//if(inputManager->isKeyDown(InputManager::ESCAPE) ||
-	//	//   inputManager->closeWindowEvent()) {
-	//	//	quit = true;
-	//	//} else {
-	//	//	if(inputManager->isKeyHeld('a')) {
-	//	//		coche_vehiculo->girar(-1);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld('d')) {
-	//	//		coche_vehiculo->girar(1);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld('w')) {
-	//	//		coche_vehiculo->acelerar(1);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld('s')) {
-	//	//		coche_vehiculo->acelerar(-1);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld(InputManager::SPACE)) {
-	//	//		coche_vehiculo->frenar();
-	//	//	}
-	//	//	if(inputManager->isKeyHeld(InputManager::ARROW_LEFT)) {
-	//	//		cam_tr->yaw(0.1f);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld(InputManager::ARROW_RIGHT)) {
-	//	//		cam_tr->yaw(-0.1f);
-	//	//	}
-	//	//	if(inputManager->isKeyHeld(InputManager::ARROW_UP)) {
-	//	//		cam_tr->translate(Spyutils::Vector3(0, 0, -1));
-	//	//	}
-	//	//	if(inputManager->isKeyHeld(InputManager::ARROW_DOWN)) {
-	//	//		cam_tr->translate(Spyutils::Vector3(0, 0, 1));
-	//	//	}
-	//	//	if(inputManager->isKeyDown('c')) {
-	//	//		RenderManager::getInstance()->resizeWindow(1920, 1080);
-	//	//	}
-	//	//	if(inputManager->isKeyDown('v')) {
-	//	//		auto trsi = sinbad->getComponent<Transform>();
-	//	//		trsi->setScale(20);
-	//	//	}
-	//	//	/*if(inputManager->isKeyDown('l')) {
-	//	//	    animSinbad->playAnim("Dance", false);
-	//	//	}
-	//	//	if(inputManager->isKeyDown('k')) {
-	//	//	    animSinbad->playAnim("Dance");
-	//	//	}*/
-	//	//}
+		//int xMouse = inputManager->getMousePos().first;
+		//int yMouse = inputManager->getMousePos().second;
+		//if(inputManager->isKeyDown(InputManager::ESCAPE) ||
+		//   inputManager->closeWindowEvent()) {
+		//	quit = true;
+		//} else {
+		//	if(inputManager->isKeyHeld('a')) {
+		//		coche_vehiculo->girar(-1);
+		//	}
+		//	if(inputManager->isKeyHeld('d')) {
+		//		coche_vehiculo->girar(1);
+		//	}
+		//	if(inputManager->isKeyHeld('w')) {
+		//		coche_vehiculo->acelerar(1);
+		//	}
+		//	if(inputManager->isKeyHeld('s')) {
+		//		coche_vehiculo->acelerar(-1);
+		//	}
+		//	if(inputManager->isKeyHeld(InputManager::SPACE)) {
+		//		coche_vehiculo->frenar();
+		//	}
+		//	if(inputManager->isKeyHeld(InputManager::ARROW_LEFT)) {
+		//		cam_tr->yaw(0.1f);
+		//	}
+		//	if(inputManager->isKeyHeld(InputManager::ARROW_RIGHT)) {
+		//		cam_tr->yaw(-0.1f);
+		//	}
+		//	if(inputManager->isKeyHeld(InputManager::ARROW_UP)) {
+		//		cam_tr->translate(Spyutils::Vector3(0, 0, -1));
+		//	}
+		//	if(inputManager->isKeyHeld(InputManager::ARROW_DOWN)) {
+		//		cam_tr->translate(Spyutils::Vector3(0, 0, 1));
+		//	}
+		//	if(inputManager->isKeyDown('c')) {
+		//		RenderManager::getInstance()->resizeWindow(1920, 1080);
+		//	}
+		//	if(inputManager->isKeyDown('v')) {
+		//		auto trsi = sinbad->getComponent<Transform>();
+		//		trsi->setScale(20);
+		//	}
+		//	/*if(inputManager->isKeyDown('l')) {
+		//	    animSinbad->playAnim("Dance", false);
+		//	}
+		//	if(inputManager->isKeyDown('k')) {
+		//	    animSinbad->playAnim("Dance");
+		//	}*/
+		//}
 
-	//	mm->update(deltaTime);
-	//	mm->render();
+		mm->update(deltaTime);
+		mm->render();
 
-	//	//deltaTime = timer->currTime();
-	//	int waitTime = FRAMETIME - deltaTime;
+		//deltaTime = timer->currTime();
+		int waitTime = FRAMETIME - deltaTime;
 
-	//	if(waitTime > 0)
-	//		Sleep(waitTime);
-	//}
+		if(waitTime > 0)
+			Sleep(waitTime);
+	}
 
-	//mm->clean();
-	////delete timer;
+	mm->clean();
+	//delete timer;
 
-CSeparityExports::CSeparityExports();
+	CSeparityExports::CSeparityExports();
 
 	return 0;
 }
