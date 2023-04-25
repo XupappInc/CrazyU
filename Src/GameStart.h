@@ -10,14 +10,9 @@
 #else
 #define CRAZYU_API __declspec(dllimport)
 #endif
-
-// Clase exportada del DLL
-class CRAZYU_API CCrazyU {	
-public:
-	CCrazyU(void);
-	// TODO: agregar métodos aquí.
-};
-
-extern "C" CRAZYU_API int nCrazyU;
-
-CRAZYU_API int fnCrazyU(void);
+namespace CrazyU {
+	class GameStart {
+		public:
+		static int initJuego();	
+	};
+}  // namespace CrazyU

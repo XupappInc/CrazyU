@@ -48,15 +48,6 @@ for obj in scene.objects:
         
         lua_string += "\t\tmeshRenderer = {\n" 
         
-        if obj.material_slots:
-            # Accede al primer slot de material
-            first_material_slot = obj.material_slots[0]
-            # Accede al nombre del material en el primer slot
-            first_material_name = first_material_slot.name
-            first_material_name = first_material_name.replace(" ", "_")
-            lua_string += "\t\t\t" + "textureName = \"" + first_material_name + "\",\n"
-            
-        
         lua_string += "\t\t\t" + "meshName = \"" + obj.data.name + "\"\n"      
         lua_string += "\t\t},\n"  
 
@@ -64,17 +55,19 @@ for obj in scene.objects:
     
     for prop_name in obj.keys(): 
         
-        lua_string += "\t\t" + prop_name + " = {\n" 
-        if (prop_name  == "collider"):
-            dimension = obj.dimensions
-            lua_string += "\t\t\t" + "dim = {" + str(dimension.x) + ", " + str(dimension.z) + ", " + str(dimension.y) + "},\n"
-                
+        if (prop_name!="als"):
         
-        else:
-            prop_value = obj[prop_name]                 
-            lua_string += "\t\t\t" + str(prop_value) + "\n"  
-                
-        lua_string += "\t\t},\n" 
+            lua_string += "\t\t" + prop_name + " = {\n" 
+            if (prop_name  == "collider"):
+                dimension = obj.dimensions
+                lua_string += "\t\t\t" + "dim = {" + str(dimension.x) + ", " + str(dimension.z) + ", " + str(dimension.y) + "},\n"
+                    
+            
+            else:
+                prop_value = obj[prop_name]                 
+                lua_string += "\t\t\t" + str(prop_value) + "\n"  
+                    
+            lua_string += "\t\t},\n" 
     
     
 

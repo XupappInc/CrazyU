@@ -1,12 +1,11 @@
 Entities = {
 	CAR_03_1 = {
 		transform = {
-			pos = {-0.8017139434814453, 19.68632698059082, -17.163516998291016},
-			rot = {0.01069751288741827, -0.7070258855819702, 0.7070258259773254, 0.010697372257709503},
+			pos = {-0.8017139434814453, -6.002227783203125, -16.27255630493164},
+			rot = {-0.774382472038269, -0.11053477972745895, -0.08803245425224304, 0.6167370080947876},
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh"
 		}
 	},
@@ -17,7 +16,6 @@ Entities = {
 			scale = {0.026635942980647087, 0.026635942980647087, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.001"
 		}
 	},
@@ -28,7 +26,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.002"
 		}
 	},
@@ -39,7 +36,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635946705937386, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.003"
 		}
 	},
@@ -50,7 +46,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.004"
 		}
 	},
@@ -61,8 +56,10 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.005"
+		},
+		script = {
+			name = "prueba"
 		}
 	},
 	Car_04_3 = {
@@ -72,7 +69,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.006"
 		}
 	},
@@ -83,7 +79,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap.8",
 			meshName = "Mesh.008"
 		}
 	},
@@ -94,7 +89,6 @@ Entities = {
 			scale = {0.026635942980647087, 0.026635944843292236, 0.026635942980647087}
 		},
 		meshRenderer = {
-			textureName = "World_ap.9",
 			meshName = "Mesh.009"
 		}
 	},
@@ -105,7 +99,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635946705937386, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.010"
 		}
 	},
@@ -116,7 +109,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635944843292236, 0.026635946705937386}
 		},
 		meshRenderer = {
-			textureName = "World_ap.11",
 			meshName = "Mesh.011"
 		}
 	},
@@ -127,7 +119,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635946705937386, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.012"
 		}
 	},
@@ -138,7 +129,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.013"
 		}
 	},
@@ -149,7 +139,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635946705937386, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.014"
 		}
 	},
@@ -160,7 +149,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap.15",
 			meshName = "Mesh.015"
 		}
 	},
@@ -171,7 +159,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap.16",
 			meshName = "Mesh.016"
 		}
 	},
@@ -182,7 +169,6 @@ Entities = {
 			scale = {0.026635942980647087, 0.026635944843292236, 0.026635942980647087}
 		},
 		meshRenderer = {
-			textureName = "World_ap.17",
 			meshName = "Mesh.017"
 		}
 	},
@@ -193,7 +179,6 @@ Entities = {
 			scale = {0.026635946705937386, 0.026635946705937386, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.018"
 		}
 	},
@@ -204,7 +189,6 @@ Entities = {
 			scale = {0.026635944843292236, 0.026635944843292236, 0.026635944843292236}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.020"
 		}
 	},
@@ -215,7 +199,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.021"
 		}
 	},
@@ -226,7 +209,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.022"
 		}
 	},
@@ -237,7 +219,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.023"
 		}
 	},
@@ -248,7 +229,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.024"
 		}
 	},
@@ -259,7 +239,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.025"
 		}
 	},
@@ -270,7 +249,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.026"
 		}
 	},
@@ -281,7 +259,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.027"
 		}
 	},
@@ -292,7 +269,6 @@ Entities = {
 			scale = {0.014883903786540031, 0.017766589298844337, 0.014883903786540031}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.028"
 		}
 	},
@@ -303,7 +279,6 @@ Entities = {
 			scale = {0.017565138638019562, 0.01684250682592392, 0.021108152344822884}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.029"
 		}
 	},
@@ -314,7 +289,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.030"
 		}
 	},
@@ -325,7 +299,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.032"
 		}
 	},
@@ -336,7 +309,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.033"
 		}
 	},
@@ -347,7 +319,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.034"
 		},
 		collider = {
@@ -364,7 +335,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.035"
 		}
 	},
@@ -375,8 +345,13 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.036"
+		},
+		collider = {
+			dim = {6.050632476806641, 8.528901100158691, 8.929821968078613},
+		},
+		rigidbody = {
+			type = 0
 		}
 	},
 	Light_3_2 = {
@@ -386,7 +361,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.037"
 		}
 	},
@@ -397,7 +371,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.038"
 		}
 	},
@@ -408,7 +381,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.039"
 		}
 	},
@@ -419,7 +391,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.040"
 		}
 	},
@@ -430,7 +401,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.020972812548279762, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.041"
 		}
 	},
@@ -441,7 +411,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.042"
 		}
 	},
@@ -452,7 +421,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.043"
 		}
 	},
@@ -463,7 +431,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.044"
 		}
 	},
@@ -474,7 +441,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.045"
 		}
 	},
@@ -485,7 +451,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.046"
 		}
 	},
@@ -496,7 +461,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.047"
 		}
 	},
@@ -507,7 +471,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.048"
 		}
 	},
@@ -518,7 +481,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.049"
 		}
 	},
@@ -529,7 +491,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.050"
 		}
 	},
@@ -540,7 +501,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.051"
 		}
 	},
@@ -551,7 +511,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.052"
 		}
 	},
@@ -562,7 +521,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.053"
 		}
 	},
@@ -573,7 +531,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.054"
 		}
 	},
@@ -584,7 +541,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.055"
 		}
 	},
@@ -595,7 +551,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.056"
 		}
 	},
@@ -606,7 +561,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.057"
 		}
 	},
@@ -617,7 +571,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.058"
 		}
 	},
@@ -628,14 +581,7 @@ Entities = {
 			scale = {0.018347809091210365, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.059"
-		},
-		collider = {
-			dim = {10.216782569885254, 9.887962341308594, 0.30334433913230896},
-		},
-		rigidbody = {
-			type = 2
 		}
 	},
 	Floor_3 = {
@@ -645,7 +591,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.060"
 		}
 	},
@@ -656,7 +601,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.061"
 		}
 	},
@@ -667,7 +611,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.062"
 		}
 	},
@@ -678,7 +621,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.063"
 		}
 	},
@@ -689,7 +631,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.064"
 		}
 	},
@@ -700,7 +641,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.065"
 		}
 	},
@@ -711,7 +651,6 @@ Entities = {
 			scale = {0.012817561626434326, 0.01844112016260624, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.066"
 		}
 	},
@@ -722,7 +661,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.067"
 		}
 	},
@@ -733,7 +671,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.068"
 		}
 	},
@@ -744,7 +681,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.069"
 		}
 	},
@@ -755,7 +691,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.070"
 		}
 	},
@@ -766,7 +701,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.071"
 		}
 	},
@@ -777,7 +711,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.072"
 		}
 	},
@@ -788,7 +721,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.073"
 		}
 	},
@@ -799,7 +731,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.074"
 		}
 	},
@@ -810,7 +741,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.075"
 		}
 	},
@@ -821,7 +751,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.076"
 		}
 	},
@@ -832,7 +761,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.077"
 		}
 	},
@@ -843,7 +771,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.078"
 		}
 	},
@@ -854,7 +781,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.080"
 		}
 	},
@@ -865,7 +791,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.081"
 		}
 	},
@@ -876,7 +801,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.083"
 		}
 	},
@@ -887,7 +811,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.084"
 		}
 	},
@@ -898,7 +821,6 @@ Entities = {
 			scale = {0.017757294699549675, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.085"
 		}
 	},
@@ -909,7 +831,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.090"
 		}
 	},
@@ -920,7 +841,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.091"
 		}
 	},
@@ -931,7 +851,6 @@ Entities = {
 			scale = {0.017757294699549675, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.092"
 		}
 	},
@@ -942,7 +861,6 @@ Entities = {
 			scale = {0.01795569434762001, 0.01795569434762001, 0.01795569434762001}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.098"
 		},
 		collider = {
@@ -959,7 +877,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.033"
 		}
 	},
@@ -970,7 +887,6 @@ Entities = {
 			scale = {0.017757296562194824, 0.017757296562194824, 0.017757296562194824}
 		},
 		meshRenderer = {
-			textureName = "World_ap",
 			meshName = "Mesh.048"
 		}
 	},
@@ -999,28 +915,6 @@ Entities = {
 	Spot_001 = {
 		transform = {
 			pos = {-14.258503913879395, 8.676029205322266, -6.414493560791016},
-			rot = {0.0, 0.0, -0.0, 1.0},
-			scale = {1.0, 1.0, 1.0}
-		},
-		light = {
-			color = {0.7697426080703735, 1.0, 0.12786714732646942},
-			type = "SPOT"
-		}
-	},
-	Spot_002 = {
-		transform = {
-			pos = {4.59745454788208, 8.676029205322266, -6.469466686248779},
-			rot = {0.0, 0.0, -0.0, 1.0},
-			scale = {1.0, 1.0, 1.0}
-		},
-		light = {
-			color = {0.7697426080703735, 1.0, 0.12786714732646942},
-			type = "SPOT"
-		}
-	},
-	Spot_003 = {
-		transform = {
-			pos = {7.167649269104004, 8.676029205322266, -9.488676071166992},
 			rot = {0.0, 0.0, -0.0, 1.0},
 			scale = {1.0, 1.0, 1.0}
 		},
@@ -1073,39 +967,6 @@ Entities = {
 			type = "SPOT"
 		}
 	},
-	Spot_008 = {
-		transform = {
-			pos = {13.009047508239746, 8.459111213684082, 7.728263854980469},
-			rot = {0.0, 0.0, -0.0, 1.0},
-			scale = {1.0, 1.0, 1.0}
-		},
-		light = {
-			color = {0.7697426080703735, 1.0, 0.12786714732646942},
-			type = "SPOT"
-		}
-	},
-	Spot_009 = {
-		transform = {
-			pos = {1.3219192028045654, 8.676029205322266, -2.1512112617492676},
-			rot = {0.0, 0.0, -0.0, 1.0},
-			scale = {1.0, 1.0, 1.0}
-		},
-		light = {
-			color = {0.7697426080703735, 1.0, 0.12786714732646942},
-			type = "SPOT"
-		}
-	},
-	Spot_010 = {
-		transform = {
-			pos = {15.062688827514648, 8.676029205322266, 0.7668014764785767},
-			rot = {0.0, 0.0, -0.0, 1.0},
-			scale = {1.0, 1.0, 1.0}
-		},
-		light = {
-			color = {0.7697426080703735, 1.0, 0.12786714732646942},
-			type = "SPOT"
-		}
-	},
 	Spot_011 = {
 		transform = {
 			pos = {-14.258503913879395, 8.676029205322266, -13.651420593261719},
@@ -1115,6 +976,29 @@ Entities = {
 		light = {
 			color = {0.7697426080703735, 1.0, 0.12786714732646942},
 			type = "SPOT"
+		}
+	},
+	Camera = {
+		transform = {
+			pos = {0.0, 14.724569320678711, 16.61865997314453},
+			rot = {0.6108472943305969, 0.0, -0.0, 0.7917484641075134},
+			scale = {1.0, 1.0, 1.0}
+		},
+		camera = {
+		}
+	},
+	BotonPrueba={
+		button = {
+			overlay = "BotonVuelta",
+			x = 50,
+			y = 50,
+			width = 200,
+			height = 200,
+			iniTex = "World_ap.15",
+			hoverTex="hoverMat",
+			clickedTex="clickedMat"
+		},script={
+			name="sceneButton"
 		}
 	}
 }

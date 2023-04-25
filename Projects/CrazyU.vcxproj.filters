@@ -18,7 +18,7 @@
     <None Include="..\Src\cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\CrazyU.h">
+    <ClInclude Include="..\Src\GameStart.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\Src\framework.h">
@@ -29,7 +29,7 @@
     <ClCompile Include="..\Src\dllmain.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\Src\CrazyU.cpp">
+    <ClCompile Include="..\Src\GameStart.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\Src\main.cpp">

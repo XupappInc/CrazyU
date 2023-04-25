@@ -152,7 +152,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\ComponentEngine;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Src\;$(SolutionDir)Separity\Src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -168,11 +168,11 @@
     <None Include="..\Src\cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Src\CrazyU.h" />
+    <ClInclude Include="..\Src\GameStart.h" />
     <ClInclude Include="..\Src\framework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Src\CrazyU.cpp" />
+    <ClCompile Include="..\Src\GameStart.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\main.cpp" />
   </ItemGroup>

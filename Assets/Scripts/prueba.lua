@@ -11,7 +11,8 @@ end
 
 function Prueba:update()
     -- print('Se llama al update del script de Lua')
-    -- prueba.entity:getTransform():roll(27)
+    -- local s = prueba.entity:getTag()
+    -- print(s)
 end
 
 function Prueba:onCollisionEnter()
@@ -19,16 +20,20 @@ function Prueba:onCollisionEnter()
 
     if other ~= nil then
         print('Other not nil!!!!')
+        local transform = prueba.entity:getTransform()
+        if transform ~= nil then
+            transform:lookAt(Vector3(0, 0, 0))
+        end
     else
         print('Other is nil')
     end
 end
 
-function Prueba:onCollisionExit(other)
+function Prueba:onCollisionExit()
     print('OnCollisionExit de Sinbad')
 end
 
-function Prueba:onCollisionStay(other)
+function Prueba:onCollisionStay()
     if collisionStayCalled then
         print('OnCollisionStay de Sinbad')
         collisionStayCalled = false
