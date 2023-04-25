@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>SeparityGame_d</TargetName>
-    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)lib\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -132,7 +132,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\ComponentEngine;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -152,7 +152,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\ComponentEngine;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
