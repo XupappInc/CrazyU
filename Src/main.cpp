@@ -48,65 +48,69 @@
 const uint32_t FRAMERATE = 60;
 const uint32_t FRAMETIME = 1000 / FRAMERATE;
 
-using namespace std;
-using namespace Separity;
+
 int main() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	ManagerManager* mm = Separity::ManagerManager::getInstance();
+	Separity::ManagerManager* mm = Separity::ManagerManager::getInstance();
 
-	EntityManager* entityManager = Separity::EntityManager::getInstance();
-	UIManager* uiManager = Separity::UIManager::getInstance();
+	Separity::EntityManager* entityManager =
+	    Separity::EntityManager::getInstance();
+	Separity::UIManager* uiManager = Separity::UIManager::getInstance();
+	Separity::AudioManager* auManager = Separity::AudioManager::getInstance();
 
-	GetComponentWrapper::registerInLua();
+	Separity::GetComponentWrapper::registerInLua();
 
-	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
+	Separity::SceneManager* sceneMenager = Separity::SceneManager::getInstance();
 	sceneMenager->loadScene("scene4.lua");
+	
 
-	Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
-	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
-	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
+	Separity::Entity* sinbad = entityManager->addEntity(Separity::_grp_GENERAL);
+	sinbad->getComponent<Separity::Transform>()->translate({-15, 60, 12});
+	sinbad->addComponent<Separity::MeshRenderer>()->setMesh("Sinbad.mesh");
 
-	Entity* guile = entityManager->addEntity(_grp_GENERAL);
-	guile->getComponent<Transform>()->translate({0, 10, 12});
-	guile->getComponent<Transform>()->setScale(3);
-	guile->addComponent<MeshRenderer>()->setMesh("guille.mesh");
+	Separity::Entity* guile = entityManager->addEntity(Separity::_grp_GENERAL);
+	guile->getComponent<Separity::Transform>()->translate({0, 10, 12});
+	guile->getComponent<Separity::Transform>()->setScale(3);
+	guile->addComponent<Separity::MeshRenderer>()->setMesh("guille.mesh");
 
-	Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
+	Separity::Entity* sinbad3 =
+	    entityManager->addEntity(Separity::_grp_GENERAL);
 	sinbad->addChild(sinbad3);
-	sinbad3->getComponent<Transform>()->translate({0, 5, 0});
-	sinbad3->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
+	sinbad3->getComponent<Separity::Transform>()->translate({0, 5, 0});
+	sinbad3->addComponent<Separity::MeshRenderer>()->setMesh("Sinbad.mesh");
 
-	colliderParams params;
-	params.colShape = CUBE;
+	Separity::colliderParams params;
+	params.colShape = Separity::CUBE;
 	params.height = 10;
 	params.width = 5;
 	params.depth = 5;
 	params.isTrigger = false;
 
-	sinbad->addComponent<Collider>(params);
-	sinbad->addComponent<RigidBody>(DYNAMIC, 10);
-	auto animSinbad = sinbad->addComponent<Animator>();
+	sinbad->addComponent<Separity::Collider>(params);
+	sinbad->addComponent<Separity::RigidBody>(Separity::DYNAMIC, 10);
+	auto animSinbad = sinbad->addComponent<Separity::Animator>();
 
-	Entity* button = entityManager->addEntity(_grp_GENERAL);
-	Text* txt =
-	    button->addComponent<Text>("TextoPrueba", "fuentePrueba", 100, 100, 200,
+	Separity::Entity* button = entityManager->addEntity(Separity::_grp_GENERAL);
+	Separity::Text* txt = button->addComponent<Separity::Text>(
+	    "TextoPrueba", "fuentePrueba", 100, 100, 200,
 	                               50, "Holi", Spyutils::Vector3(1, 1, 1));
 
 
 	mm->initComponents();
 
-	Camera* cam_cam = RenderManager::getInstance()->getCamera();
-	Entity* camera = cam_cam->getEntity();
-	Transform* cam_tr = camera->getComponent<Transform>();
+	Separity::Camera* cam_cam =
+	    Separity::RenderManager::getInstance()->getCamera();
+	Separity::Entity* camera = cam_cam->getEntity();
+	Separity::Transform* cam_tr = camera->getComponent<Separity::Transform>();
 
 
 	uint32_t deltaTime = 0;
 
 	while(!mm->quit()) {
-		cam_cam = RenderManager::getInstance()->getCamera();
+		cam_cam = Separity::RenderManager::getInstance()->getCamera();
 		camera = cam_cam->getEntity();
-		cam_tr = camera->getComponent<Transform>();
+		cam_tr = camera->getComponent<Separity::Transform>();
 
 		mm->update(deltaTime);
 		mm->render();
