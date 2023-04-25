@@ -72,19 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>SeparityGame_d</TargetName>
-    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>CrazyU</TargetName>
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>CrazyU</TargetName>
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>SeparityGame</TargetName>
-    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -128,14 +132,14 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Lib\$(Platform)\$(Configuration);$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Separity\Src\UIEngine;$(SolutionDir)Separity\Src\SoundEngine;$(SolutionDir)Separity\Src\SeparityUtils;$(SolutionDir)Separity\Src\SceneEngine;$(SolutionDir)Separity\Src\RenderEngine;$(SolutionDir)Separity\Src\PhysicsEngine;$(SolutionDir)Separity\Src\LuaEngine;$(SolutionDir)Separity\Src\InputEngine;$(SolutionDir)Separity\Src\SeparityExports;$(SolutionDir)Separity\Src\EntityComponent</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>SeparityExports_d.dll;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)Separity\Lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SeparityExports_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Separity\lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

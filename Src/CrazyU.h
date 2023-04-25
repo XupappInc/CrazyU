@@ -4,6 +4,7 @@
 // que use este archivo DLL. De este modo, otros proyectos cuyos archivos de código fuente incluyan el archivo verán
 // interpretan que las funciones CRAZYU_API se importan de un archivo DLL, mientras que este archivo DLL interpreta los símbolos
 // definidos en esta macro como si fueran exportados.
+
 #ifdef CRAZYU_EXPORTS
 #define CRAZYU_API __declspec(dllexport)
 #else
@@ -11,7 +12,7 @@
 #endif
 
 // Clase exportada del DLL
-class CRAZYU_API CCrazyU {
+class CRAZYU_API CCrazyU {	
 public:
 	CCrazyU(void);
 	// TODO: agregar métodos aquí.
