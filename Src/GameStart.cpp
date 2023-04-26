@@ -8,38 +8,38 @@
 // HMODULE hinstLib = LoadLibrary(TEXT("Separity_Game"));
 // #endif  // DEBUG
 
-#include "Entity.h"
+#include "EntityComponent\Entity.h"
 
 // Componentes
-#include "Animator.h"
-#include "AudioListener.h"
-#include "AudioSource.h"
-#include "Behaviour.h"
-#include "Button.h"
-#include "Camera.h"
-#include "Collider.h"
-#include "Light.h"
-#include "MeshRenderer.h"
-#include "Panel.h"
-#include "ParticleSystem.h"
-#include "RigidBody.h"
-#include "Text.h"
-#include "Transform.h"
+#include "RenderEngine\Animator.h"
+#include "RenderEngine\Camera.h"
+#include "RenderEngine\Light.h"
+#include "RenderEngine\MeshRenderer.h"
+#include "RenderEngine\ParticleSystem.h"
+#include "SoundEngine\AudioListener.h"
+#include "SoundEngine\AudioSource.h"
+#include "LuaEngine\Behaviour.h"
+#include "PhysicsEngine\Collider.h"
+#include "PhysicsEngine\RigidBody.h"
+#include "UIEngine\Button.h"
+#include "UIEngine\Panel.h"
+#include "UIEngine\Text.h"
+#include "EntityComponent\Transform.h"
 
 // Managers
-#include "AudioManager.h"
-#include "EntityManager.h"
-#include "LuaManager.h"
-#include "ManagerManager.h"
-#include "PhysicsManager.h"
-#include "RenderManager.h"
-#include "SceneManager.h"
-#include "SeparityExports.h"
-#include "UIManager.h"
+#include "SoundEngine\AudioManager.h"
+#include "EntityComponent\EntityManager.h"
+#include "LuaEngine\LuaManager.h"
+#include "EntityComponent\ManagerManager.h"
+#include "PhysicsEngine\PhysicsManager.h"
+#include "RenderEngine\RenderManager.h"
+#include "SceneEngine\SceneManager.h"
+#include "SeparityExports\SeparityExports.h"
+#include "UIEngine\UIManager.h"
 // Utils
-#include "GetComponentWrapper.h"
-#include "Random.h"
-#include "checkML.h"
+#include "ComponentEngine\GetComponentWrapper.h"
+#include "SeparityUtils\Random.h"
+#include "SeparityUtils\checkML.h"
 
 #include <Windows.h>
 #include <iostream>
@@ -65,11 +65,11 @@ int CrazyU::GameStart::initJuego() {
 
 	Separity::AudioManager* auManager = Separity::AudioManager::getInstance();
 
-	//Separity::GetComponentWrapper::registerInLua();
+	Separity::GetComponentWrapper::registerInLua();
 
-	/*Separity::SceneManager* sceneMenager =
+	Separity::SceneManager* sceneMenager =
 	    Separity::SceneManager::getInstance();
-	sceneMenager->loadScene("scene4.lua");*/
+	sceneMenager->loadScene("scene4.lua");
 
 	Separity::Entity* sinbad = entityManager->addEntity(Separity::_grp_GENERAL);
 	sinbad->getComponent<Separity::Transform>()->translate({-15, 60, 12});
@@ -102,22 +102,22 @@ int CrazyU::GameStart::initJuego() {
 	    "TextoPrueba", "fuentePrueba", 100, 100, 200, 50, "Holi",
 	    Spyutils::Vector3(1, 1, 1));
 
-	//mm->initComponents();
+	mm->initComponents();
 
-	//Separity::Camera* cam_cam =
-	//    Separity::RenderManager::getInstance()->getCamera();
-	//Separity::Entity* camera = cam_cam->getEntity();
-	//Separity::Transform* cam_tr = camera->getComponent<Separity::Transform>();
+	Separity::Camera* cam_cam =
+	    Separity::RenderManager::getInstance()->getCamera();
+	Separity::Entity* camera = cam_cam->getEntity();
+	Separity::Transform* cam_tr = camera->getComponent<Separity::Transform>();
 
 	uint32_t deltaTime = 0;
 
 	while(!mm->quit()) {
-		/*cam_cam = Separity::RenderManager::getInstance()->getCamera();
+		cam_cam = Separity::RenderManager::getInstance()->getCamera();
 		camera = cam_cam->getEntity();
-		cam_tr = camera->getComponent<Separity::Transform>();*/
+		cam_tr = camera->getComponent<Separity::Transform>();
 
-		//mm->update(deltaTime);
-		//mm->render();
+		mm->update(deltaTime);
+		mm->render();
 	}
 
 	mm->clean();
