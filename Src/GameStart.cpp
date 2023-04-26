@@ -59,6 +59,7 @@ int CrazyU::GameStart::initJuego() {
 	ManagerManager* mm = Separity::ManagerManager::getInstance();
 	InputManager* inputManager = Separity::InputManager::getInstance();
 	EntityManager* entityManager = Separity::EntityManager::getInstance();
+	AudioManager* audioManager = Separity::AudioManager::getInstance();
 	;
 
 	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
@@ -66,11 +67,10 @@ int CrazyU::GameStart::initJuego() {
 
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
-	/* Entity* listener = entityManager->addEntity(_grp_GENERAL);
-	 auto* sonido = listener->addComponent<AudioSource>("Assets//piano.wav",
-	                                                    "callmemaybe",
-false);*/
-
+	Entity* listener = entityManager->addEntity(_grp_GENERAL);
+	 auto* sonido = listener->addComponent<AudioSource>("Assets//callmemaybe.mp3",
+	                                                    "callmemaybe", false);
+	audioManager->playAudio(sonido, 1000,1000);
 	Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
 	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
 	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
