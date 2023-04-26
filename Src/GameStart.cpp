@@ -200,6 +200,8 @@ false);*/
 	}
 
 	mm->clean();
+	GetComponentWrapper::closeAllManagers();
+
 	//delete timer;
 
 	return 0;
