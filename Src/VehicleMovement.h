@@ -18,8 +18,8 @@ namespace CrazyU {
 	/// </summary>
 	class VehicleMovement : public Separity::Component {
 		public:
-		__CMPTYPE_DECL__(Separity::_PHYSICS)
-		__CMPID_DECL__(Separity::_VEHICLE_MOVEMENT)
+		__CMPTYPE_DECL__(Separity::_SCRIPT)
+		__CMPID_DECL__(Separity::_GAME_COMPONENT)
 
 		VehicleMovement(Separity::Transform* cameraTr);
 		~VehicleMovement();
