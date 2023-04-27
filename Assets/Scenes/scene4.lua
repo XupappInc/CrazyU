@@ -24,7 +24,7 @@ Entities = {
 		script={
 			name="soundButton"
 		}
-	}
+	},
 	Light = {
 		transform = {
 			pos = {4.076245307922363, 5.903861999511719, -1.0054539442062378},
