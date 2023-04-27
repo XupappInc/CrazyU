@@ -57,7 +57,7 @@ int CrazyU::GameStart::initJuego() {
 	;
 	
 	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
-	sceneMenager->loadScene("menuScene.lua");
+	sceneMenager->loadScene("scene4.lua");
 
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
@@ -102,8 +102,7 @@ int CrazyU::GameStart::initJuego() {
 	cocheTr->translate({0, 10, 0});
 	cocheTr->setScale(1);
 	coche->addComponent<MeshRenderer>()->setMesh("Bus1.mesh");
-	/*VehicleMovement* coche_vehiculo =
-	    coche->addComponent<VehicleMovement>(cam_tr);*/
+	
 
 	colliderParams paramsCoche;
 	paramsCoche.colShape = CUBE;
@@ -126,14 +125,19 @@ int CrazyU::GameStart::initJuego() {
 	Camera* cam_cam = RenderManager::getInstance()->getCamera();
 	Entity* camera = cam_cam->getEntity();
 	Transform* cam_tr = camera->getComponent<Transform>();
-	cam_tr->setPosition(posCoche.x, posCoche.y + 3, posCoche.z + 7.5);
-	cam_tr->pitch(20);
+
 	coche->addChild(camera);
+	cam_tr->setPosition(posCoche.x, posCoche.y + 3, posCoche.z + 7.5);
+	//cam_tr->translate({0, 10, 0});
+	cam_tr->pitch(20);
+	/*VehicleMovement* coche_vehiculo =
+	    coche->addComponent<VehicleMovement>(cam_tr);*/
+	
 
 	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
-		cam_cam = RenderManager::getInstance()->getCamera();
+		/*cam_cam = RenderManager::getInstance()->getCamera();
 		camera = cam_cam->getEntity();
-		cam_tr = camera->getComponent<Transform>();
+		cam_tr = camera->getComponent<Transform>();*/
 
 		//timer->reset();
 		//	while(!mm->quit() &&
