@@ -170,11 +170,13 @@
   <ItemGroup>
     <ClInclude Include="..\Src\GameStart.h" />
     <ClInclude Include="..\Src\framework.h" />
+    <ClInclude Include="..\Src\VehicleMovement.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\GameStart.cpp" />
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\main.cpp" />
+    <ClCompile Include="..\Src\VehicleMovement.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
