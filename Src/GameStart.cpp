@@ -95,9 +95,6 @@ int CrazyU::GameStart::initJuego() {
 	    button->addComponent<Text>("TextoPrueba", "fuentePrueba", 100, 100, 200,
 	                               50, "Holi", Spyutils::Vector3(1, 1, 1));
 	
-	Camera* cam_cam = RenderManager::getInstance()->getCamera();
-	/*Entity* camera = cam_cam->getEntity();
-	Transform* cam_tr = camera->getComponent<Transform>();*/
 
 	// BUS
 	Entity* coche = entityManager->addEntity(_grp_GENERAL);
@@ -118,10 +115,7 @@ int CrazyU::GameStart::initJuego() {
 	coche->addComponent<Collider>(paramsCoche);
 	coche->addComponent<RigidBody>(DYNAMIC, 100);
 
-	//coche->addChild(camera);
 	Spyutils::Vector3 posCoche = cocheTr->getPosition();
-	/*cam_tr->setPosition(posCoche.x, posCoche.y + 3, posCoche.z + 7.5);
-	cam_tr->pitch(20);*/
 
 	//Spyutils::VirtualTimer* timer = new Spyutils::VirtualTimer();
 	uint32_t deltaTime = 0;
@@ -129,14 +123,77 @@ int CrazyU::GameStart::initJuego() {
 	bool rot = true;
 	mm->initComponents();
 
+	Camera* cam_cam = RenderManager::getInstance()->getCamera();
+	Entity* camera = cam_cam->getEntity();
+	Transform* cam_tr = camera->getComponent<Transform>();
+	cam_tr->setPosition(posCoche.x, posCoche.y + 3, posCoche.z + 7.5);
+	cam_tr->pitch(20);
+	coche->addChild(camera);
 
 	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
 		cam_cam = RenderManager::getInstance()->getCamera();
-		/*camera = cam_cam->getEntity();
-		cam_tr = camera->getComponent<Transform>();*/
+		camera = cam_cam->getEntity();
+		cam_tr = camera->getComponent<Transform>();
 
 		//timer->reset();
-
+		//	while(!mm->quit() &&
+		//!InputManager::getInstance()->closeWindowEvent()) {
+		//
+		//		cam_cam = RenderManager::getInstance()->getCamera();
+		//		camera = cam_cam->getEntity();
+		//		cam_tr = camera->getComponent<Transform>();
+		//
+		//		timer->reset();
+		//
+		//		if(inputManager->isKeyDown(InputManager::ESCAPE) ||
+		//		   inputManager->closeWindowEvent()) {
+		//			mm->shutDown();
+		//		} else {
+		//			if(inputManager->isKeyHeld('a')) {
+		//				coche_vehiculo->girar(-1);
+		//			}
+		//			if(inputManager->isKeyHeld('d')) {
+		//				coche_vehiculo->girar(1);
+		//			}
+		//			if(inputManager->isKeyHeld('w')) {
+		//				coche_vehiculo->acelerar(1);
+		//
+		//			}
+		//			if(inputManager->isKeyHeld('s')) {
+		//				coche_vehiculo->acelerar(-1);
+		//				auto quate=cam_tr->getRotationQ();
+		//				if(rot) {
+		//					quate.rotateGlobal(180, {0, 1, 0});
+		//					cam_tr->setRotationQ(quate.w, quate.x, quate.y,
+		//quate.z); 					rot = false;
+		//				}
+		//
+		//
+		//			}
+		//			if(inputManager->isKeyUp('s')) {
+		//				rot = true;
+		//				auto quate = cam_tr->getRotationQ();
+		//				quate.rotateGlobal(180, {0, 1, 0});
+		//				cam_tr->setRotationQ(quate.w, quate.x, quate.y,
+		//quate.z);
+		//			}
+		//			if(inputManager->isKeyHeld(InputManager::SPACE)) {
+		//				coche_vehiculo->frenar();
+		//			}
+		//			if(inputManager->isKeyDown('c')) {
+		//				RenderManager::getInstance()->resizeWindow(1920, 1080);
+		//			}
+		//			if(inputManager->isKeyDown('v')) {
+		//				auto trsi = sinbad->getComponent<Transform>();
+		//				trsi->setScale(20);
+		//			}
+		//			/*if(inputManager->isKeyDown('l')) {
+		//			    animSinbad->playAnim("Dance", false);
+		//			}
+		//			if(inputManager->isKeyDown('k')) {
+		//			    animSinbad->playAnim("Dance");
+		//			}*
+		//		
 		if(inputManager->isKeyDown(InputManager::ESCAPE) ||
 		   inputManager->closeWindowEvent()) {
 			mm->shutDown();
@@ -144,9 +201,9 @@ int CrazyU::GameStart::initJuego() {
 			
 			if(inputManager->isKeyUp('s')) {
 				rot = true;
-				//auto quate = cam_tr->getRotationQ();
-				/*quate.rotateGlobal(180, {0, 1, 0});
-				cam_tr->setRotationQ(quate.w, quate.x, quate.y, quate.z);*/
+				auto quate = cam_tr->getRotationQ();
+				quate.rotateGlobal(180, {0, 1, 0});
+				cam_tr->setRotationQ(quate.w, quate.x, quate.y, quate.z);
 			}
 			
 			if(inputManager->isKeyDown('c')) {

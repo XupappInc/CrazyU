@@ -9,7 +9,7 @@
 
 CrazyU::GameManagerCreator::GameManagerCreator() {}
 
-CrazyU::GameManagerCreator::~GameManagerCreator() {}
+//CrazyU::GameManagerCreator::~GameManagerCreator() {}
 
 void CrazyU::GameManagerCreator::registerInLua() {}
 
