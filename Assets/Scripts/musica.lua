@@ -17,16 +17,13 @@ end
 
 --Metodo Start, llamado tras Awake
 function musica:start()
-	
+	print("Estoy entrando en callmemaybe");
+	AudioManager:play("callmemaybe", 1000, 1000);
 end
 
 --Metodo Update, llamado en cada frame
 function musica:update()
-	if notPlaying then
-        print("Estoy entrando en callmemaybe");
-		AudioManager:play("callmemaybe", 1000, 1000);
-		notPlaying=false;
-	end
+
 end
 
 --Metodo OnCollisionEnter, llamado al comenzar una colision
