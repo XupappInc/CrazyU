@@ -31,10 +31,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 [Tt]emp/
-[Ee]xes/*
+[Ee]xe/*
 [Ll]ib
-![Ee]xes/assets
-![Ee]xes/*.cfg
+![Ee]xe/assets
 
 
 # Visual Studio 2015/2017 cache/options directory
