@@ -9,7 +9,7 @@ function paradas:new()
 	setmetatable(obj, paradas)
 	return obj
 end
-
+local alreadyPickedPeople = false;
 --Metodo Awake, llamado al comienzo de la ejecucion
 function paradas:awake()
 
@@ -28,26 +28,32 @@ end
 --Metodo OnCollisionEnter, llamado al comenzar una colision
 function paradas:onCollisionEnter()
 
-    if other ~= nil then
-		--Funcionalidades futuras, sumar puntos al pasar por una parada,
-		--En un futuro se llamará al gameManager pero aún no existe
-		
-		t = other.entity:getTag();
-		print(t);
-        print('Chocando con Parada')
-    else
-        print('Parada no detectada')
-	end
+    
 end
 
 --Metodo OnCollisionStay, llamado mientras se mantenga una colision
 function paradas:onCollisionStay()
-
+	if alreadyPickedPeople ~= nil then
+		alreadyPickedPeople = true;
+		if other ~= nil then
+			if other:getTag() == "player" then
+				print('Chocando con el jugador');
+				if other.getRigidBody() then
+					vel = other.getRigidBody().getVelocity();
+					print(vel);
+					print("Tengo el getRigidBody");
+				end
+			end
+			print('Chocando con algo que no es el jugador');
+		else
+			print('Other existe');
+		end
+	end
 end
 
 --Metodo OnCollisionExit, llamado al salir de una colision
 function paradas:onCollisionExit()
-
+	alreadyPickedPeople = false;
 end
 
 --Metodo OnButtonClick, llamado al pulsar el boton de esta entidad
