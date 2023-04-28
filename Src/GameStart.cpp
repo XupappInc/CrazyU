@@ -57,7 +57,7 @@ int CrazyU::GameStart::initJuego() {
 	;
 	
 	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
-	sceneMenager->loadScene("scene4.lua");
+	sceneMenager->loadScene("scene18.lua");
 
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 

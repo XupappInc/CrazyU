@@ -529,9 +529,6 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.057"
-		},
-		currentUVSet = {
-			map1
 		}
 	},
 	SM_Bld_Station_01 = {
@@ -602,56 +599,6 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.068"
-		}
-	},
-	Captura de pantalla (46) = {
-		transform = {
-			pos = {25.6715087890625, -0.003783028805628419, 15.634771347045898},
-			rot = {0.0, 0.6582857966423035, -0.0, 0.7527680993080139},
-			scale = {248.96676635742188, 340.6197204589844, 248.96676635742188}
-		},
-		meshRenderer = {
-			meshName = "Captura de pantalla (46)"
-		}
-	},
-	Captura de pantalla (47) = {
-		transform = {
-			pos = {-227.16448974609375, 0.0, 14.575326919555664},
-			rot = {0.0, 0.6582430601119995, -0.0, 0.7528054714202881},
-			scale = {254.66761779785156, 263.66827392578125, 254.66761779785156}
-		},
-		meshRenderer = {
-			meshName = "Captura de pantalla (47)"
-		}
-	},
-	Captura de pantalla (48) = {
-		transform = {
-			pos = {-326.20458984375, 0.748958170413971, 9.434072494506836},
-			rot = {0.0, 0.6575322151184082, -0.0, 0.7534264326095581},
-			scale = {244.98440551757812, 44.45325469970703, 244.98440551757812}
-		},
-		meshRenderer = {
-			meshName = "Captura de pantalla (48)"
-		}
-	},
-	Captura de pantalla (49) = {
-		transform = {
-			pos = {-472.7969055175781, -1.9073486328125e-06, -6.9040656089782715},
-			rot = {0.0, 0.6622534394264221, -0.0, 0.7492799162864685},
-			scale = {252.40298461914062, 44.453250885009766, 252.40298461914062}
-		},
-		meshRenderer = {
-			meshName = "Captura de pantalla (49)"
-		}
-	},
-	Captura de pantalla (50) = {
-		transform = {
-			pos = {-697.4558715820312, 0.0, 196.81654357910156},
-			rot = {0.0, 0.6654005646705627, -0.0, 0.746486485004425},
-			scale = {355.9809265136719, 44.4532470703125, 355.9809265136719}
-		},
-		meshRenderer = {
-			meshName = "Captura de pantalla (50)"
 		}
 	},
 	SM_Env_Road_Arrow_01_002 = {
