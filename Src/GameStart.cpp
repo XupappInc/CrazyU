@@ -57,7 +57,7 @@ int CrazyU::GameStart::initJuego() {
 	;
 	
 	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
-	sceneMenager->loadScene("scene18.lua");
+	sceneMenager->loadScene("scene4.lua");
 
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
@@ -69,11 +69,11 @@ int CrazyU::GameStart::initJuego() {
 	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
 	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
 
-	//Entity* guile = entityManager->addEntity(_grp_GENERAL);
-	//guile->getComponent<Transform>()->translate({0, 10, -12});
-	//guile->getComponent<Transform>()->setScale(0.5);
-	//guile->addComponent<MeshRenderer>()->setMesh("Maria_J_J_Ong.mesh");
-	//auto anim=guile->addComponent<Animator>();
+	Entity* guile = entityManager->addEntity(_grp_GENERAL);
+	guile->getComponent<Transform>()->translate({0, 10, -12});
+	guile->getComponent<Transform>()->setScale(0.5);
+	guile->addComponent<MeshRenderer>()->setMesh("Guille.mesh");
+	auto anim=guile->addComponent<Animator>();
 
 	Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
 	sinbad->addChild(sinbad3);
@@ -89,7 +89,7 @@ int CrazyU::GameStart::initJuego() {
 
 	sinbad->addComponent<Collider>(params);
 	sinbad->addComponent<RigidBody>(DYNAMIC, 10);
-	/*auto animSinbad = sinbad->addComponent<Animator>();*/
+	//auto animSinbad = sinbad->addComponent<Animator>();
 
 	Entity* button = entityManager->addEntity(_grp_GENERAL);
 	Text* txt =
@@ -127,16 +127,24 @@ int CrazyU::GameStart::initJuego() {
 	Entity* camera = cam_cam->getEntity();
 	Transform* cam_tr = camera->getComponent<Transform>();
 
-	coche->addChild(camera);
-	cam_tr->setPosition(posCoche.x, posCoche.y + 3, posCoche.z + 7.5);
-	cam_tr->translate({0, 10, 0});
+	//coche->addChild(camera);
+	cam_tr->setPosition(0, 20, 0);
+	//cam_tr->translate({0, 10, 0});
 	cam_tr->pitch(20);
+	guile->getComponent<Transform>()->setPosition({0, 5, -125});
 	/*VehicleMovement* coche_vehiculo =
 	    coche->addComponent<VehicleMovement>(cam_tr);*/
-	//anim->playAnim("my_animation",true);
 	
+	anim->playAnim("idle",true);
+	
+	
+	
+	//animSinbad->playAnim("Dance", true);
 	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
-		if(inputManager->isKeyHeld('a')) {
+		if(inputManager->isKeyHeld('s')) {
+			cam_tr->translate({0, 0, -1});
+		}
+		/*if(inputManager->isKeyHeld('a')) {
 			cam_tr->translate({-1, 0, 0});
 		} 
 		else if(inputManager->isKeyHeld('d')) {
@@ -145,9 +153,7 @@ int CrazyU::GameStart::initJuego() {
 		else if(inputManager->isKeyHeld('w')) {
 			cam_tr->translate({0, 0, -1});
 		}
-		else if(inputManager->isKeyHeld('s')) {
-			cam_tr->translate({0,0, 1});
-		}
+		else */
 			//				coche_vehiculo->girar(-1);
 			//			}
 			//			if(inputManager->isKeyHeld('d')) {
