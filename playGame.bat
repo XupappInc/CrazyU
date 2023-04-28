@@ -2,6 +2,6 @@
 
 call putGameInSeparity.bat
 
-cd Separity\Exes
+cd Exe
 
 call Separity.exe
