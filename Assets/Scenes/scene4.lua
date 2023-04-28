@@ -9,22 +9,6 @@ Entities = {
 			name = "musica"
 		}
 	},
-	BotonSonido = {
-		button = {
-			overlay = "SoundButton",
-			x = 100,
-			y = 100,
-			width = 100,
-			height = 100,
-			iniTex = "volumeIni",
-			hoverTex="volumeHover",
-			clickedTex="volumeClick",
-			zorder=2
-		},
-		script={
-			name="soundButton"
-		}
-	},
 	Light = {
 		transform = {
 			pos = {4.076245307922363, 5.903861999511719, -1.0054539442062378},
@@ -470,8 +454,8 @@ Entities = {
 	Soundbur={
 		button = {
 			overlay = "SoundButton",
-			x = 0,
-			y = 0,
+			x = 10,
+			y = 10,
 			width = 100,
 			height = 100,
 			iniTex = "volumeIni",
