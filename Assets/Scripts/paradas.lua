@@ -31,6 +31,9 @@ function paradas:onCollisionEnter()
     if other ~= nil then
 		--Funcionalidades futuras, sumar puntos al pasar por una parada,
 		--En un futuro se llamará al gameManager pero aún no existe
+		
+		t = other.entity:getTag();
+		print(t);
         print('Chocando con Parada')
     else
         print('Parada no detectada')

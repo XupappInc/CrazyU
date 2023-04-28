@@ -62,9 +62,9 @@ int CrazyU::GameStart::initJuego() {
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
 	Entity* listener = entityManager->addEntity(_grp_GENERAL);
-	 auto* sonido = listener->addComponent<AudioSource>("Assets//callmemaybe.mp3",
+	/* auto* sonido = listener->addComponent<AudioSource>("Assets//callmemaybe.mp3",
 	                                                    "callmemaybe", false);
-	audioManager->playAudio("callmemaybe", 1000, 1000);
+	audioManager->playAudio("callmemaybe", 1000, 1000);*/
 	Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
 	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
 	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
