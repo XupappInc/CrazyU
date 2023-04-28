@@ -1,8 +1,8 @@
 @echo off
+cls
 
-mkdir Separity\Exes\Assets
-
-set EXES=Separity\Exes
+set EXES=Exe
+set MOTOR=%cd%\Separity\Exes
 
 cd Separity
 
@@ -12,10 +12,12 @@ cd ..
 
 call buildGame.bat
 
-XCOPY /y /s lib\x64\Debug\SeparityGame_d.dll %EXES%
-XCOPY /y /s lib\x64\Release\SeparityGame.dll %EXES%
+XCOPY /y /s lib\Debug\SeparityGame_d.dll %EXES%
+XCOPY /y /s lib\Release\SeparityGame.dll %EXES%
 XCOPY /y /s Separity\lib\x64\Debug\SeparityExports_d.dll %EXES%
 XCOPY /y /s Separity\lib\x64\Release\SeparityExports.dll %EXES%
-XCOPY /y /s Assets\ %EXES%\Assets
 
 
+copy "%MOTOR%\*.exe" %EXES%
+copy "%MOTOR%\*.cfg" %EXES%
+copy "%MOTOR%\*.dll" %EXES%
