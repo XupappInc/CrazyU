@@ -69,11 +69,11 @@ int CrazyU::GameStart::initJuego() {
 	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
 	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
 
-	Entity* guile = entityManager->addEntity(_grp_GENERAL);
-	guile->getComponent<Transform>()->translate({0, 10, -12});
-	guile->getComponent<Transform>()->setScale(0.5);
-	guile->addComponent<MeshRenderer>()->setMesh("Maria_J_J_Ong.mesh");
-	auto anim=guile->addComponent<Animator>();
+	//Entity* guile = entityManager->addEntity(_grp_GENERAL);
+	//guile->getComponent<Transform>()->translate({0, 10, -12});
+	//guile->getComponent<Transform>()->setScale(0.5);
+	//guile->addComponent<MeshRenderer>()->setMesh("Maria_J_J_Ong.mesh");
+	//auto anim=guile->addComponent<Animator>();
 
 	Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
 	sinbad->addChild(sinbad3);
@@ -133,7 +133,7 @@ int CrazyU::GameStart::initJuego() {
 	cam_tr->pitch(20);
 	/*VehicleMovement* coche_vehiculo =
 	    coche->addComponent<VehicleMovement>(cam_tr);*/
-	anim->playAnim("my_animation",true);
+	//anim->playAnim("my_animation",true);
 	
 	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
 		if(inputManager->isKeyHeld('a')) {
