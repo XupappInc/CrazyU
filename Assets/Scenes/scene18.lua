@@ -1,4 +1,13 @@
 Entities = {
+    -- GameManager =
+    -- {
+    --     transform = {
+    --         pos = {0, 0, 0},
+	-- 		rot = {0, 0, 0, 0},
+	-- 		scale = {0, 0, 0}
+    --     },
+    --     gameManager = {}
+    -- },
 	Light = {
 		transform = {
 			pos = {8.48244571685791, 10.236784934997559, -2.139559268951416},

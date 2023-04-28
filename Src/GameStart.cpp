@@ -17,6 +17,10 @@
 #include "UIEngine\Panel.h"
 #include "UIEngine\Text.h"
 #include "VehicleMovement.h"
+#include "GameManager.h"
+
+//Creators
+#include "GameManagerCreator.h"
 
 // Managers
 #include "EntityComponent\EntityManager.h"
@@ -39,6 +43,9 @@
 #include <iostream>
 #include <utility>
 
+#include "lua.hpp"
+#include "LuaBridge.h"
+
 const uint32_t FRAMERATE = 60;
 const uint32_t FRAMETIME = 1000 / FRAMERATE;
 using namespace Separity;
@@ -56,8 +63,14 @@ int CrazyU::GameStart::initJuego() {
 	AudioManager* audioManager = Separity::AudioManager::getInstance();
 	;
 	
-	SceneManager* sceneMenager = Separity::SceneManager::getInstance();
-	sceneMenager->loadScene("scene18.lua");
+	SceneManager* sceneManager = Separity::SceneManager::getInstance();
+	sceneManager->addComponentCreator("gameManager", new GameManagerCreator());
+
+	sceneManager->loadScene("scene18.lua");
+
+	Entity* gameManager = entityManager->addEntity(_grp_GENERAL);
+	auto gm = gameManager->addComponent<GameManager>();
+	luabridge::setGlobal(LuaManager::getInstance()->getLuaState(), gm, "GameManager");
 
 	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
 
