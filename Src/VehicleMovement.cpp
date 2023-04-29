@@ -25,7 +25,7 @@ void CrazyU::VehicleMovement::initComponent() {
 
 	auto cameraEnt = camera->getEntity();
 	cameraTr_ = cameraEnt->getComponent<Transform>();
-	assert(cameraTr_ != nullptr)
+	assert(cameraTr_ != nullptr);
 }
 
 void CrazyU::VehicleMovement::girar(int dir) {

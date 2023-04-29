@@ -44,8 +44,8 @@
 #include <iostream>
 #include <utility>
 
-#include "lua.hpp"
-#include "LuaBridge.h"
+//#include "lua.hpp"
+//#include "LuaBridge.h"
 
 const uint32_t FRAMERATE = 60;
 const uint32_t FRAMETIME = 1000 / FRAMERATE;
@@ -53,217 +53,38 @@ using namespace Separity;
 int CrazyU::GameStart::initJuego() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	GetComponentWrapper::createAllManagers();
 
+	GetComponentWrapper::createAllManagers();
 	GetComponentWrapper::registerInLua();
 	
-	//RenderManager* rm = RenderManager::getInstance();
 	ManagerManager* mm = Separity::ManagerManager::getInstance();
 	InputManager* inputManager = Separity::InputManager::getInstance();
 	EntityManager* entityManager = Separity::EntityManager::getInstance();
 	AudioManager* audioManager = Separity::AudioManager::getInstance();
-	;
 	
 	SceneManager* sceneManager = Separity::SceneManager::getInstance();
-	sceneManager->addComponentCreator("gameManager", new GameManagerCreator());
-	sceneManager->addComponentCreator("vehicleMovement", new VehicleMovementCreator());
 
-	sceneManager->loadScene("scene18.lua");
+	sceneManager->loadScene("menuScene.lua");
 
-	Entity* gameManager = entityManager->addEntity(_grp_GENERAL);
-	auto gm = gameManager->addComponent<GameManager>();
-	luabridge::setGlobal(LuaManager::getInstance()->getLuaState(), gm, "GameManager");
-
-	// Entity* MusicInstance = entityManager->addEntity(_grp_GENERAL);
-
-	Entity* listener = entityManager->addEntity(_grp_GENERAL);
-	/* auto* sonido = listener->addComponent<AudioSource>("Assets//callmemaybe.mp3",
-	                                                    "callmemaybe", false);
-	audioManager->playAudio("callmemaybe", 1000, 1000);*/
-	Entity* sinbad = entityManager->addEntity(_grp_GENERAL);
-	sinbad->getComponent<Transform>()->translate({-15, 60, 12});
-	sinbad->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
-
-	Entity* guile = entityManager->addEntity(_grp_GENERAL);
-	guile->getComponent<Transform>()->translate({0, 10, -12});
-	guile->getComponent<Transform>()->setScale(0.5);
-	guile->addComponent<MeshRenderer>()->setMesh("Guille.mesh");
-	auto anim=guile->addComponent<Animator>();
-
-	Entity* sinbad3 = entityManager->addEntity(_grp_GENERAL);
-	sinbad->addChild(sinbad3);
-	sinbad3->getComponent<Transform>()->translate({0, 5, 0});
-	sinbad3->addComponent<MeshRenderer>()->setMesh("Sinbad.mesh");
-
-	colliderParams params;
-	params.colShape = CUBE;
-	params.height = 10;
-	params.width = 5;
-	params.depth = 5;
-	params.isTrigger = false;
-
-	sinbad->addComponent<Collider>(params);
-	sinbad->addComponent<RigidBody>(DYNAMIC, 10);
-	//auto animSinbad = sinbad->addComponent<Animator>();
-
-	Entity* button = entityManager->addEntity(_grp_GENERAL);
-	Text* txt =
-	    button->addComponent<Text>("TextoPrueba", "fuentePrueba", 100, 100, 200,
-	                               50, "Holi", Spyutils::Vector3(1, 1, 1));
-	
-
-	// BUS
-	Entity* coche = entityManager->addEntity(_grp_GENERAL);
-	Transform* cocheTr = coche->getComponent<Transform>();
-	cocheTr->translate({0, 10, 0});
-	cocheTr->setScale(1);
-	coche->addComponent<MeshRenderer>()->setMesh("Bus1.mesh");
-	
-
-	colliderParams paramsCoche;
-	paramsCoche.colShape = CUBE;
-	paramsCoche.height = 2;
-	paramsCoche.width = 2;
-	paramsCoche.depth = 3;
-	paramsCoche.isTrigger = false;
-
-	coche->addComponent<Collider>(paramsCoche);
-	coche->addComponent<RigidBody>(DYNAMIC, 100);
-
-	Spyutils::Vector3 posCoche = cocheTr->getPosition();
-
-	//Spyutils::VirtualTimer* timer = new Spyutils::VirtualTimer();
-	uint32_t deltaTime = 0;
-
-	bool rot = true;
 	mm->initComponents();
-
-	Camera* cam_cam = RenderManager::getInstance()->getCamera();
-	Entity* camera = cam_cam->getEntity();
-	Transform* cam_tr = camera->getComponent<Transform>();
-
-	//coche->addChild(camera);
-	cam_tr->setPosition(0, 20, 0);
-	//cam_tr->translate({0, 10, 0});
-	cam_tr->pitch(20);
-	guile->getComponent<Transform>()->setPosition({0, 5, -125});
-	/*VehicleMovement* coche_vehiculo =
-	    coche->addComponent<VehicleMovement>(cam_tr);*/
 	
-	anim->playAnim("idle",true);
-	
-	
-	
-	//animSinbad->playAnim("Dance", true);
 	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
-		if(inputManager->isKeyHeld('s')) {
-			cam_tr->translate({0, 0, -1});
-		}
-		/*if(inputManager->isKeyHeld('a')) {
-			cam_tr->translate({-1, 0, 0});
-		} 
-		else if(inputManager->isKeyHeld('d')) {
-			cam_tr->translate({1, 0, 0});
-		} 
-		else if(inputManager->isKeyHeld('w')) {
-			cam_tr->translate({0, 0, -1});
-		}
-		else */
-			//				coche_vehiculo->girar(-1);
-			//			}
-			//			if(inputManager->isKeyHeld('d')) {
-			//				coche_vehiculo->girar(1);
-			//			}
-			//			if(inputManager->isKeyHeld('w')) {
-			//				coche_vehiculo->acelerar(1);
-			//
-			//			}
-			//			if(inputManager->isKeyHeld('s')) {
-			//				coche_vehiculo->acelerar(-1);
-			//				auto quate=cam_tr->getRotationQ();
-			//				if(rot) {
-			//					quate.rotateGlobal(180, {0, 1, 0});
-			//					cam_tr->setRotationQ(quate.w, quate.x, quate.y,
-			// quate.z); 					rot = false;
-			//				}
-		/*cam_cam = RenderManager::getInstance()->getCamera();
-		camera = cam_cam->getEntity();
-		cam_tr = camera->getComponent<Transform>();*/
-
-		//timer->reset();
-		//	while(!mm->quit() &&
-		//!InputManager::getInstance()->closeWindowEvent()) {
-		//
-		//		cam_cam = RenderManager::getInstance()->getCamera();
-		//		camera = cam_cam->getEntity();
-		//		cam_tr = camera->getComponent<Transform>();
-		//
-		//		timer->reset();
-		//
-		//		if(inputManager->isKeyDown(InputManager::ESCAPE) ||
-		//		   inputManager->closeWindowEvent()) {
-		//			mm->shutDown();
-		//		} else {
-		//			
-		//
-		//
-		//			}
-		//			if(inputManager->isKeyUp('s')) {
-		//				rot = true;
-		//				auto quate = cam_tr->getRotationQ();
-		//				quate.rotateGlobal(180, {0, 1, 0});
-		//				cam_tr->setRotationQ(quate.w, quate.x, quate.y,
-		//quate.z);
-		//			}
-		//			if(inputManager->isKeyHeld(InputManager::SPACE)) {
-		//				coche_vehiculo->frenar();
-		//			}
-		//			if(inputManager->isKeyDown('c')) {
-		//				RenderManager::getInstance()->resizeWindow(1920, 1080);
-		//			}
-		//			if(inputManager->isKeyDown('v')) {
-		//				auto trsi = sinbad->getComponent<Transform>();
-		//				trsi->setScale(20);
-		//			}
-		//			/*if(inputManager->isKeyDown('l')) {
-		//			    animSinbad->playAnim("Dance", false);
-		//			}
-		//			if(inputManager->isKeyDown('k')) {
-		//			    animSinbad->playAnim("Dance");
-		//			}*
-		//		
-		if(inputManager->isKeyDown(InputManager::ESCAPE) ||
-		   inputManager->closeWindowEvent()) {
+		
+		if(inputManager->isKeyDown(InputManager::ESCAPE)) {
 			mm->shutDown();
-		} else {
+		} 
 			
-			if(inputManager->isKeyUp('s')) {
-				rot = true;
-				auto quate = cam_tr->getRotationQ();
-				quate.rotateGlobal(180, {0, 1, 0});
-				cam_tr->setRotationQ(quate.w, quate.x, quate.y, quate.z);
-			}
-			
-			if(inputManager->isKeyDown('c')) {
-				RenderManager::getInstance()->resizeWindow(1920, 1080);
-			}
-			if(inputManager->isKeyDown('v')) {
-				auto trsi = sinbad->getComponent<Transform>();
-				trsi->setScale(20);
-			}
-		}
-
-		mm->update(deltaTime);
-		mm->render();
+		mm->update(0);
 
 		//deltaTime = timer->currTime();
-		int waitTime = FRAMETIME - deltaTime;
+		//int waitTime = FRAMETIME - deltaTime;
 
-		if(waitTime > 0)
-			Sleep(waitTime);
+		//if(waitTime > 0)
+		//	Sleep(waitTime);
 	}
 
 	mm->clean();
+
 	GetComponentWrapper::closeAllManagers();
 
 	//delete timer;
