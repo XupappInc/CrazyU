@@ -4,7 +4,7 @@
 // Componentes
 #include "EntityComponent\Transform.h"
 #include "LuaEngine\Behaviour.h"
-#include "PhysicsEngine\Collider.h"
+
 #include "PhysicsEngine\RigidBody.h"
 #include "RenderEngine\Animator.h"
 #include "RenderEngine\Camera.h"
