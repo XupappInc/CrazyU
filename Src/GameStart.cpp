@@ -4,7 +4,6 @@
 // Componentes
 #include "EntityComponent\Transform.h"
 #include "LuaEngine\Behaviour.h"
-#include "PhysicsEngine\Collider.h"
 #include "PhysicsEngine\RigidBody.h"
 #include "RenderEngine\Animator.h"
 #include "RenderEngine\Camera.h"
@@ -47,47 +46,12 @@
 //#include "lua.hpp"
 //#include "LuaBridge.h"
 
-const uint32_t FRAMERATE = 60;
-const uint32_t FRAMETIME = 1000 / FRAMERATE;
+
 using namespace Separity;
 int CrazyU::GameStart::initJuego() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
-	GetComponentWrapper::createAllManagers();
-	GetComponentWrapper::registerInLua();
-	
-	ManagerManager* mm = Separity::ManagerManager::getInstance();
-	InputManager* inputManager = Separity::InputManager::getInstance();
-	EntityManager* entityManager = Separity::EntityManager::getInstance();
-	AudioManager* audioManager = Separity::AudioManager::getInstance();
-	
-	SceneManager* sceneManager = Separity::SceneManager::getInstance();
-
-	sceneManager->loadScene("scene.lua");
-
-	mm->initComponents();
-	
-	while(!mm->quit() && !InputManager::getInstance()->closeWindowEvent()) {
-		
-		if(inputManager->isKeyDown(InputManager::ESCAPE)) {
-			mm->shutDown();
-		} 
-			
-		mm->update(20);
-
-		//deltaTime = timer->currTime();
-		//int waitTime = FRAMETIME - deltaTime;
-
-		//if(waitTime > 0)
-		//	Sleep(waitTime);
-	}
-
-	mm->clean();
-
-	GetComponentWrapper::closeAllManagers();
-
-	//delete timer;
+	//Añadir los creators de los componentes del juego
 
 	return 0;
 }
