@@ -21,7 +21,7 @@ namespace CrazyU {
 		__CMPTYPE_DECL__(Separity::_SCRIPT)
 		__CMPID_DECL__(Separity::_GAME_COMPONENT)
 
-		VehicleMovement(Separity::Transform* cameraTr);
+		VehicleMovement();
 		~VehicleMovement();
 
 		void initComponent() override;

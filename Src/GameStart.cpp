@@ -21,6 +21,7 @@
 
 //Creators
 #include "GameManagerCreator.h"
+#include "VehicleMovementCreator.h"
 
 // Managers
 #include "EntityComponent\EntityManager.h"
@@ -65,6 +66,7 @@ int CrazyU::GameStart::initJuego() {
 	
 	SceneManager* sceneManager = Separity::SceneManager::getInstance();
 	sceneManager->addComponentCreator("gameManager", new GameManagerCreator());
+	sceneManager->addComponentCreator("vehicleMovement", new VehicleMovementCreator());
 
 	sceneManager->loadScene("scene18.lua");
 

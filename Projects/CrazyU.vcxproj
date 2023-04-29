@@ -173,6 +173,7 @@
     <ClInclude Include="..\Src\GameStart.h" />
     <ClInclude Include="..\Src\framework.h" />
     <ClInclude Include="..\Src\VehicleMovement.h" />
+    <ClInclude Include="..\Src\VehicleMovementCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Src\GameManager.cpp" />
@@ -181,6 +182,7 @@
     <ClCompile Include="..\Src\dllmain.cpp" />
     <ClCompile Include="..\Src\main.cpp" />
     <ClCompile Include="..\Src\VehicleMovement.cpp" />
+    <ClCompile Include="..\Src\VehicleMovementCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
