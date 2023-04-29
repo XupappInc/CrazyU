@@ -9,8 +9,6 @@
 
 CrazyU::GameManagerCreator::GameManagerCreator() {}
 
-//CrazyU::GameManagerCreator::~GameManagerCreator() {}
-
 void CrazyU::GameManagerCreator::registerInLua() {
 	
 	auto L = Separity::LuaManager::getInstance()->getLuaState();

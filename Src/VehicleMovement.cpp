@@ -6,10 +6,12 @@
 #include "SeparityUtils\Vector.h"
 #include "SeparityUtils\spyMath.h"
 
+#include "RenderEngine/RenderManager.h"
+#include "RenderEngine/Camera.h"
+
 using namespace Separity;
 
-CrazyU::VehicleMovement::VehicleMovement(Transform* cameraTr) {
-	cameraTr_ = cameraTr;
+CrazyU::VehicleMovement::VehicleMovement() : cameraTr_(nullptr), rb_(nullptr) {
 }
 
 CrazyU::VehicleMovement::~VehicleMovement() {}
@@ -17,6 +19,13 @@ CrazyU::VehicleMovement::~VehicleMovement() {}
 void CrazyU::VehicleMovement::initComponent() {
 	rb_ = ent_->getComponent<RigidBody>();
 	assert(rb_ != nullptr);
+
+	auto camera = Separity::RenderManager::getInstance()->getCamera();
+	assert(camera != nullptr);
+
+	auto cameraEnt = camera->getEntity();
+	cameraTr_ = cameraEnt->getComponent<Transform>();
+	assert(cameraTr_ != nullptr)
 }
 
 void CrazyU::VehicleMovement::girar(int dir) {
