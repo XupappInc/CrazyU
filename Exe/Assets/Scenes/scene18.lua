@@ -28,11 +28,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh"
 		},
-		collider = {
-			dim = {11.74368953704834, 12.203099250793457, 7.0462141036987305},
-		},
 		rigidbody = {
-			type = 2
+			type =2,
+			mass=10,
+			dim = {11.74368953704834, 12.203099250793457, 7.0462141036987305},
+			trigger=1
 		}
 	},
 	SM_Prop_ParkBench_01 = {
@@ -373,11 +373,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "suelo012138761"
 		},
-		collider = {
-			dim = {1195.093505859375, 1.0485559701919556, 1195.093505859375},
-		},
 		rigidbody = {
-			type = 2
+			type =2,
+			mass=10,
+			dim = {1195.093505859375, 1.0485559701919556, 1195.093505859375},
+			trigger=1
 		}
 	},
 	SM_Bld_OfficeOld_Small_01 = {

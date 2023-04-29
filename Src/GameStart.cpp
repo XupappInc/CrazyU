@@ -64,7 +64,7 @@ int CrazyU::GameStart::initJuego() {
 	
 	SceneManager* sceneManager = Separity::SceneManager::getInstance();
 
-	sceneManager->loadScene("menuScene.lua");
+	sceneManager->loadScene("scene.lua");
 
 	mm->initComponents();
 	
@@ -74,7 +74,7 @@ int CrazyU::GameStart::initJuego() {
 			mm->shutDown();
 		} 
 			
-		mm->update(0);
+		mm->update(20);
 
 		//deltaTime = timer->currTime();
 		//int waitTime = FRAMETIME - deltaTime;

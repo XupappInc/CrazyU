@@ -29,11 +29,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh"
 		},
-		collider = {
-			dim = {2.4903528690338135, 2.5877747535705566, 1.4942116737365723},
-		},
 		rigidbody = {
-			type = 2
+			type =2,
+			mass=10,
+			dim = {2.4903528690338135, 2.5877747535705566, 1.4942116737365723},
+			trigger=1
 		}
 	},
 	SM_Env_Sidewalk_01 = {
@@ -444,11 +444,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "suelo012138761"
 		},
-		collider = {
-			dim = {191.19271850585938, 0.59760582447052, 191.19271850585938},
-		},
 		rigidbody = {
-			type = 2
+			type =2,
+			mass=10,
+			dim = {191.19271850585938, 0.59760582447052, 191.19271850585938},
+			trigger=1
 		}
 	},
 	Soundbur={

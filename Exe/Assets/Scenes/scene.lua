@@ -321,11 +321,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.034"
 		},
-		collider = {
-			dim = {6.555717945098877, 9.741019248962402, 9.111288070678711},
-		},
 		rigidbody = {
-			type = 0
+			type =2,
+			mass=10,
+			dim = {6.555717945098877, 9.741019248962402, 9.111288070678711},
+			trigger=1
 		}
 	},
 	Bench_1 = {
@@ -347,11 +347,12 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.036"
 		},
-		collider = {
-			dim = {6.050632476806641, 8.528901100158691, 8.929821968078613},
-		},
+
 		rigidbody = {
-			type = 0
+			type =2,
+			mass=10,
+			dim = {6.050632476806641, 8.528901100158691, 8.929821968078613},
+			trigger=1
 		}
 	},
 	Light_3_2 = {
@@ -863,11 +864,11 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.098"
 		},
-		collider = {
-			dim = {39.052555084228516, 4.317275047302246, 39.07554626464844},
-		},
 		rigidbody = {
-			type = 2
+			type =2,
+			mass=10,
+			dim = {6.050632476806641, 8.528901100158691, 8.929821968078613},
+			trigger=1
 		}
 	},
 	Bushes_3_2_001 = {
