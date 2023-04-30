@@ -1002,7 +1002,7 @@ Entities = {
 	-- 		name = "sceneButton"
 	-- 	}
 	-- },
-	Mono = {
+	Guillermo = {
 		transform = {
 			pos = {0, -4.6901750564575195, 0},
 			rot = {0, 0, 0, 1},
@@ -1017,6 +1017,23 @@ Entities = {
 		script={
 			name = "monoAnim"
 	    }
+
+	},
+	Alejandro = {
+		transform = {
+			pos = {-5, -4.6901750564575195, 0},
+			rot = {0, 0, 0, 1},
+			scale = {0.03, 0.03, 0.03}
+		},
+		meshRenderer = {
+			meshName = "alejandro"
+		},
+		animator = {
+			animName="sexy_dance"
+		},
+		 script={
+		 	name = "alejandro"
+	     }
 
 	}
 }
