@@ -58,8 +58,8 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.005"
 		},
-		script = {
-			name = "prueba"
+		vehicleMovement = {
+			
 		}
 	},
 	Car_04_3 = {
