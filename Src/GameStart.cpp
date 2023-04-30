@@ -2,13 +2,11 @@
 
 #include <SceneEngine/SceneManager.h> 
 #include <EntityComponent/CCreator.h>
-#include <LuaEngine/LuaManager.h>
 
 #include "VehicleMovementCreator.h"
 #include "GameManagerCreator.h"
 
 #include <iostream>
-
 
 int CrazyU::GameStart::initJuego() {
 
@@ -18,6 +16,8 @@ int CrazyU::GameStart::initJuego() {
 	std::cout << "Añadiendo los componentes del juego\n";
 
 	Separity::SceneManager* sm = Separity::SceneManager::getInstance();
+
+	sm->setFirstScene("menuScene.lua");
 
 	sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
 	sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());
