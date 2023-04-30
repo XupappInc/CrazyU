@@ -58,13 +58,7 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.005"
 		},
-		rigidbody = {
-			type =2,
-			mass=10,
-			dim = {6.555717945098877, 9.741019248962402, 9.111288070678711},
-			trigger=1
-		},
-		vehicleMovement = {
+		manager = {
 			
 		}
 	},
@@ -994,18 +988,35 @@ Entities = {
 		camera = {
 		}
 	},
-	BotonPrueba={
-		button = {
-			overlay = "BotonVuelta",
-			x = 50,
-			y = 50,
-			width = 200,
-			height = 200,
-			iniTex = "World_ap.15",
-			hoverTex="hoverMat",
-			clickedTex="clickedMat"
-		},script={
-			name = "sceneButton"
-		}
+	-- BotonPrueba={
+	-- 	button = {
+	-- 		overlay = "BotonVuelta",
+	-- 		x = 50,
+	-- 		y = 50,
+	-- 		width = 200,
+	-- 		height = 200,
+	-- 		iniTex = "World_ap.15",
+	-- 		hoverTex="hoverMat",
+	-- 		clickedTex="clickedMat"
+	-- 	},script={
+	-- 		name = "sceneButton"
+	-- 	}
+	-- },
+	Mono = {
+		transform = {
+			pos = {0, -4.6901750564575195, 0},
+			rot = {0, 0, 0, 1},
+			scale = {1, 1, 1}
+		},
+		meshRenderer = {
+			meshName = "Generic"
+		},
+		animator = {
+			animName="Granade_Generic"
+		},
+		script={
+			name = "monoAnim"
+	    }
+
 	}
 }
