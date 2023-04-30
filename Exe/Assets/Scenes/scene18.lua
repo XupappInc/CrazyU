@@ -5550,5 +5550,29 @@ Entities = {
 		script={
 			name="sceneButton"
 		}
+	},Music =  {
+		audioSource = {
+			route = "Assets//Audio//traffic.mp3",
+			name = "traffic",
+			isMusic = 1
+		},
+		script={
+			name = "musica"
+		}
+	},SoundButton={
+		button = {
+			overlay = "SoundButton",
+			x = 20,
+			y = 10,
+			width = 100,
+			height = 100,
+			iniTex = "volumeIni",
+			hoverTex="volumeHover",
+			clickedTex="volumeClick",
+			zorder=2
+		},
+		script={
+			name="soundButton"
+		}
 	}
 }
