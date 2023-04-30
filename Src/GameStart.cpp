@@ -19,12 +19,8 @@ int CrazyU::GameStart::initJuego() {
 
 	Separity::SceneManager* sm = Separity::SceneManager::getInstance();
 
-	//sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
-	//sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());
-
-
-	//Separity::LuaManager::getInstance()->start();
-	//sm->start();
+	sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
+	sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());
 
 	return 0;
 }

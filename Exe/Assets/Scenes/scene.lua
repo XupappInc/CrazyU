@@ -58,7 +58,7 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.005"
 		},
-		vehicleMovement = {
+		manager = {
 			
 		}
 	},

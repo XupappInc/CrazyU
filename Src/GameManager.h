@@ -13,6 +13,8 @@ namespace CrazyU {
 		GameManager();
 		~GameManager();
 
+
+		void update(const uint32_t& deltaTime) override;
 		/// <summary>
 		/// Añade puntos a la puntuacion total actual
 		/// </summary>
@@ -23,6 +25,8 @@ namespace CrazyU {
 		/// </summary>
 		/// <returns>La puntuacion total actual del jugador</returns>
 		int getScore();
+
+		
 
 		private:
 		int score_;
