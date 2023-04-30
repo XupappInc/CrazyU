@@ -11,7 +11,8 @@
 
 using namespace Separity;
 
-CrazyU::VehicleMovement::VehicleMovement() : cameraTr_(nullptr), rb_(nullptr), inputManager(nullptr) {}
+CrazyU::VehicleMovement::VehicleMovement()
+    : cameraTr_(nullptr), rb_(nullptr), inputManager(nullptr) {}
 
 CrazyU::VehicleMovement::~VehicleMovement() {}
 
@@ -24,8 +25,22 @@ void CrazyU::VehicleMovement::initComponent() {
 	assert(camera != nullptr);
 
 	auto cameraEnt = camera->getEntity();
-	ent_->addChild(cameraEnt);
+
 	cameraTr_ = cameraEnt->getComponent<Transform>();
+	cameraTr_->setPosition(Spyutils::Vector3(0, 0, 0));
+	cameraTr_->setRotation(0, 0, 0);
+	
+	auto transform = ent_->getComponent<Transform>();
+	auto pos = transform->getPosition();
+	
+	cameraTr_->setRotationQ(0, 0, 0, 1);
+	
+	auto quaternion = cameraTr_->getRotationQ();
+	quaternion.rotateGlobal(-90, Spyutils::Vector3(0,1,0));
+	cameraTr_->setRotationQ(quaternion.w, quaternion.x, quaternion.y, quaternion.z);
+	ent_->addChild(cameraEnt);
+	cameraTr_->setPosition(Spyutils::Vector3(pos.x + 10, pos.y + 6, pos.z));
+	cameraTr_->pitch(-40);
 	assert(cameraTr_ != nullptr);
 }
 
@@ -123,6 +138,16 @@ void CrazyU::VehicleMovement::frenar() {
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	if(inputManager->isKeyHeld('w')) {
 		acelerar(1);
+	}
+	if(inputManager->isKeyHeld('a')) {
+		girar(-1);
+	}
+	if(inputManager->isKeyHeld('d')) {
+		girar(1);
+	}
+	
+	if(inputManager->isKeyHeld(Separity::InputManager::SPACE)) {
+		frenar();
 	}
 	if(inputManager->isKeyHeld('s')) {
 		acelerar(-1);
