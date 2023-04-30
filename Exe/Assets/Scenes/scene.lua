@@ -1035,5 +1035,22 @@ Entities = {
 		 	name = "alejandro"
 	     }
 
+	},
+	chica = {
+		transform = {
+			pos = {-8, -4.6901750564575195, 0},
+			rot = {0, 0, 0, 1},
+			scale = {0.03, 0.03, 0.03}
+		},
+		meshRenderer = {
+			meshName = "chica"
+		},
+		animator = {
+			animName="walking"
+		},
+		 script={
+		 	name = "npcAnimations"
+	     }
+
 	}
 }
