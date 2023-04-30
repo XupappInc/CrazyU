@@ -2,7 +2,6 @@
 #ifndef __VEHICLE_MOVEMENT_H__
 #define __VEHICLE_MOVEMENT_H__
 
-#include "SeparityExports\SeparityApi.h"
 #include "EntityComponent\Component.h"
 
 namespace Spyutils {
@@ -11,6 +10,7 @@ namespace Spyutils {
 namespace Separity {	
 	class RigidBody;
 	class Transform;
+	class InputManager;
 }
 namespace CrazyU {
 	/// <summary>
@@ -46,10 +46,12 @@ namespace CrazyU {
 		void update(const uint32_t& deltaTime) override;
 
 		private:
+		Separity::InputManager* inputManager;
 		Separity::RigidBody* rb_;
 		Separity::Transform* cameraTr_;
 		float cameraOffset_ = 0;
 		float cameraRot_ = 0;
+		bool rot_ = true;
 	};
 }  // namespace Separity
 #endif __VEHICLE_MOVEMENT_H__

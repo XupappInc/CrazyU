@@ -58,7 +58,13 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.005"
 		},
-		manager = {
+		rigidbody = {
+			type =2,
+			mass=10,
+			dim = {6.555717945098877, 9.741019248962402, 9.111288070678711},
+			trigger=1
+		},
+		vehicleMovement = {
 			
 		}
 	},

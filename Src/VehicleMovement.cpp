@@ -1,22 +1,22 @@
 #include "VehicleMovement.h"
 
-#include "PhysicsEngine\Rigidbody.h"
 #include "EntityComponent\Entity.h"
 #include "EntityComponent\Transform.h"
+#include "InputEngine/InputManager.h"
+#include "PhysicsEngine\Rigidbody.h"
+#include "RenderEngine/Camera.h"
+#include "RenderEngine/RenderManager.h"
 #include "SeparityUtils\Vector.h"
 #include "SeparityUtils\spyMath.h"
 
-#include "RenderEngine/RenderManager.h"
-#include "RenderEngine/Camera.h"
-
 using namespace Separity;
 
-CrazyU::VehicleMovement::VehicleMovement() : cameraTr_(nullptr), rb_(nullptr) {
-}
+CrazyU::VehicleMovement::VehicleMovement() : cameraTr_(nullptr), rb_(nullptr), inputManager(nullptr) {}
 
 CrazyU::VehicleMovement::~VehicleMovement() {}
 
 void CrazyU::VehicleMovement::initComponent() {
+	inputManager = Separity::InputManager::getInstance();
 	rb_ = ent_->getComponent<RigidBody>();
 	assert(rb_ != nullptr);
 
@@ -24,6 +24,7 @@ void CrazyU::VehicleMovement::initComponent() {
 	assert(camera != nullptr);
 
 	auto cameraEnt = camera->getEntity();
+	ent_->addChild(cameraEnt);
 	cameraTr_ = cameraEnt->getComponent<Transform>();
 	assert(cameraTr_ != nullptr);
 }
@@ -62,7 +63,7 @@ void CrazyU::VehicleMovement::girar(int dir) {
 		cameraOffset_ -= 0.02;
 		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.02));
 	}
-	if(rb_->getLinearVelocity().magnitude() > 0.1){
+	if(rb_->getLinearVelocity().magnitude() > 0.1) {
 		if(dir > 0 && cameraRot_ > -10) {
 			cameraRot_ -= 0.15;
 			cameraTr_->yaw(-0.15);
@@ -72,7 +73,7 @@ void CrazyU::VehicleMovement::girar(int dir) {
 			cameraTr_->yaw(0.15);
 			cameraTr_->roll(0.15 / 2);
 		}
-}
+	}
 }
 
 void CrazyU::VehicleMovement::acelerar(int dir) {
@@ -120,6 +121,25 @@ void CrazyU::VehicleMovement::frenar() {
 }
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
+	if(inputManager->isKeyHeld('w')) {
+		acelerar(1);
+	}
+	if(inputManager->isKeyHeld('s')) {
+		acelerar(-1);
+		auto quate = cameraTr_->getRotationQ();
+		if(rot_) {
+			quate.rotateGlobal(180, {0, 1, 0});
+			cameraTr_->setRotationQ(quate.w, quate.x, quate.y, quate.z);
+			rot_ = false;
+		}
+	}
+	if(inputManager->isKeyUp('s')) {
+		rot_ = true;
+		auto quate = cameraTr_->getRotationQ();
+		quate.rotateGlobal(180, {0, 1, 0});
+		cameraTr_->setRotationQ(quate.w, quate.x, quate.y, quate.z);
+	}
+
 	rb_->setLinearVelocity(rb_->getLinearVelocity() * 0.999);
 	rb_->setAngularVelocity(rb_->getAngularVelocity() * 0.99);
 	if(cameraOffset_ > 0) {
