@@ -1052,5 +1052,39 @@ Entities = {
 		 	name = "npcAnimations"
 	     }
 
+	},
+	text = {
+		transform = {
+			pos = {-15.928573608398438, 16.454805374145508, -121.13045501708984},
+			rot = {0.7071067690849304, 0.0, -0.0, 0.7071068286895752},
+			scale = {1.6835308074951172, 1.6835308074951172, 1.6835308074951172}
+		},
+		text = {
+			overlayName = "hola",
+			fontName = "fuentePrueba",
+			x = 100,
+			y = 100,
+			width = 100,
+			height = 100,
+			textContent = "hola",
+			fontColor = {1.0, 0.0, 0.0}
+		}
+	},
+	text2 = {
+		transform = {
+			pos = {-15.928573608398438, 16.454805374145508, -121.13045501708984},
+			rot = {0.7071067690849304, 0.0, -0.0, 0.7071068286895752},
+			scale = {1.6835308074951172, 1.6835308074951172, 1.6835308074951172}
+		},
+		text = {
+			overlayName = "hola2",
+			fontName = "fuentePrueba",
+			x = 200,
+			y = 200,
+			width = 200,
+			height = 200,
+			textContent = "hola2",
+			fontColor = {1.0, 1.0, 0.0}
+		}
 	}
 }
