@@ -1006,13 +1006,13 @@ Entities = {
 		transform = {
 			pos = {0, -4.6901750564575195, 0},
 			rot = {0, 0, 0, 1},
-			scale = {1, 1, 1}
+			scale = {0.03, 0.03, 0.03}
 		},
 		meshRenderer = {
-			meshName = "Generic"
+			meshName = "guille"
 		},
 		animator = {
-			animName="Granade_Generic"
+			animName="Breakdance"
 		},
 		script={
 			name = "monoAnim"

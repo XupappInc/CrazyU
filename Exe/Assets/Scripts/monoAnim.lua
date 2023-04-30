@@ -19,7 +19,7 @@ end
 function monoAnim:start()
 	print('ANIMAME ESTA KSTNIEHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 	local anim = monoAnim.entity:getAnimator();
-	anim:playAnim("Granade_Generic",true);
+	anim:playAnim("Breakdance",true);
 end
 
 --Metodo Update, llamado en cada frame
