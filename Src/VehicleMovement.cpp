@@ -39,8 +39,8 @@ void CrazyU::VehicleMovement::initComponent() {
 	quaternion.rotateGlobal(-90, Spyutils::Vector3(0,1,0));
 	cameraTr_->setRotationQ(quaternion.w, quaternion.x, quaternion.y, quaternion.z);
 	ent_->addChild(cameraEnt);
-	cameraTr_->setPosition(Spyutils::Vector3(pos.x + 10, pos.y + 6, pos.z));
-	cameraTr_->pitch(-40);
+	cameraTr_->setPosition(Spyutils::Vector3(pos.x + 16, pos.y + 7, pos.z));
+	cameraTr_->pitch(-55);
 	assert(cameraTr_ != nullptr);
 }
 
@@ -55,7 +55,7 @@ void CrazyU::VehicleMovement::girar(int dir) {
 
 	float angleRad = Spyutils::Math::toRadians(angle);
 
-	float forceMagnitude = rb_->getLinearVelocity().magnitude() * 10;
+	float forceMagnitude = rb_->getLinearVelocity().magnitude() * 25;
 	float forceX = forceMagnitude * sin(angleRad);  // componente x de la fuerza
 	float forceZ = forceMagnitude * cos(angleRad);  // componente y de la fuerza
 
@@ -124,6 +124,7 @@ void CrazyU::VehicleMovement::acelerar(int dir) {
 	if(dir > 0 && cameraOffset_ < 3) {
 		cameraOffset_ += 0.02;
 		cameraTr_->translate(Spyutils::Vector3(0, 0, 0.02));
+		cameraTr_->translate(Spyutils::Vector3(-0.02, 0, 0));
 	}
 }
 
@@ -132,6 +133,7 @@ void CrazyU::VehicleMovement::frenar() {
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.1;
 		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.1));
+		cameraTr_->translate(Spyutils::Vector3(0.1, 0, 0));
 	}
 }
 
@@ -171,6 +173,7 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.005;
 		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.005));
+		cameraTr_->translate(Spyutils::Vector3(0.005, 0, 0));
 	}
 	if(cameraRot_ > 1) {
 		cameraRot_ -= 0.05;
