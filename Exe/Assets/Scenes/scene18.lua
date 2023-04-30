@@ -5186,7 +5186,9 @@ Entities = {
 			meshName = "Mesh.521"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0,
+			dim={414,10.2,2}
 		}
 	},
 	SM_Env_Fence_01_002 = {
@@ -5199,7 +5201,8 @@ Entities = {
 			meshName = "Mesh.522"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_Fence_01_003 = {
@@ -5212,7 +5215,8 @@ Entities = {
 			meshName = "Mesh.523"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_Fence_01_004 = {
@@ -5225,7 +5229,8 @@ Entities = {
 			meshName = "Mesh.524"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_Fence_01_005 = {
@@ -5238,7 +5243,8 @@ Entities = {
 			meshName = "Mesh.525"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_Fence_01_006 = {
@@ -5251,7 +5257,8 @@ Entities = {
 			meshName = "Mesh.526"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_Fence_01_007 = {
@@ -5264,7 +5271,8 @@ Entities = {
 			meshName = "Mesh.527"
 		},
 		rigidbody = {
-			type = 2
+			type = 2,
+			trigger=0
 		}
 	},
 	SM_Env_GrassPath_Straight_01_001 = {
