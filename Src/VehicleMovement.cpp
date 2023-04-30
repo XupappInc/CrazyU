@@ -55,7 +55,7 @@ void CrazyU::VehicleMovement::girar(int dir) {
 
 	float angleRad = Spyutils::Math::toRadians(angle);
 
-	float forceMagnitude = rb_->getLinearVelocity().magnitude() * 100;
+	float forceMagnitude = rb_->getLinearVelocity().magnitude() * 10;
 	float forceX = forceMagnitude * sin(angleRad);  // componente x de la fuerza
 	float forceZ = forceMagnitude * cos(angleRad);  // componente y de la fuerza
 
@@ -136,6 +136,7 @@ void CrazyU::VehicleMovement::frenar() {
 }
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
+	float dt = deltaTime / 1000.0f;
 	if(inputManager->isKeyHeld('w')) {
 		acelerar(1);
 	}
