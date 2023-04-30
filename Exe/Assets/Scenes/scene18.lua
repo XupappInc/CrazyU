@@ -5534,5 +5534,21 @@ Entities = {
 		rigidbody = {
 			type = 2
 		}
+	},
+	Quit = {
+		button = {
+			overlay = "BotonQuit",
+			x = 5,
+			y = 8,
+			width = 256,
+			height = 140,
+			iniTex = "QuitIni",
+			hoverTex="QuitHover",
+			clickedTex="QuitClick",
+			zorder=2
+		},
+		script={
+			name="sceneButton"
+		}
 	}
 }
