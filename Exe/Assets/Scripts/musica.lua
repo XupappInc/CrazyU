@@ -17,8 +17,9 @@ end
 
 --Metodo Start, llamado tras Awake
 function musica:start()
-	print("Estoy entrando en callmemaybe");
-	AudioManager:play("callmemaybe", 1000, 1000);
+	print("Estoy entrando en el start de la musica");
+	--AudioManager:play("callmemaybe", 1000, 1000);
+	AudioManager:play("traffic", 1000, 1000);
 end
 
 --Metodo Update, llamado en cada frame
