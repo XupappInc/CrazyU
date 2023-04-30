@@ -12,12 +12,12 @@ end
 local alreadyPickedPeople = false;
 --Metodo Awake, llamado al comienzo de la ejecucion
 function paradas:awake()
-
+    GameManager:addParada(paradas.entity)
 end
 
 --Metodo Start, llamado tras Awake
 function paradas:start()
-
+    
 end
 
 --Metodo Update, llamado en cada frame

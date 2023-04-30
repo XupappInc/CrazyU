@@ -1,4 +1,7 @@
 Entities = {
+    GameManager = {
+        manager = {}
+    },
 	Light = {
 		transform = {
 			pos = {8.48244571685791, 10.236784934997559, -2.139559268951416},
@@ -180,7 +183,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.042"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_SidewalkPoles_01 = {
 		transform = {
@@ -519,7 +526,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.085"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_002 = {
 		transform = {
@@ -539,7 +550,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.087"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_003 = {
 		transform = {
@@ -559,7 +574,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.089"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_004 = {
 		transform = {
@@ -579,7 +598,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.091"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_005 = {
 		transform = {
@@ -599,7 +622,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.093"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_006 = {
 		transform = {
@@ -619,7 +646,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.095"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_007 = {
 		transform = {
@@ -639,7 +670,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.097"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Prop_BusStop_01_Glass_008 = {
 		transform = {
@@ -659,7 +694,11 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.099"
-		}
+		},
+        script = 
+        {
+			name="paradas"
+        }
 	},
 	SM_Env_Road_01_002 = {
 		transform = {
