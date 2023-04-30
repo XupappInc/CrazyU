@@ -3218,7 +3218,7 @@ Entities = {
 		},
 		rigidbody = {
 			type =0,
-            mass=10,
+            mass=40,
             dim = {4.48, 4.3, 10.5},
             trigger=0
 		},
