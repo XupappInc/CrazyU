@@ -44,7 +44,7 @@ void CrazyU::VehicleMovement::initComponent() {
 	assert(cameraTr_ != nullptr);
 }
 
-void CrazyU::VehicleMovement::girar(int dir) {
+void CrazyU::VehicleMovement::girar(int dir, float dt) {
 	rb_->applyTorque(Spyutils::Vector3(
 	    0, dir * -1 * rb_->getLinearVelocity().magnitude() * 2, 0));
 
@@ -69,14 +69,14 @@ void CrazyU::VehicleMovement::girar(int dir) {
 	forceX *= forceMagnitude;
 	forceZ *= forceMagnitude;
 
-	Spyutils::Vector3 impulso(-forceX, 0, forceZ);
+	Spyutils::Vector3 impulso( -forceX, 0,forceZ);
 
 	rb_->setLinearVelocity(rb_->getLinearVelocity() * 0.97);
 	rb_->addForce(impulso);
 
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.02;
-		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.02));
+		cameraTr_->translate(Spyutils::Vector3(-0.01, 0, -0.02));
 	}
 	if(rb_->getLinearVelocity().magnitude() > 0.1) {
 		if(dir > 0 && cameraRot_ > -10) {
@@ -91,7 +91,7 @@ void CrazyU::VehicleMovement::girar(int dir) {
 	}
 }
 
-void CrazyU::VehicleMovement::acelerar(int dir) {
+void CrazyU::VehicleMovement::acelerar(int dir, float dt) {
 	// Calcular la direcci�n de la fuerza en funci�n de la rotaci�n del objeto
 	float angle =
 	    -ent_->getComponent<Transform>()->getRotationQ().getRotation().y;
@@ -100,9 +100,9 @@ void CrazyU::VehicleMovement::acelerar(int dir) {
 
 	float forceMagnitude = dir;
 	if(dir > 0)
-		forceMagnitude = dir * 30;
+		forceMagnitude = dir * 3000;
 	else
-		forceMagnitude = dir * 10;
+		forceMagnitude = dir * 1000;
 	float forceX = forceMagnitude * sin(angleRad);  // componente x de la fuerza
 	float forceZ = forceMagnitude * cos(angleRad);  // componente y de la fuerza
 
@@ -118,42 +118,40 @@ void CrazyU::VehicleMovement::acelerar(int dir) {
 	forceX *= forceMagnitude;
 	forceZ *= forceMagnitude;
 
-	Spyutils::Vector3 impulso(-forceX, 0, forceZ);
+	Spyutils::Vector3 impulso(dt*-forceX, 0, dt*forceZ);
 
 	rb_->applyImpulse(impulso);
 	if(dir > 0 && cameraOffset_ < 3) {
 		cameraOffset_ += 0.02;
-		cameraTr_->translate(Spyutils::Vector3(0, 0, 0.02));
-		cameraTr_->translate(Spyutils::Vector3(-0.02, 0, 0));
+		cameraTr_->translate(Spyutils::Vector3(0.01, 0, 0.02));
 	}
 }
 
-void CrazyU::VehicleMovement::frenar() {
+void CrazyU::VehicleMovement::frenar(float dt) {
 	rb_->setLinearVelocity(rb_->getLinearVelocity() * 0.95);
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.1;
-		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.1));
-		cameraTr_->translate(Spyutils::Vector3(0.1, 0, 0));
+		cameraTr_->translate(Spyutils::Vector3(-0.05, 0, -0.1));
 	}
 }
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	float dt = deltaTime / 1000.0f;
 	if(inputManager->isKeyHeld('w')) {
-		acelerar(1);
+		acelerar(1,dt);
 	}
 	if(inputManager->isKeyHeld('a')) {
-		girar(-1);
+		girar(-1,dt);
 	}
 	if(inputManager->isKeyHeld('d')) {
-		girar(1);
+		girar(1,dt);
 	}
 	
 	if(inputManager->isKeyHeld(Separity::InputManager::SPACE)) {
-		frenar();
+		frenar(dt);
 	}
 	if(inputManager->isKeyHeld('s')) {
-		acelerar(-1);
+		acelerar(-1,dt);
 		auto quate = cameraTr_->getRotationQ();
 		if(rot_) {
 			quate.rotateGlobal(180, {0, 1, 0});
@@ -172,8 +170,7 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	rb_->setAngularVelocity(rb_->getAngularVelocity() * 0.99);
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.005;
-		cameraTr_->translate(Spyutils::Vector3(0, 0, -0.005));
-		cameraTr_->translate(Spyutils::Vector3(0.005, 0, 0));
+		cameraTr_->translate(Spyutils::Vector3(-0.0025, 0, -0.005));
 	}
 	if(cameraRot_ > 1) {
 		cameraRot_ -= 0.05;
