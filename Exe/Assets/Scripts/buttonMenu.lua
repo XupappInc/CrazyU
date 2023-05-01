@@ -49,7 +49,7 @@ function buttonMenu:onButtonClick()
 end
 function buttonMenu:onButtonReleased()
 	--print("Has dejado de pulsar para ir al menú\n");
-	SceneManager:changeScene("scene18.lua");
+	SceneManager:changeScene("gameScene.lua");
 end
 --Metodo OnButtonHover
 function buttonMenu:onButtonHover()
