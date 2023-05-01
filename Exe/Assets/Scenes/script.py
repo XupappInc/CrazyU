@@ -58,19 +58,15 @@ for obj in scene.objects:
         if (prop_name!="als"):
         
             lua_string += "\t\t" + prop_name + " = {\n" 
-            if (prop_name  == "collider"):
+            if (prop_name  == "rigidbody"):
                 dimension = obj.dimensions
                 lua_string += "\t\t\t" + "dim = {" + str(dimension.x) + ", " + str(dimension.z) + ", " + str(dimension.y) + "},\n"
                     
-            
-            else:
-                prop_value = obj[prop_name]                 
-                lua_string += "\t\t\t" + str(prop_value) + "\n"  
-                    
+ 
+            prop_value = obj[prop_name]                 
+            lua_string += "\t\t\t" + str(prop_value) + "\n"                  
             lua_string += "\t\t},\n" 
     
-    
-
     lua_string = lua_string[:-2]
     lua_string += "\n\t},\n"
 
