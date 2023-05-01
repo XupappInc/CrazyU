@@ -158,20 +158,18 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 void CrazyU::VehicleMovement::start() {
 	inputManager = Separity::InputManager::getInstance();
 	rb_ = ent_->getComponent<RigidBody>();
-	assert(rb_ != nullptr);
 
 	auto camera = Separity::RenderManager::getInstance()->getCamera();
-	assert(camera != nullptr);
 
 	Separity::Entity* nodoFicticio = EntityManager::getInstance()->addEntity(_grp_GENERAL);
 	node_ = nodoFicticio->getComponent<Transform>();
 	node_->setPosition(Spyutils::Vector3(0, 0, 0));
-	node_->setRotation(0, 0, 0);
+	node_->setRotationQ(1, 0, 0, 0);
 	
 	Separity::Entity* cameraEnt = camera->getEntity();
 	cameraTr_ = cameraEnt->getComponent<Transform>();
 	cameraTr_->setPosition(Spyutils::Vector3(0, 0, 0));
-	cameraTr_->setRotation(0, 0, 0);
+	cameraTr_->setRotationQ(1, 0, 0, 0);
 
 	Spyutils::Vector3 pos = ent_->getComponent<Transform>()->getPosition();
 

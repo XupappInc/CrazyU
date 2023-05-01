@@ -14257,7 +14257,8 @@ Entities = {
 		script={
 			name="sceneButton"
 		}
-	},Music =  {
+	},
+	Music =  {
 		audioSource = {
 			route = "Assets//Audio//traffic.mp3",
 			name = "traffic",
