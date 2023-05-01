@@ -23,32 +23,34 @@ namespace CrazyU {
 
 		VehicleMovement();
 		~VehicleMovement();
-
-		void initComponent() override;
+		
 		/// <summary>
 		/// Añade giro al volante
 		/// </summary>
 		/// <param name="dir">Entre -1 y 1, siendo -1 izquierda y 1
 		/// derecha</param>
-		void girar(int dir);
+		void girar(int dir ,float dt);
 		/// <summary>
 		/// Acelera hacia delante o hacia atrás
 		/// <param name="dir">Entre -1 y 1, siendo -1 atrás y 1 adelante</param>
 		/// </summary>
-		void acelerar(int dir);
+		void acelerar(int dir,float dt);
 		/// <summary>
 		/// Gestiona el freno del vehículo
 		/// </summary>
-		void frenar();
+		void frenar(float dt);
 		/// <summary>
 		/// Método update heredado de Component
 		/// </summary>
 		void update(const uint32_t& deltaTime) override;
 
+		void start() override;
+
 		private:
 		Separity::InputManager* inputManager;
 		Separity::RigidBody* rb_;
 		Separity::Transform* cameraTr_;
+		Separity::Transform* node_;
 		float cameraOffset_ = 0;
 		float cameraRot_ = 0;
 		bool rot_ = true;

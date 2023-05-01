@@ -16,8 +16,6 @@ void CrazyU::GameManagerCreator::registerInLua() {
 	    .beginClass<GameManager>("GameManager")
 	    .addFunction("addScore", &GameManager::addScore)
 	    .addFunction("getScore", &GameManager::getScore)
-	    .addFunction("addParada", &GameManager::addParada)
-	    .addFunction("setParadaActual", &GameManager::setParadaActual)
 		.endClass();
 }
 

@@ -12,12 +12,12 @@ end
 local alreadyPickedPeople = false;
 --Metodo Awake, llamado al comienzo de la ejecucion
 function paradas:awake()
-    GameManager:addParada(paradas.entity)
+    
 end
 
 --Metodo Start, llamado tras Awake
 function paradas:start()
-    
+
 end
 
 --Metodo Update, llamado en cada frame
@@ -33,20 +33,25 @@ end
 
 --Metodo OnCollisionStay, llamado mientras se mantenga una colision
 function paradas:onCollisionStay()
-	if alreadyPickedPeople ~= nil then
-		alreadyPickedPeople = true;
+	--Si aún no ha recogido a nadie
+	if alreadyPickedPeople ~= true then
+		
 		if other ~= nil then
-			if other:getTag() == "player" then
+			if other:getTag() == "Player" then
 				print('Chocando con el jugador');
-				if other.getRigidBody() then
-					vel = other.getRigidBody().getVelocity();
-					print(vel);
+				print(other);
+				rigidbody = other:getRigidBody();
+				if rigidbody then
+					vel = rigidbody:getVelocity();
 					print("Tengo el getRigidBody");
+					if vel < 1.5 then
+						alreadyPickedPeople = true;
+					end
+					
 				end
 			end
-			print('Chocando con algo que no es el jugador');
 		else
-			print('Other existe');
+			print('Other no existe');
 		end
 	end
 end
