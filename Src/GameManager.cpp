@@ -13,7 +13,9 @@ void CrazyU::GameManager::start() { addParadas("SM_Prop_BusStop_01"); }
 
 void CrazyU::GameManager::update(const uint32_t& deltaTime) { return; }
 
-void CrazyU::GameManager::addScore(int score) { score_ += score; }
+void CrazyU::GameManager::addScore(int score) {
+	score_ += score;
+}
 
 int CrazyU::GameManager::getScore() { return score_; }
 

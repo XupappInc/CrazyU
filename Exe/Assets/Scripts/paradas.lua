@@ -38,13 +38,11 @@ function paradas:onCollisionStay()
 		
 		if other ~= nil then
 			if other:getTag() == "Player" then
-				print('Chocando con el jugador');
-				print(other);
 				rigidbody = other:getRigidBody();
 				if rigidbody then
 					vel = rigidbody:getVelocity();
-					print("Tengo el getRigidBody");
 					if vel < 1.5 then
+						GameManager:addScore(15);
 						alreadyPickedPeople = true;
 					end
 					

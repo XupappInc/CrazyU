@@ -1,4 +1,7 @@
 Entities = {
+	GameManager = {
+        manager = {}
+    },
 	Light = {
 		transform = {
 			pos = {8.48244571685791, 10.236784934997559, -2.139559268951416},
