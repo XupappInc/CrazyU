@@ -4,6 +4,7 @@
 
 #include "EntityComponent/Component.h"
 #include <vector>
+#include <string>
 
 namespace CrazyU {
 	class GameManager : public Separity::Component {
@@ -14,6 +15,7 @@ namespace CrazyU {
 		GameManager();
 		~GameManager();
 
+		void start() override;
 
 		void update(const uint32_t& deltaTime) override;
 		/// <summary>
@@ -30,14 +32,12 @@ namespace CrazyU {
 		/// Añade una parada al vector de paradas
 		/// </summary>
 		/// <param name="parada">Parada a añadir</param>
-		void addParada(Separity::Entity* parada);
-		/// <summary>
-		/// Asigna la 
-		/// </summary>
-		/// <param name="paradaActual"></param>
-		void setParadaActual(Separity::Entity* paradaActual);
+		void addParadas(std::string parada);
+		
+		void nextParada();
 
 		private:
+		bool paradasInitialized_;
 		int score_;
 		std::vector<Separity::Entity*> paradas_;
 		Separity::Entity* paradaActual_;
