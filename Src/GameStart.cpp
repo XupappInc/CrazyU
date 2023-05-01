@@ -21,7 +21,7 @@ int CrazyU::GameStart::initJuego() {
 
 	sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
 	sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());
-
+	
 	return 0;
 }
 
