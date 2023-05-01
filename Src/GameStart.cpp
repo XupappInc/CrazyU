@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-int CrazyU::GameStart::initJuego() {
+bool CrazyU::GameStart::gameStart() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//A�adir los creators de los componentes del juego
@@ -22,6 +22,6 @@ int CrazyU::GameStart::initJuego() {
 	sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
 	sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());
 
-	return 0;
+	return true;
 }
 

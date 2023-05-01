@@ -20,6 +20,5 @@
 #endif
 
 extern "C" void CRAZYU_API start() { 
-	
-	CrazyU::GameStart::initJuego(); 
+	CrazyU::GameStart::gameStart(); 
 }
