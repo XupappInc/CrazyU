@@ -6,43 +6,16 @@
 #include "PhysicsEngine\Rigidbody.h"
 #include "RenderEngine/Camera.h"
 #include "RenderEngine/RenderManager.h"
+#include "EntityComponent/EntityManager.h"
 #include "SeparityUtils\Vector.h"
 #include "SeparityUtils\spyMath.h"
 
 using namespace Separity;
 
 CrazyU::VehicleMovement::VehicleMovement()
-    : cameraTr_(nullptr), rb_(nullptr), inputManager(nullptr) {}
+    : cameraTr_(nullptr), rb_(nullptr), inputManager(nullptr), node_(nullptr) {}
 
 CrazyU::VehicleMovement::~VehicleMovement() {}
-
-void CrazyU::VehicleMovement::initComponent() {
-	inputManager = Separity::InputManager::getInstance();
-	rb_ = ent_->getComponent<RigidBody>();
-	assert(rb_ != nullptr);
-
-	auto camera = Separity::RenderManager::getInstance()->getCamera();
-	assert(camera != nullptr);
-
-	auto cameraEnt = camera->getEntity();
-
-	cameraTr_ = cameraEnt->getComponent<Transform>();
-	cameraTr_->setPosition(Spyutils::Vector3(0, 0, 0));
-	cameraTr_->setRotation(0, 0, 0);
-	
-	auto transform = ent_->getComponent<Transform>();
-	auto pos = transform->getPosition();
-	
-	cameraTr_->setRotationQ(0, 0, 0, 1);
-	
-	auto quaternion = cameraTr_->getRotationQ();
-	quaternion.rotateGlobal(-90, Spyutils::Vector3(0,1,0));
-	cameraTr_->setRotationQ(quaternion.w, quaternion.x, quaternion.y, quaternion.z);
-	ent_->addChild(cameraEnt);
-	cameraTr_->setPosition(Spyutils::Vector3(pos.x + 16, pos.y + 7, pos.z));
-	cameraTr_->pitch(-55);
-	assert(cameraTr_ != nullptr);
-}
 
 void CrazyU::VehicleMovement::girar(int dir, float dt) {
 	rb_->applyTorque(Spyutils::Vector3(
@@ -76,7 +49,7 @@ void CrazyU::VehicleMovement::girar(int dir, float dt) {
 
 	if(cameraOffset_ > 0) {
 		cameraOffset_ -= 0.02;
-		cameraTr_->translate(Spyutils::Vector3(-0.01, 0, -0.02));
+		node_->translate(Spyutils::Vector3(-0.02, 0, 0));
 	}
 	if(rb_->getLinearVelocity().magnitude() > 0.1) {
 		if(dir > 0 && cameraRot_ > -10) {
@@ -122,16 +95,16 @@ void CrazyU::VehicleMovement::acelerar(int dir, float dt) {
 
 	rb_->applyImpulse(impulso);
 	if(dir > 0 && cameraOffset_ < 3) {
-		cameraOffset_ += 0.02;
-		cameraTr_->translate(Spyutils::Vector3(0.01, 0, 0.02));
+		cameraOffset_ += 0.04;
+		node_->translate(Spyutils::Vector3(0.04, 0, 0));
 	}
 }
 
 void CrazyU::VehicleMovement::frenar(float dt) {
 	rb_->setLinearVelocity(rb_->getLinearVelocity() * 0.95);
 	if(cameraOffset_ > 0) {
-		cameraOffset_ -= 0.1;
-		cameraTr_->translate(Spyutils::Vector3(-0.05, 0, -0.1));
+		cameraOffset_ -= 0.02;
+		node_->translate(Spyutils::Vector3(-0.02, 0, 0));
 	}
 }
 
@@ -146,7 +119,6 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	if(inputManager->isKeyHeld('d')) {
 		girar(1,dt);
 	}
-	
 	if(inputManager->isKeyHeld(Separity::InputManager::SPACE)) {
 		frenar(dt);
 	}
@@ -159,7 +131,7 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 			rot_ = false;
 		}
 	}
-	if(inputManager->isKeyUp('s')) {
+	else if(inputManager->isKeyUp('s')) {
 		rot_ = true;
 		auto quate = cameraTr_->getRotationQ();
 		quate.rotateGlobal(180, {0, 1, 0});
@@ -169,8 +141,8 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	rb_->setLinearVelocity(rb_->getLinearVelocity() * 0.999);
 	rb_->setAngularVelocity(rb_->getAngularVelocity() * 0.99);
 	if(cameraOffset_ > 0) {
-		cameraOffset_ -= 0.005;
-		cameraTr_->translate(Spyutils::Vector3(-0.0025, 0, -0.005));
+		cameraOffset_ -= 0.02;
+		node_->translate(Spyutils::Vector3(-0.02, 0, 0));
 	}
 	if(cameraRot_ > 1) {
 		cameraRot_ -= 0.05;
@@ -181,4 +153,35 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 		cameraTr_->yaw(0.05);
 		cameraTr_->roll(0.05 / 2);
 	}
+}
+
+void CrazyU::VehicleMovement::start() {
+	inputManager = Separity::InputManager::getInstance();
+	rb_ = ent_->getComponent<RigidBody>();
+	assert(rb_ != nullptr);
+
+	auto camera = Separity::RenderManager::getInstance()->getCamera();
+	assert(camera != nullptr);
+
+	Separity::Entity* nodoFicticio = EntityManager::getInstance()->addEntity(_grp_GENERAL);
+	node_ = nodoFicticio->getComponent<Transform>();
+	node_->setPosition(Spyutils::Vector3(0, 0, 0));
+	node_->setRotation(0, 0, 0);
+	
+	Separity::Entity* cameraEnt = camera->getEntity();
+	cameraTr_ = cameraEnt->getComponent<Transform>();
+	cameraTr_->setPosition(Spyutils::Vector3(0, 0, 0));
+	cameraTr_->setRotation(0, 0, 0);
+
+	Spyutils::Vector3 pos = ent_->getComponent<Transform>()->getPosition();
+
+	Spyutils::spyQuaternion quaternion = cameraTr_->getRotationQ();
+	quaternion.rotateGlobal(90, Spyutils::Vector3(0, 1, 0));
+	cameraTr_->setRotationQ(quaternion.w, quaternion.x, quaternion.y,
+	                        quaternion.z);
+	
+	ent_->addChild(nodoFicticio);
+	nodoFicticio->addChild(cameraEnt);
+	node_->setPosition(Spyutils::Vector3(pos.x + 16, pos.y + 7, pos.z));
+	cameraTr_->pitch(-15);
 }

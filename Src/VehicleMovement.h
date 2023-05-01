@@ -23,8 +23,7 @@ namespace CrazyU {
 
 		VehicleMovement();
 		~VehicleMovement();
-
-		void initComponent() override;
+		
 		/// <summary>
 		/// Añade giro al volante
 		/// </summary>
@@ -45,10 +44,13 @@ namespace CrazyU {
 		/// </summary>
 		void update(const uint32_t& deltaTime) override;
 
+		void start() override;
+
 		private:
 		Separity::InputManager* inputManager;
 		Separity::RigidBody* rb_;
 		Separity::Transform* cameraTr_;
+		Separity::Transform* node_;
 		float cameraOffset_ = 0;
 		float cameraRot_ = 0;
 		bool rot_ = true;
