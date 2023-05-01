@@ -139,7 +139,7 @@ material londres {
                 depth_write off
                 diffuse vertexcolour
             texture_unit {
-                texture plano-buses-londres.jpg
+                texture fondo.jpeg
                 tex_address_mode clamp
                 
             }
