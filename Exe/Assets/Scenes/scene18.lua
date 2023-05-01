@@ -181,6 +181,14 @@ Entities = {
 			rot = {5.338507591545749e-08, -0.7071068286895752, 0.7071067690849304, 5.338508302088485e-08},
 			scale = {2.2222564220428467, 2.2222564220428467, 2.2222564220428467}
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
 		meshRenderer = {
 			meshName = "Mesh.042"
 		},
@@ -527,6 +535,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.085"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -551,6 +567,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.087"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -575,6 +599,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.089"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -599,6 +631,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.091"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -623,6 +663,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.093"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -647,6 +695,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.095"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -671,6 +727,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.097"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -695,6 +759,14 @@ Entities = {
 		meshRenderer = {
 			meshName = "Mesh.099"
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
         script = 
         {
 			name="paradas"
@@ -3571,9 +3643,21 @@ Entities = {
 			rot = {-0.5007983446121216, 0.49920058250427246, -0.49920058250427246, -0.5007983446121216},
 			scale = {2.2222564220428467, 2.2222564220428467, 2.2222564220428467}
 		},
+        rigidbody = {
+            shape = 0,
+            dim = { 10, 10, 10 },
+            offset = { 0, 0, 0 },
+            trigger = true,
+            type = 2,
+            mass = 1
+        },
 		meshRenderer = {
 			meshName = "Mesh.372"
-		}
+		},
+        script = 
+        {
+            name = "paradas"
+        }
 	},
 	SM_Env_Road_01_033 = {
 		transform = {
