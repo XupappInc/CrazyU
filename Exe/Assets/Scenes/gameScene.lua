@@ -14261,13 +14261,17 @@ Entities = {
 	},
 	JoseAntonio = {
 		meshRenderer={
-			meshName = "guille.mesh"
+			meshName = "guille"
 		},
 		pathFollow={
 			nWaypoints = 3,
 			waypoint0 = {4,3,5},
 			waypoint1 = {14,3,5},
 			waypoint2 = {4,13,5},
+		},
+		rigidbody = {
+			dim = {27.082321166992188, 27.144329071044922, 42.51074981689453},
+			type = 2
 		}
 	}
 }
