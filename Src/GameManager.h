@@ -35,12 +35,15 @@ namespace CrazyU {
 		void addParadas(std::string parada);
 		
 		void nextParada();
-
+		float timeLeft();
 		private:
 		bool paradasInitialized_;
 		int score_;
 		std::vector<Separity::Entity*> paradas_;
 		Separity::Entity* paradaActual_;
+		float timeBetweenStops_;
+		float currTime_;
+		bool isPlaying_;
 	};
 }  // namespace CrazyU
 #endif

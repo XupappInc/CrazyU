@@ -17,7 +17,7 @@ end
 
 --Metodo Start, llamado tras Awake
 function paradas:start()
-
+	--GameManager:addScore(15);
 end
 
 --Metodo Update, llamado en cada frame
