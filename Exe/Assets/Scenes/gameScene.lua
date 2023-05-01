@@ -145,22 +145,34 @@ Entities = {
 	},
 	SM_Prop_BusStop_01_Glass = {
 		transform = {
-			pos = {84.90705108642578, -0.4209032654762268, 37.35410690307617},
+			pos = {84.91047668457031, 2.919184923171997, 39.0421028137207},
 			rot = {5.338507591545749e-08, -0.7071068286895752, 0.7071067690849304, 5.338508302088485e-08},
-			scale = {2.355861186981201, 2.355861186981201, 2.355861186981201}
+			scale = {2.355861186981201, 2.3558528423309326, 2.355861186981201}
 		},
 		meshRenderer = {
 			meshName = "Mesh.043"
+		},
+		rigidbody = {
+			dim = {9.69839096069336, 6, 4.7919392585754395},
+			offset = {0.0, 8.0, -1.0},
+			trigger = true
+		},
+		script = {
+			name = "paradas"
 		}
 	},
 	SM_Prop_BusStop_01 = {
 		transform = {
-			pos = {84.94573974609375, -0.12123583257198334, 37.24327087402344},
+			pos = {85.6927261352539, 4.120333671569824, 37.738590240478516},
 			rot = {5.338507591545749e-08, -0.7071068286895752, 0.7071067690849304, 5.338508302088485e-08},
 			scale = {2.2222564220428467, 2.2222564220428467, 2.2222564220428467}
 		},
 		meshRenderer = {
 			meshName = "Mesh.042"
+		},
+		rigidbody = {
+			dim = {10.025365829467773, 3.490990161895752, 6.829148292541504},
+			type = 2
 		}
 	},
 	SM_Prop_SidewalkPoles_01 = {
@@ -2947,7 +2959,7 @@ Entities = {
 			meshName = "Mesh.348"
 		}
 	},
-	Bus1 = {
+	Player = {
 		transform = {
 			pos = {104.03799438476562, 2.448772668838501, 23.0000057220459},
 			rot = {-2.3040463759116392e-07, 0.7071067690849304, 1.3737738321524247e-15, 0.7071067690849304},
@@ -14240,47 +14252,6 @@ Entities = {
 		rigidbody = {
 			dim = {27.082321166992188, 27.144329071044922, 42.51074981689453},
 			type = 2
-		}
-	},
-	Back = {
-		button = {
-			overlay = "BotonBack",
-			x = 10,
-			y = 10,
-			width = 100,
-			height = 100,
-			iniTex = "goBackIni",
-			hoverTex="goBackHover",
-			clickedTex="goBackClicked",
-			zorder=2
-		},
-		script={
-			name="sceneButton"
-		}
-	},
-	Music =  {
-		audioSource = {
-			route = "Assets//Audio//traffic.mp3",
-			name = "traffic",
-			isMusic = 1
-		},
-		script={
-			name = "musica"
-		}
-	},SoundButton={
-		button = {
-			overlay = "SoundButton",
-			x = 20,
-			y = 10,
-			width = 100,
-			height = 100,
-			iniTex = "volumeIni",
-			hoverTex="volumeHover",
-			clickedTex="volumeClick",
-			zorder=2
-		},
-		script={
-			name="soundButton"
 		}
 	}
 }
