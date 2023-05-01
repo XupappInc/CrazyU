@@ -212,4 +212,52 @@ material noVolume {
         }
     }
 }
+material goBackClicked {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture goBackClicked.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+material goBackHover {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture goBackHover.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+material goBackIni {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture goBackIni.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
 
