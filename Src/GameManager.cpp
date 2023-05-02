@@ -17,7 +17,8 @@ CrazyU::GameManager::GameManager()
     : paradaActual_(nullptr), paradaActualTr_(nullptr),
       paradas_(std::vector<Separity::Entity*>()),
       score_(0), paradasInitialized_(false), timeBetweenStops_(30000),
-      isPlaying_(true), currTime_(0), player_(nullptr), playerTr_(nullptr), indexParada_(-1), particleSys_(nullptr), particleSysTr_(nullptr) {
+      isPlaying_(true), currTime_(0), player_(nullptr), playerTr_(nullptr),
+		indexParada_(-1), particleSys_(nullptr), particleSysTr_(nullptr),finalPoints_(0),sumScore_(20) {
 
 	arrow_ = Separity::EntityManager::getInstance()->addEntity(Separity::_grp_GENERAL);
 	arrowTr_ = arrow_->getComponent<Separity::Transform>();
@@ -78,6 +79,7 @@ void CrazyU::GameManager::addScore(int score) {
 		timeBetweenStops_ = maxTime_;
 	}
 	timeBetweenStops_ += score * 1000;
+	finalPoints_ += sumScore_;
 }
 
 int CrazyU::GameManager::getScore() { return score_; }
