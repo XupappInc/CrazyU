@@ -18,8 +18,8 @@ end
 --Metodo Start, llamado tras Awake
 function musica:start()
 	print("Estoy entrando en el start de la musica");
-	--AudioManager:play("callmemaybe", 1000, 1000);
-	AudioManager:play("traffic", 1, 100);
+	audioName = musica.entity:getAudio():getAudioName();
+	AudioManager:play(audioName, 1, 100);
 end
 
 --Metodo Update, llamado en cada frame
