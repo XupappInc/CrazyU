@@ -14449,5 +14449,19 @@ Entities = {
 			dim = {1, 1, 1},
 			type = 0
 		}
+	},
+	Barra={
+		bar = {
+			overlay = "CrazyUbarra",
+			x = 50,
+			y = 5,
+			width = 845,
+			height = 66,
+			texture = "barra",
+			zorder=4
+		},
+		script={
+			name="barraTiempo"
+		}
 	}
 }
