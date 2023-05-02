@@ -63,6 +63,9 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 
 void CrazyU::GameManager::addScore(int score) {
 	score_ += score;
+	if (timeBetweenStops_ + (score_ * 1000) > maxTime_) {
+		timeBetweenStops_ = maxTime_;
+	}
 	timeBetweenStops_ += score * 1000;
 }
 
@@ -116,4 +119,9 @@ float CrazyU::GameManager::timeLeft() {
 	float timeSecs = timeLeft / 1000;
 	std::cout << timeSecs << "\n";
 	return timeSecs;
+}
+
+int CrazyU::GameManager::getPercentageofTime() { auto time=timeLeft();
+	int percentage = (time / (maxTime_ / 1000)) * 100;
+	return percentage;
 }

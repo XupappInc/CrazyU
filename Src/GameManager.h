@@ -42,7 +42,7 @@ namespace CrazyU {
 		
 		void nextParada();
 		float timeLeft();
-
+		int getPercentageofTime();
 		private:
 		int score_;
 		
@@ -60,7 +60,8 @@ namespace CrazyU {
 		
 		float timeBetweenStops_;
 		float currTime_;
-		
+		float maxTime_=45000;
+
 		bool isPlaying_;
 	};
 }  // namespace CrazyU
