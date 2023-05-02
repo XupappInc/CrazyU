@@ -5675,7 +5675,7 @@ Entities = {
 		}
 	},Music =  {
 		audioSource = {
-			route = "Assets//Audio//traffic.mp3",
+			route = "traffic.mp3",
 			name = "traffic",
 			isMusic = 1
 		},
