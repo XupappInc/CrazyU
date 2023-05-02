@@ -14655,5 +14655,24 @@ Entities = {
 			zorder=5
 		}
 	},
-	
+	vroomvroom = {
+		transform = {
+            pos = {96, 1, 10},
+            rot = {1, 1, -1, 1},
+            scale = {0.2, 0.2, 0.2}
+        },
+		meshRenderer={
+			meshName="Mesh.793"
+		},
+		rigidbody = {
+			dim = {3,3, 3},
+			type = 0
+		},
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {96, 1, 10},
+			waypoint1 = {-10,1,10},
+			vel = 20.0
+		}
+	}
 }
