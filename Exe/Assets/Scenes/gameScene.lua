@@ -14273,5 +14273,36 @@ Entities = {
 			dim = {27.082321166992188, 27.144329071044922, 42.51074981689453},
 			type = 2
 		}
+	},
+	Back = {
+		button = {
+			overlay = "BotonBack",
+			x = 10,
+			y = 10,
+			width = 100,
+			height = 100,
+			iniTex = "goBackIni",
+			hoverTex="goBackHover",
+			clickedTex="goBackClicked",
+			zorder=2
+		},
+		script={
+			name="sceneButton"
+		}
+	},SoundButton={
+		button = {
+			overlay = "SoundButton",
+			x = 20,
+			y = 10,
+			width = 100,
+			height = 100,
+			iniTex = "volumeIni",
+			hoverTex="volumeHover",
+			clickedTex="volumeClick",
+			zorder=2
+		},
+		script={
+			name="soundButton"
+		}
 	}
 }
