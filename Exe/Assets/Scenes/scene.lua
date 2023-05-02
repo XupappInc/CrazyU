@@ -57,9 +57,6 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.005"
-		},
-		manager = {
-			
 		}
 	},
 	Car_04_3 = {
@@ -1043,7 +1040,7 @@ Entities = {
 			scale = {0.03, 0.03, 0.03}
 		},
 		meshRenderer = {
-			meshName = "chica"
+			meshName = "drogata"
 		},
 		animator = {
 			animName="walking"

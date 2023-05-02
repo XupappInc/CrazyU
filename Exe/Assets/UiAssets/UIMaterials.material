@@ -260,4 +260,20 @@ material goBackIni {
         }
     }
 }
+material barra {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture barra.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
 

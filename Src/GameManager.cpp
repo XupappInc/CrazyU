@@ -8,6 +8,9 @@
 #include <PhysicsEngine/RigidBody.h>
 #include <RenderEngine/MeshRenderer.h>
 
+#include <lua.hpp>
+#include <LuaBridge.h>
+
 CrazyU::GameManager::GameManager()
     : paradaActual_(nullptr), paradaActualTr_(nullptr),
       paradas_(std::vector<Separity::Entity*>()),
@@ -48,7 +51,8 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 		isPlaying_ = false;
 	}
 
-	arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
+	if(player_ != nullptr)
+		arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
 
 	if(paradaActualTr_ != nullptr)
 		arrowTr_->lookAt(paradaActualTr_->getPosition());
@@ -95,6 +99,16 @@ void CrazyU::GameManager::nextParada() {
 
 	paradaActual_ = paradas_[indexParada_];
 	paradaActualTr_ = paradaActual_->getComponent<Separity::Transform>();
+
+	auto behaviour = paradaActual_->getComponent<Separity::Behaviour>();
+	auto scriptLua = behaviour->getBehaviourLua();
+
+	auto setActiveLua = (*scriptLua)["setActive"];
+
+	if(setActiveLua.isFunction()) 
+	{
+		setActiveLua();
+	}
 }
 
 float CrazyU::GameManager::timeLeft() {

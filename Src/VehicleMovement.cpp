@@ -110,6 +110,20 @@ void CrazyU::VehicleMovement::frenar(float dt) {
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	float dt = deltaTime / 1000.0f;
+	
+	if (inputManager->leftJoystickEvent()) {
+		auto ejes = inputManager->getLeftAxis();
+		if(ejes.first > 0)
+			girar(1, dt);
+		else if(ejes.first < 0)
+			girar(-1, dt);
+
+		if(ejes.second > 0)
+			acelerar(1, dt);
+		else if(ejes.second < 0)
+			acelerar(-1, dt);
+	}
+
 	if(inputManager->isKeyHeld('w')) {
 		acelerar(1,dt);
 	}
@@ -130,8 +144,7 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 			cameraTr_->setRotationQ(quate.w, quate.x, quate.y, quate.z);
 			rot_ = false;
 		}
-	}
-	else if(inputManager->isKeyUp('s')) {
+	} else if(inputManager->isKeyUp('s')) {
 		rot_ = true;
 		auto quate = cameraTr_->getRotationQ();
 		quate.rotateGlobal(180, {0, 1, 0});
