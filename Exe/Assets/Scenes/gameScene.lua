@@ -14677,7 +14677,7 @@ Entities = {
 	},
 	coche2 ={
 			transform = {
-				pos = {-628, 1, -80},
+				pos = {-628, 1, -70},
 				rot = {1, 1, -1, 1},
 				scale = {0.2, 0.2, 0.2}
 			},
@@ -14690,8 +14690,28 @@ Entities = {
 			},
 			pathFollow={
 				nWaypoints = 2,
-				waypoint0 = {-290, 1, -80},
-				waypoint1 = {-628, 1, -50},
+				waypoint0 = {-290, 1, -70},
+				waypoint1 = {-628, 1, -70},
+				vel = 20.0
+			}
+		},
+		coche3 ={
+			transform = {
+				pos = {-260, 1, 0},
+				rot = {1, 1, -1, 1},
+				scale = {0.2, 0.2, 0.2}
+			},
+			meshRenderer={
+				meshName="Mesh.1108"
+			},
+			rigidbody = {
+				dim = {3,3, 3},
+				type = 0
+			},
+			pathFollow={
+				nWaypoints = 2,
+				waypoint0 = {-260, 1, 100},
+				waypoint1 = {-260, 1, 0},
 				vel = 20.0
 			}
 		}
