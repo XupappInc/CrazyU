@@ -17,7 +17,6 @@ end
 
 --Metodo Start, llamado tras Awake
 function npcAnimations:start()
-	print('ANIMAME ESTA KSTNIEHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 	local anim = this.entity:getAnimator();
 	anim:playAnim("walking",true);
 end

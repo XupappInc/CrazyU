@@ -14654,5 +14654,6 @@ Entities = {
 			texture = "barraEncima",
 			zorder=5
 		}
-	}
+	},
+	
 }
