@@ -35,7 +35,7 @@ end
 function paradas:onCollisionStay()
 	--Si aún no ha recogido a nadie
 	if alreadyPickedPeople ~= true then
-		
+		print("Chocando con parada");
 		if other ~= nil then
 			if other:getTag() == "Player" then
 				rigidbody = other:getRigidBody();

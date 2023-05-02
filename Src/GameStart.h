@@ -13,6 +13,6 @@
 namespace CrazyU {
 	class GameStart {
 		public:
-		static int initJuego();	
+		static bool gameStart();	
 	};
 }  // namespace CrazyU
