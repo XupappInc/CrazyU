@@ -18,7 +18,7 @@ end
 --Metodo Start, llamado tras Awake
 function sonido:start()
 	print("Estoy entrando en el start del sonido");
-	audioName = sonido.entity:getAudio():getAudioName();
+	audioName = this.entity:getAudio():getAudioName();
 	AudioManager:play(audioName, 1, 100);
 end
 
