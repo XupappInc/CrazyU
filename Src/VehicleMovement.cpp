@@ -93,13 +93,6 @@ void CrazyU::VehicleMovement::frenar() {
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	float dt = deltaTime / 1000.0f;
-	if (inputManager->leftJoystickEvent()) {
-		auto ejes = inputManager->getLeftAxis();
-		if(ejes.first > 0)
-			girar(1);
-		else if(ejes.first < 0)
-			girar(-1);
-	}
 	
 	if(inputManager->isKeyHeld('w') ||
 	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::RT)) {
@@ -111,6 +104,15 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	if(inputManager->isKeyHeld('d')) {
 		girar(1);
 	}
+
+	if(inputManager->leftJoystickEvent()) {
+		auto ejes = inputManager->getLeftAxis();
+		if(ejes.first > 0)
+			girar(1);
+		else if(ejes.first < 0)
+			girar(-1);
+	}
+	
 	if(inputManager->isKeyHeld(Separity::InputManager::SPACE) ||
 	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::A)) {
 		frenar();
