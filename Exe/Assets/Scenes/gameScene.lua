@@ -14121,56 +14121,6 @@ Entities = {
 			type = 2
 		}
 	},
-	Guille = {
-		transform = {
-            pos = {84.91047668457031, 2.919184923171997, 39.0421028137207},
-            rot = {0, 0, 0, 1},
-            scale = {0.03, 0.03, 0.03}
-        },
-        meshRenderer = {
-            meshName = "guille"
-        },
-        animator = {
-            animName="Breakdance"
-        },
-        script={
-            name = "monoAnim"
-        },
-		pathFollow={
-			nWaypoints = 2,
-			waypoint0 = {-299.7113952636719, 0.10548597574234009, -77.22769165039062},
-			waypoint1 = {104.91047668457031, 2.919184923171997, 39.0421028137207},
-		},
-		rigidbody = {
-			dim = {1, 1, 1},
-			type = 0
-		}
-	},
-	Alejandro={
-		transform = {
-            pos = {84.91047668457031, 2.919184923171997, 39.0421028137207},
-            rot = {0, 0, 0, 1},
-            scale = {0.03, 0.03, 0.03}
-        },
-		meshRenderer = {
-			meshName = "alejandro"
-		},
-		animator = {
-			animName="sexy_dance"
-		},
-		script={
-			name = "alejandro"
-		},
-		pathFollow={
-			nWaypoints = 2,
-			waypoint0 = {-299.7113952636719, 0.10548597574234009, -87.22769165039062},
-			waypoint1 = {104.91047668457031, 2.919184923171997, 29.0421028137207},
-		},
-		rigidbody = {
-			dim = {1, 1, 1},
-			type = 0
-		}
-	},
 	Back = {
 		button = {
 			overlay = "BotonBack",
@@ -14416,6 +14366,81 @@ Entities = {
 		rigidbody = {
 			dim = {10.025364875793457, 3.490990161895752, 6.829148292541504},
 			type = 2
+		}
+	},
+	Guille = {
+		transform = {
+            pos = {84.91047668457031, 2.919184923171997, 39.0421028137207},
+            rot = {0, 0, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+        meshRenderer = {
+            meshName = "guille"
+        },
+        animator = {
+            animName="Breakdance"
+        },
+        script={
+            name = "monoAnim"
+        },
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {-299.7113952636719, 0.10548597574234009, -77.22769165039062},
+			waypoint1 = {104.91047668457031, 2.919184923171997, 39.0421028137207},
+		},
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Alejandro={
+		transform = {
+            pos = {84.91047668457031, 2.919184923171997, 39.0421028137207},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		meshRenderer = {
+			meshName = "alejandro"
+		},
+		animator = {
+			animName="sexy_dance"
+		},
+		script={
+			name = "alejandro"
+		},
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {-299.7113952636719, 0.10548597574234009, -87.22769165039062},
+			waypoint1 = {104.91047668457031, 2.919184923171997, 29.0421028137207},
+		},
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Antonia = {
+		transform = {
+            pos = {-299.7113952636719, 0.10548597574234009, -47.22769165039062},
+            rot = {0, 1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		meshRenderer = {
+			meshName= "chica"
+		},
+		animator={
+			animName= "walking"
+		},
+		script={
+			name="npcAnimations"
+		},
+		pathFollow={
+			nWaypoints= 2,
+			waypoint0= {-249.54429626464844, 4.120333671569824, 97.09048461914062},
+			waypoint1={104.91047668457031, 2.919184923171997, 29.0421028137207}
+		},
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
 		}
 	}
 }
