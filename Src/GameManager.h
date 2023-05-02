@@ -6,6 +6,12 @@
 #include <vector>
 #include <string>
 
+namespace Separity 
+{
+	class Entity;
+	class Transform;
+}
+
 namespace CrazyU {
 	class GameManager : public Separity::Component {
 		public:
@@ -36,13 +42,25 @@ namespace CrazyU {
 		
 		void nextParada();
 		float timeLeft();
+
 		private:
-		bool paradasInitialized_;
 		int score_;
+		
+		bool paradasInitialized_;
 		std::vector<Separity::Entity*> paradas_;
 		Separity::Entity* paradaActual_;
+		Separity::Transform* paradaActualTr_;
+		int indexParada_;
+		
+		Separity::Entity* arrow_;
+		Separity::Transform* arrowTr_;
+
+		Separity::Entity* player_;
+		Separity::Transform* playerTr_;
+		
 		float timeBetweenStops_;
 		float currTime_;
+		
 		bool isPlaying_;
 	};
 }  // namespace CrazyU
