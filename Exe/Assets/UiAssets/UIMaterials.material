@@ -356,3 +356,19 @@ material menuIni {
         }
     }
 }
+material busScore {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture renderBus.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
