@@ -57,9 +57,6 @@ Entities = {
 		},
 		meshRenderer = {
 			meshName = "Mesh.005"
-		},
-		manager = {
-			
 		}
 	},
 	Car_04_3 = {
