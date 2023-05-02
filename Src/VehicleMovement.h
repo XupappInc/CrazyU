@@ -3,10 +3,11 @@
 #define __VEHICLE_MOVEMENT_H__
 
 #include "EntityComponent\Component.h"
+#include"SeparityUtils/spyQuaternion.h"
 
 namespace Spyutils {
 	class Vector3;
-}
+}  // namespace Spyutils
 namespace Separity {	
 	class RigidBody;
 	class Transform;
@@ -29,16 +30,16 @@ namespace CrazyU {
 		/// </summary>
 		/// <param name="dir">Entre -1 y 1, siendo -1 izquierda y 1
 		/// derecha</param>
-		void girar(int dir ,float dt);
+		void girar(int dir);
 		/// <summary>
 		/// Acelera hacia delante o hacia atrás
 		/// <param name="dir">Entre -1 y 1, siendo -1 atrás y 1 adelante</param>
 		/// </summary>
-		void acelerar(int dir,float dt);
+		void acelerar(int dir);
 		/// <summary>
 		/// Gestiona el freno del vehículo
 		/// </summary>
-		void frenar(float dt);
+		void frenar();
 		/// <summary>
 		/// Método update heredado de Component
 		/// </summary>
@@ -47,11 +48,12 @@ namespace CrazyU {
 		void start() override;
 
 		private:
+		
 		Separity::InputManager* inputManager;
 		Separity::RigidBody* rb_;
+		Separity::Transform* entTr_;
 		Separity::Transform* cameraTr_;
 		Separity::Transform* node_;
-		float cameraOffset_ = 0;
 		float cameraRot_ = 0;
 		bool rot_ = true;
 	};
