@@ -60,7 +60,7 @@ namespace CrazyU {
 		
 		float timeBetweenStops_;
 		float currTime_;
-		float maxTime_=90000;
+		float maxTime_=45000;
 
 		bool isPlaying_;
 	};

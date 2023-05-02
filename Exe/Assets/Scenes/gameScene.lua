@@ -14453,15 +14453,27 @@ Entities = {
 	Barra={
 		bar = {
 			overlay = "CrazyUbarra",
-			x = 50,
+			x = 55,
 			y = 5,
-			width = 845,
-			height = 66,
+			width = 633,
+			height = 48,
 			texture = "barra",
 			zorder=4
 		},
 		script={
 			name="barraTiempo"
+		}
+	}
+	,
+	BarraEncima={
+		bar = {
+			overlay = "barraEncima",
+			x = 55,
+			y = 4,
+			width = 680,
+			height = 68,
+			texture = "barraEncima",
+			zorder=5
 		}
 	}
 }
