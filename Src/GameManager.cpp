@@ -7,7 +7,7 @@
 #include <iostream>
 #include <PhysicsEngine/RigidBody.h>
 #include <RenderEngine/MeshRenderer.h>
-
+#include<SceneEngine/SceneManager.h>
 #include <lua.hpp>
 #include <LuaBridge.h>
 
@@ -49,8 +49,10 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 	currTime_ += deltaTime;
 	if(timeLeft() <= 0) {
 		isPlaying_ = false;
+		Separity::SceneManager* sm = Separity::SceneManager::getInstance();
+		sm->changeScene("finalScene.lua");
 	}
-
+	
 	if(player_ != nullptr)
 		arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
 

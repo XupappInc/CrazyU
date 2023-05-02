@@ -11,7 +11,7 @@ bool CrazyU::GameStart::gameStart() {
 
 	Separity::SceneManager* sm = Separity::SceneManager::getInstance();
 
-	sm->setFirstScene("gameScene.lua");
+	sm->setFirstScene("finalScene.lua");
 
 	sm->addComponentCreator("vehicleMovement", new CrazyU::VehicleMovementCreator());
 	sm->addComponentCreator("manager", new CrazyU::GameManagerCreator());

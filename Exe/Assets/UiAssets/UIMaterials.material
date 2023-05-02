@@ -146,6 +146,22 @@ material londres {
         }
     }
 }
+material final {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture FINAL.jpeg
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
 material volumeIni {
     receive_shadows on
     technique {
@@ -292,4 +308,51 @@ material barraEncima {
         }
     }
 }
-
+material menuClick {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture menuClicked.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+material menuHover {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture menuHover.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+material menuIni {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            texture_unit {
+                texture menuIni.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
