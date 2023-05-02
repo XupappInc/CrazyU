@@ -79,8 +79,8 @@ particle_system particles/ExplosionAv
 particle_system particles/ExplosionB
 {
 	material        	Practica1/Smoke
-	particle_width  	20
-	particle_height 	20
+	particle_width  	2
+	particle_height 	2
 	cull_each       	true
 	quota           	2000
 	billboard_type  	point
@@ -89,36 +89,12 @@ particle_system particles/ExplosionB
 	// Area emitter
 	emitter Point
 	{
-		position 0 15 -20
-		angle 30
-		emission_rate 300
-		time_to_live 5
+		position 0 0 0
+		angle 0
+		emission_rate 30
+		time_to_live 10
 		direction  0 1 0	
-		velocity_min 50
-		velocity_max 80    	
+		velocity_min 5
+		velocity_max 8    	
 	}
-
-	affector DirectionRandomiser
-	{
-		randomness	40
-	}
-
-	    affector Rotator
-    {
-        rotation_range_start 0
-        rotation_range_end 360
-        rotation_speed_range_start 0
-        rotation_speed_range_end 360
-    }
-
-	   	affector Scaler
-   	{
-       	rate 1
-   	}
-
-	affector ColourImage
-	{
-		image smokecolors.png
-	}
-
 }
