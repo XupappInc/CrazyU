@@ -48,7 +48,8 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 		isPlaying_ = false;
 	}
 
-	arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
+	if(player != nullptr)
+		arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
 
 	if(paradaActualTr_ != nullptr)
 		arrowTr_->lookAt(paradaActualTr_->getPosition());
