@@ -999,40 +999,7 @@ Entities = {
 	-- 		name = "sceneButton"
 	-- 	}
 	-- },
-	Guillermo = {
-		transform = {
-			pos = {0, -4.6901750564575195, 0},
-			rot = {0, 0, 0, 1},
-			scale = {0.03, 0.03, 0.03}
-		},
-		meshRenderer = {
-			meshName = "guille"
-		},
-		animator = {
-			animName="Breakdance"
-		},
-		script={
-			name = "monoAnim"
-	    }
-
-	},
-	Alejandro = {
-		transform = {
-			pos = {-5, -4.6901750564575195, 0},
-			rot = {0, 0, 0, 1},
-			scale = {0.03, 0.03, 0.03}
-		},
-		meshRenderer = {
-			meshName = "alejandro"
-		},
-		animator = {
-			animName="sexy_dance"
-		},
-		 script={
-		 	name = "alejandro"
-	     }
-
-	},
+	
 	chica = {
 		transform = {
 			pos = {-8, -4.6901750564575195, 0},
@@ -1047,6 +1014,23 @@ Entities = {
 		},
 		 script={
 		 	name = "npcAnimations"
+	     }
+
+	},
+	chica2 = {
+		transform = {
+			pos = {-10, -4.6901750564575195, 0},
+			rot = {0, 0, 0, 1},
+			scale = {0.03, 0.03, 0.03}
+		},
+		meshRenderer = {
+			meshName = "chica"
+		},
+		animator = {
+			animName="walking"
+		},
+		 script={
+		 	name = "npcAnimations3"
 	     }
 
 	},

@@ -21,7 +21,7 @@ CrazyU::GameManager::GameManager()
 	arrowTr_ = arrow_->getComponent<Separity::Transform>();
 
 	auto meshRenderer = arrow_->addComponent<Separity::MeshRenderer>();
-	meshRenderer->setMesh("Bus1.mesh");
+	meshRenderer->setMesh("flecha.mesh");
 }
 
 CrazyU::GameManager::~GameManager() {
@@ -117,7 +117,6 @@ void CrazyU::GameManager::nextParada() {
 float CrazyU::GameManager::timeLeft() {
 	float timeLeft = timeBetweenStops_ - currTime_;
 	float timeSecs = timeLeft / 1000;
-	std::cout << timeSecs << "\n";
 	return timeSecs;
 }
 
