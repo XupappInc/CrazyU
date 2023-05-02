@@ -14384,10 +14384,122 @@ Entities = {
 		pathFollow={
 			nWaypoints = 2,
 			waypoint0 = {56,1, 48},
-			waypoint1 = {106, 1, 48},
+			waypoint1 = {6, 1, 48},
 		},
         meshRenderer = {
             meshName = "chica"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Josecarlos = {
+		transform = {
+            pos = {106, 1, 0},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 4,
+			waypoint0 = {56, 1, 0},
+			waypoint1 = {56, 1, 40},
+			waypoint2 = {6, 1, 40},
+			waypoint3 = {6, 1, 0},
+			vel = 1.0
+		},
+        meshRenderer = {
+            meshName = "drogata"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Patricia = {
+		transform = {
+            pos = {-60, 1, 88},
+            rot = {0, 0, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 6,
+			waypoint0 = {-60, 1, 48},
+			waypoint1 = {0, 1, 48},
+			waypoint2 = {20, 1, 48},
+			waypoint3 = {20, 1,8},
+			waypoint4 = {0, 1, 48},
+			waypoint5 = {0, 1, 8},
+		},
+        meshRenderer = {
+            meshName = "chica"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Juana = {
+		transform = {
+            pos = {-260, 1, 88},
+            rot = {0, 0, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 4,
+			waypoint0 = {-260, 1, 48},
+			waypoint1 = {-300, 1, 48},
+			waypoint2 = {-300, 1, 48},
+			waypoint3 = {-300, 1,8},
+		},
+        meshRenderer = {
+            meshName = "chica"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Yonke = {
+		transform = {
+            pos = {-450, 1, -100},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 4,
+			waypoint0 = {-450, 1, -200},
+			waypoint1 = {-450, 1, -350},
+			waypoint2 = {-450, 1, -100},
+			waypoint3 = {-450, 1, -50},
+			vel = 1.0
+		},
+        meshRenderer = {
+            meshName = "drogata"
         },
         animator = {
             animName="walking"
