@@ -107,9 +107,9 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 
 	if(inputManager->leftJoystickEvent()) {
 		auto ejes = inputManager->getLeftAxis();
-		if(ejes.first > 0)
+		if(ejes.first > 0.0f)
 			girar(1);
-		else if(ejes.first < 0)
+		else if(ejes.first < 0.0f)
 			girar(-1);
 	}
 	
