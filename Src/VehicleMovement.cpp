@@ -105,13 +105,13 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 		girar(1);
 	}
 
-	if(inputManager->leftJoystickEvent()) {
-		auto ejes = inputManager->getLeftAxis();
-		if(ejes.first > 0.0f)
-			girar(1);
-		else if(ejes.first < 0.0f)
-			girar(-1);
-	}
+	
+	auto ejes = inputManager->getLeftAxis();
+	if(ejes.first > 0.01f)
+		girar(1);
+	else if(ejes.first < -0.01f)
+		girar(-1);
+	
 	
 	if(inputManager->isKeyHeld(Separity::InputManager::SPACE) ||
 	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::A)) {
@@ -153,6 +153,7 @@ void CrazyU::VehicleMovement::start() {
 
 	entTr_ = ent_->getComponent<Transform>();
 	inputManager = Separity::InputManager::getInstance();
+	inputManager->setJoystickDeadzone(5000);
 	rb_ = ent_->getComponent<RigidBody>();
 
 	auto camera = Separity::RenderManager::getInstance()->getCamera();
