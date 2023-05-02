@@ -1043,7 +1043,7 @@ Entities = {
 			scale = {0.03, 0.03, 0.03}
 		},
 		meshRenderer = {
-			meshName = "chica"
+			meshName = "police"
 		},
 		animator = {
 			animName="walking"
