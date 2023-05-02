@@ -99,14 +99,10 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 			girar(1);
 		else if(ejes.first < 0)
 			girar(-1);
-
-		if(ejes.second > 0)
-			acelerar(1);
-		else if(ejes.second < 0)
-			acelerar(-1);
 	}
-
-	if(inputManager->isKeyHeld('w')) {
+	
+	if(inputManager->isKeyHeld('w') ||
+	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::RB)) {
 		acelerar(1);
 	}
 	if(inputManager->isKeyHeld('a')) {
@@ -115,10 +111,12 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	if(inputManager->isKeyHeld('d')) {
 		girar(1);
 	}
-	if(inputManager->isKeyHeld(Separity::InputManager::SPACE)) {
+	if(inputManager->isKeyHeld(Separity::InputManager::SPACE) ||
+	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::A)) {
 		frenar();
 	}
-	if(inputManager->isKeyHeld('s')) {
+	if(inputManager->isKeyHeld('s') ||
+	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::LB)) {
 		acelerar(-1);
 		auto quate = cameraTr_->getRotationQ();
 		if(rot_) {
@@ -126,7 +124,9 @@ void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 			cameraTr_->setRotationQ(quate.w, quate.x, quate.y, quate.z);
 			rot_ = false;
 		}
-	} else if(inputManager->isKeyUp('s')) {
+	} else if(inputManager->isKeyUp('s') ||
+	          inputManager->isControllerButtonUp(
+	              InputManager::GAMEPADBUTTON::LB)) {
 		rot_ = true;
 		auto quate = cameraTr_->getRotationQ();
 		quate.rotateGlobal(180, {0, 1, 0});
