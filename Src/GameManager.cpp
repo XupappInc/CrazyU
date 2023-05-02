@@ -117,7 +117,6 @@ void CrazyU::GameManager::nextParada() {
 float CrazyU::GameManager::timeLeft() {
 	float timeLeft = timeBetweenStops_ - currTime_;
 	float timeSecs = timeLeft / 1000;
-	std::cout << timeSecs << "\n";
 	return timeSecs;
 }
 
