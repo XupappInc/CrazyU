@@ -10,6 +10,7 @@ namespace Separity
 {
 	class Entity;
 	class Transform;
+	class ParticleSystem;
 }
 
 namespace CrazyU {
@@ -40,7 +41,16 @@ namespace CrazyU {
 		/// <param name="parada">Parada a añadir</param>
 		void addParadas(std::string parada);
 		
+		/// <summary>
+		/// Cambia la parada a la siguiente
+		/// </summary>
 		void nextParada();
+
+		/// <summary>
+		/// Activa el particleSystem en la parada actual para indicar que el bus ha recogido a los peatones
+		/// </summary>
+		void repositionParticleSys();
+
 		float timeLeft();
 		int getPercentageofTime();
 		private:
@@ -52,6 +62,9 @@ namespace CrazyU {
 		Separity::Transform* paradaActualTr_;
 		int indexParada_;
 		
+		Separity::ParticleSystem* particleSys_;
+		Separity::Transform* particleSysTr_;
+
 		Separity::Entity* arrow_;
 		Separity::Transform* arrowTr_;
 

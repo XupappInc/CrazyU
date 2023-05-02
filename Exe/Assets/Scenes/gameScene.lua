@@ -14512,6 +14512,124 @@ Entities = {
 			type = 0
 		}
 	},
+	MIRIAM = {
+		transform = {
+            pos = {40, 1, -2},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {-300, 1, -2},
+			waypoint1 = {40, 1, -2},
+			vel =14.0
+		},
+        meshRenderer = {
+            meshName = "police"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	PAULA = {
+		transform = {
+            pos = {40, 1, -4},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {-300, 1, -4},
+			waypoint1 = {40, 1, -4},
+			vel =14.0
+		},
+        meshRenderer = {
+            meshName = "police"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	LAURA = {
+		transform = {
+            pos = {40, 1, -6},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		pathFollow={
+			nWaypoints = 2,
+			waypoint0 = {-300, 1, -6},
+			waypoint1 = {40, 1, -6},
+			vel =14.0
+		},
+        meshRenderer = {
+            meshName = "police"
+        },
+        animator = {
+            animName="walking"
+        },
+        script={
+            name = "npcAnimations"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Guille = {
+		transform = {
+            pos = {-250, 1, -10},
+            rot = {0, 0, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+        meshRenderer = {
+            meshName = "guille"
+        },
+        animator = {
+            animName="Breakdance"
+        },
+        script={
+            name = "monoAnim"
+        },
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
+	Alejandro={
+		transform = {
+            pos = {-200, 1, 30},
+            rot = {0, -1, 0, 1},
+            scale = {0.03, 0.03, 0.03}
+        },
+		meshRenderer = {
+			meshName = "alejandro"
+		},
+		animator = {
+			animName="sexy_dance"
+		},
+		script={
+			name = "alejandro"
+		},
+		rigidbody = {
+			dim = {1, 1, 1},
+			type = 0
+		}
+	},
 	Barra={
 		bar = {
 			overlay = "CrazyUbarra",
@@ -14525,8 +14643,7 @@ Entities = {
 		script={
 			name="barraTiempo"
 		}
-	}
-	,
+	},
 	BarraEncima={
 		bar = {
 			overlay = "barraEncima",
