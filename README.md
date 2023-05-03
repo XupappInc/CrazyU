@@ -73,13 +73,13 @@ En su camino el jugador se encontrará con otros vehículos y peatones. Dichos v
 
 ### Vista general
 
-![image](https://user-images.githubusercontent.com/82317485/236010574-11b5f07e-9a0c-4309-bfbe-2c3467b4c908.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/82317485/236010574-11b5f07e-9a0c-4309-bfbe-2c3467b4c908.png" alt="vista"/>
+</p>
 
 ## Relato breve y parcial de una partida típica 
 
 El jugador comienza en un punto aleatorio del mapa, lo primero que ve es que hay una flecha encima del bus que conduce. Esta flecha indica la parada en la que tiene que recoger estudiantes. Tras conducir hasta dicha parada, detiene completamente el vehículo para sumar un tiempo determinado al tiempo restante. El jugador se pone en marcha y aparece una nueva flecha que indica la siguiente parada. Tras repetir unas cuantas veces esto, el jugador se queda sin tiempo, por lo tanto termina la partida, y el tiempo que ha sobrevivido en total es su puntuación final de esta partida.
-
 
 # Menús y modos de juego 
 ## Configuración
@@ -126,7 +126,6 @@ El objetivo principal es conseguir la mayor puntuación posible. La puntuación 
 
 Para conseguir puntos tendrás que llegar a la **siguiente parada** para poder recuperar tiempo. Alcanzar una parada sumará 15 segundos a la puntuación. Cuando empieces una partida aparecerás en la parada de Ciudad Universitaria y se te asignará la siguiente parada. Tu puntuación final depende del tiempo que has llegado a aguantar y de las paradas que has alcanzado. Se mostrará al final de la partida en forma de autobuses de manera que si no se ha alcanzado ninguna parada, no se muestren autobuses, si se alcanzan entre una y dos se muestra uno, entre dos y tres se muestran dos autobuses y así de forma sucesiva hasta un máximo de cinco autobuses .
 
-
 La selección de paradas es aleatoria.
 
 Cuando llegues a la parada destino deberás reducir tu velocidad a 0 para que se te sumen los puntos y los viandantes bajen y suban del bus. 
@@ -154,13 +153,13 @@ Los coches, por su parte,circularán por la carretera,sin respetar normas de tr�
 
 Tu objetivo es aguantar lo máximo posible, por lo que el jugador deberá elegir las mejores rutas en todo momento, ya sea respetando las rutas “lógicas” o saltándose las normas de tráfico.
 
-
-
 ## Estética
 
 Todo tendrá una estética cartoon con lineart negro.Tendra un sombreado plano ,utilizando colores saturados.Se utilizará una paleta de colores con tonos saturados y con colores brillantes.
 
-![](https://cdn.discordapp.com/attachments/937640481943355402/1103387991206002738/image.png)
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/937640481943355402/1103387991206002738/image.png" alt="colores"/>
+</p>
 
 ## Cámara
 
@@ -168,22 +167,19 @@ La cámara en tercera persona tendrá un plano picado. Seguirá al autobús a ci
 
 Al pulsar un botón, la cámara mostrará una imagen del vehículo desde delante, de forma que el jugador vería lo que tiene detrás (retrovisor).
 
-
-
-
-
-
 ## Controles
 
 El juego se podrá controlar por teclado y mando:
 
-![image](https://user-images.githubusercontent.com/82317485/236012878-a0fc0a92-1436-4f0e-b45d-1e8f46909272.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/82317485/236012878-a0fc0a92-1436-4f0e-b45d-1e8f46909272.png" alt="controles"/>
+</p>
 
 Con W/S puedes acelerar o decelerar.
 
-
-![](https://cdn.discordapp.com/attachments/937640481943355402/1103389150712967260/mando.png)
-
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/937640481943355402/1103389150712967260/mando.png" alt="controlesMando"/>
+</p>
 
 # Contenido
 
@@ -215,25 +211,12 @@ Con W/S puedes acelerar o decelerar.
 
 El protagonista es un conductor de autobús que se ha tenido que levantar pronto como todos los días para trabajar recogiendo alumnos y llevándolos a sus paradas; no es el trabajo más entretenido pero le ayuda a salir adelante y eso es suficiente. Está un poco cansado de su trabajo y por eso le da igual atropellar a algún que otro alumno, total, hay muchos, nadie echará de menos a un par de estudiantes de ADE.	
 
-
-
-
-
-
-
-
-
-
-
-
 ## Niveles
 
 El juego solo tendrá un nivel, que corresponde a una porción del mapa real de Ciudad Universitaria. Las paradas de Bus tendrán una distribución parecida a las de la vida real.
 
-
-
 # Referencias
 
-Crazy Taxi- https://crazy-taxi-free.uptodown.com/android
-The Simpsons Hit & Run -https://es.wikipedia.org/wiki/The_Simpsons_Hit_%26_Run
+- Crazy Taxi- https://crazy-taxi-free.uptodown.com/android
+- The Simpsons Hit & Run -https://es.wikipedia.org/wiki/The_Simpsons_Hit_%26_Run
 
