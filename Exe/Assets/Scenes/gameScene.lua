@@ -14094,6 +14094,11 @@ Entities = {
 		},
 		script={
 			name="sceneButton"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBotonMenu",
+			isMusic = false
 		}
 	},SoundButton={
 		button = {
@@ -14109,6 +14114,11 @@ Entities = {
 		},
 		script={
 			name="soundButton"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBotonSonido",
+			isMusic = false
 		}
 	},	SM_Prop_BusStop_01_Glass_002 = {
 		transform = {

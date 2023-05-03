@@ -13,6 +13,11 @@ Entities = {
 		},
 		script = {
 			name = "buttonMenu"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBotonPlay",
+			isMusic = false
 		}
 	},
 	Quit={
@@ -29,6 +34,11 @@ Entities = {
 		},
 		script={
 			name="quitMenu"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBotonSalir",
+			isMusic = false
 		}
 	},
 	CrazyUImage={

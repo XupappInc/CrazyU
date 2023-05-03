@@ -44,8 +44,11 @@ end
 
 --Metodo OnButtonClicked
 function quitMenu:onButtonClick()
-	
-	--SceneManager:changeScene("scene2.lua");
+	print("Estoy encima del boton");
+	audio = this.entity:getAudio();
+	if audio then
+		AudioManager:play(audio:getAudioName(), 10000, 10000)
+	end
 end
 function quitMenu:onButtonReleased()
 	InputManager:setCloseWindow();

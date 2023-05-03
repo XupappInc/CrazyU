@@ -42,8 +42,11 @@ end
 
 --Metodo OnButtonClicked, llamado al salir de una colision
 function sceneButton:onButtonClick()
-	--print("Has pulsado para ir a la escena\n");
-
+	print("Estoy encima del boton");
+	audio = this.entity:getAudio();
+	if audio then
+		AudioManager:play(audio:getAudioName(), 10000, 10000)
+	end
 end
 
 function sceneButton:onButtonReleased()

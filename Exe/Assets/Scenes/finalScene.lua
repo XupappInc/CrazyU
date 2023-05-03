@@ -40,6 +40,11 @@ Entities = {
 		},
 		script={
 			name="sceneButton"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBotonMenu",
+			isMusic = false
 		}
 	},
 	Play={
@@ -56,6 +61,11 @@ Entities = {
 		},
 		script = {
 			name = "buttonMenu"
+		},
+		audioSource ={
+			route = "sonidoBoton.wav",
+			name = "sonidoBoton",
+			isMusic = true
 		}
 	}
 }

@@ -42,7 +42,11 @@ end
 
 --Metodo OnButtonClick, llamado al pulsar el boton de esta entidad
 function soundButton:onButtonClick()
-
+	print("Estoy encima del boton");
+	audio = this.entity:getAudio();
+	if audio then
+		AudioManager:play(audio:getAudioName(), 10000, 10000)
+	end
 end
 
 --Metodo OnButtonReleased, llamado al soltar el boton de esta entidad

@@ -44,8 +44,11 @@ end
 
 --Metodo OnButtonClicked
 function buttonMenu:onButtonClick()
-	--print("Has pulsado para ir al menú\n");
-	--SceneManager:changeScene("scene2.lua");
+	print("Estoy encima del boton");
+	audio = this.entity:getAudio();
+	if audio then
+		AudioManager:play(audio:getAudioName(), 10000, 10000)
+	end
 end
 function buttonMenu:onButtonReleased()
 	--print("Has dejado de pulsar para ir al menú\n");
@@ -53,7 +56,7 @@ function buttonMenu:onButtonReleased()
 end
 --Metodo OnButtonHover
 function buttonMenu:onButtonHover()
-	--print("Has puesto el cursor para ir al menu\n");	
+	
 end
 --Metodo OnButtonUnhover
 function buttonMenu:onButtonUnhover()
