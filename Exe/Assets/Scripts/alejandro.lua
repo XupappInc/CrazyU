@@ -17,7 +17,6 @@ end
 
 --Metodo Start, llamado tras Awake
 function alejandro:start()
-	print('ANIMAME ESTA KSTNIEHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 	local anim = alejandro.entity:getAnimator();
 	anim:playAnim("sexy_dance",true);
 	audioName = this.entity:getAudio():getAudioName();
