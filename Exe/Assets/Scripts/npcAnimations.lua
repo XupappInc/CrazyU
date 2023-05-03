@@ -29,9 +29,9 @@ function npcAnimations:update()
 	if audio then
 		math.randomseed(os.time())
 
-    	numeroAleatorio = math.random(0, 1000)
+    	numeroAleatorio = math.random(0, 100)
 
-		if numeroAleatorio > 700 then
+		if numeroAleatorio > 85 then
 			AudioManager:play(audio:getAudioName(), 1, 100)
 		end
 	end
