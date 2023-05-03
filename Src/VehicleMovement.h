@@ -48,6 +48,8 @@ namespace CrazyU {
 		void start() override;
 
 		private:
+
+		const int ROTATION_SPEED = 8;
 		
 		Separity::InputManager* inputManager;
 		Separity::RigidBody* rb_;
