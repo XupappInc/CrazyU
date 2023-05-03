@@ -14466,7 +14466,7 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0,+
+			type = 0,
 			mass=0.05
 		}
 	},
@@ -14564,7 +14564,7 @@ Entities = {
 			nWaypoints = 2,
 			waypoint0 = {-300, 1, -4},
 			waypoint1 = {40, 1, -4},
-			vel =14.0
+			vel = 14.0
 		},
         meshRenderer = {
             meshName = "police"
