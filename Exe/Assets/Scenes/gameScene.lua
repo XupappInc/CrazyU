@@ -2861,7 +2861,8 @@ Entities = {
 		},
 		audioListener ={
 			
-		},
+		}
+		,
 		audioSource ={
 			route = "callmemaybe.mp3",
 			name = "callmemaybe",
@@ -14403,6 +14404,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femalelaugh.wav",
+			name = "femalelaughAntonia",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14433,6 +14439,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "malesurprised.wav",
+			name = "malesurprised2",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14464,6 +14475,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femalelaugh.wav",
+			name = "femalelaughPatricia",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14492,6 +14508,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femalelaugh.wav",
+			name = "femalelaughJuana",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14521,6 +14542,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "malesurprised.wav",
+			name = "malesurprised23",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14548,6 +14574,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femaletalk.wav",
+			name = "femaletalkMiriam",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14575,6 +14606,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femaletalk.wav",
+			name = "femaletalkPaula",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14602,6 +14638,11 @@ Entities = {
         script={
             name = "npcAnimations"
         },
+		audioSource ={
+			route = "femaletalk.wav",
+			name = "femaletalkLaura",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14627,6 +14668,11 @@ Entities = {
 			dim = {1, 1, 1},
 			type = 0,
 			mass=0.05
+		},
+		audioSource ={
+			route = "caillou.mp3",
+			name = "caillou",
+			isMusic = false
 		}
 	},
 	Alejandro={
@@ -14644,6 +14690,11 @@ Entities = {
 		script={
 			name = "alejandro"
 		},
+		audioSource ={
+			route = "shakiraLoba.mp3",
+			name = "shakiraLoba",
+			isMusic = false
+		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
 			type = 0,
@@ -14713,6 +14764,14 @@ Entities = {
 				waypoint0 = {-290, 1, -70},
 				waypoint1 = {-628, 1, -70},
 				vel = 20.0
+			},
+			audioSource ={
+				route = "claxon.wav",
+				name = "claxon",
+				isMusic = false
+			}, 
+			script = {
+				name = "sonido"
 			}
 		},
 		coche3 ={
@@ -14733,6 +14792,14 @@ Entities = {
 				waypoint0 = {-260, 1, 100},
 				waypoint1 = {-260, 1, -40},
 				vel = 20.0
+			},
+			audioSource ={
+				route = "cocheRapido.wav",
+				name = "cocheRapido",
+				isMusic = false
+			}, 
+			script = {
+				name = "sonido"
 			}
 		},
 		coche4 ={
@@ -14753,6 +14820,14 @@ Entities = {
 				waypoint0 = {-600, 1, 75},
 				waypoint1 = {-290, 1, 75},
 				vel = 20.0
+			},
+			audioSource ={
+				route = "claxon2.wav",
+				name = "claxon2",
+				isMusic = false
+			}, 
+			script = {
+				name = "sonido"
 			}
 		},
 	

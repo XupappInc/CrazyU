@@ -17,14 +17,20 @@ end
 
 --Metodo Start, llamado tras Awake
 function sonido:start()
-	print("Estoy entrando en el start del sonido");
-	audioName = this.entity:getAudio():getAudioName();
-	AudioManager:play(audioName, 1, 100);
+
 end
 
 --Metodo Update, llamado en cada frame
 function sonido:update()
+	
+	math.randomseed(os.time())
 
+    numeroAleatorio = math.random(0, 1000)
+    
+    if numeroAleatorio > 900 then
+        audioName = this.entity:getAudio():getAudioName()
+        AudioManager:play(audioName, 1, 100)
+    end
 end
 
 --Metodo OnCollisionEnter, llamado al comenzar una colision

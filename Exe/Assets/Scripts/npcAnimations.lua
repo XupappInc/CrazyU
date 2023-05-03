@@ -17,13 +17,28 @@ end
 
 --Metodo Start, llamado tras Awake
 function npcAnimations:start()
+	
+	
 	local anim = this.entity:getAnimator();
 	anim:playAnim("walking",true);
 end
 
 --Metodo Update, llamado en cada frame
 function npcAnimations:update()
+	audio = this.entity:getAudio();
+	if audio then
+		math.randomseed(os.time())
 
+    	numeroAleatorio = math.random(0, 1000)
+
+		if numeroAleatorio > 700 then
+			AudioManager:play(audio:getAudioName(), 1, 100)
+		end
+	end
+
+	
+    
+   
 end
 
 --Metodo OnCollisionEnter, llamado al comenzar una colision
