@@ -16,6 +16,14 @@ Entities = {
 			height = 720,
 			texture = "final",
 			zorder=0
+		},
+		audioSource ={
+			route = "cancionEpicaGref.mp3",
+			name = "cancionEpicaGref",
+			isMusic = true
+		}, 
+		script = {
+			name = "musica"
 		}
 	},
 	Menu={
