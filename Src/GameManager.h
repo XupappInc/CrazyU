@@ -63,8 +63,22 @@ namespace CrazyU {
 		/// <returns>Devuelve en int un porcentaje indicando el tiempo de juego
 		/// que queda</returns>
 		int getPercentageofTime();
+		/// <summary>
+		/// Metodo que devuelve el numero de autobuses que se deben dibujar en
+		/// la escena final Para menos de 20 puntos, no se dibujan, entre 20 y
+		/// 40 se dibuja 1, entre 40 y 60 se dibujan 2 y así sucesivamente hasta
+		/// 5 autobuses máximo
+		/// </summary>
+		/// <returns>Devuelve en int el numero de autobuses</returns>
+		int getBusNum();
 
 		private:
+		/// <summary>
+		/// Metodo que escribe en un fichero la putuacion (en autobuses) del
+		/// jugador
+		/// </summary>
+		void writeFinalScore();
+
 		int score_;
 
 		bool paradasInitialized_;
@@ -87,7 +101,7 @@ namespace CrazyU {
 		float maxTime_ = 45000;
 		int finalPoints_;
 		const int sumScore_;
-		bool isPlaying_;
+		// bool isPlaying_;
 	};
 }  // namespace CrazyU
 #endif

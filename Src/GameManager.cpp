@@ -2,25 +2,27 @@
 
 #include "EntityComponent/Entity.h"
 #include "EntityComponent/Transform.h"
+
 #include <EntityComponent/EntityManager.h>
 #include <LuaEngine/Behaviour.h>
-#include <iostream>
 #include <PhysicsEngine/RigidBody.h>
 #include <RenderEngine/MeshRenderer.h>
-#include<SceneEngine/SceneManager.h>
 #include <RenderEngine/ParticleSystem.h>
-
+#include <SceneEngine/SceneManager.h>
+#include <iostream>
 #include <lua.hpp>
-#include <LuaBridge.h>
+#include <LuaBridge.h> //MANTENER EN ESTA POSICION
+#include <fstream>
 
 CrazyU::GameManager::GameManager()
     : paradaActual_(nullptr), paradaActualTr_(nullptr),
-      paradas_(std::vector<Separity::Entity*>()),
-      score_(0), paradasInitialized_(false), timeBetweenStops_(30000),
-      isPlaying_(true), currTime_(0), player_(nullptr), playerTr_(nullptr),
-		indexParada_(-1), particleSys_(nullptr), particleSysTr_(nullptr),finalPoints_(0),sumScore_(20) {
-
-	arrow_ = Separity::EntityManager::getInstance()->addEntity(Separity::_grp_GENERAL);
+      paradas_(std::vector<Separity::Entity*>()), score_(0),
+      paradasInitialized_(false), timeBetweenStops_(30000),
+      currTime_(0), player_(nullptr), playerTr_(nullptr), indexParada_(-1),
+      particleSys_(nullptr), particleSysTr_(nullptr), finalPoints_(0),
+      sumScore_(20) {
+	arrow_ = Separity::EntityManager::getInstance()->addEntity(
+	    Separity::_grp_GENERAL);
 	arrowTr_ = arrow_->getComponent<Separity::Transform>();
 
 	auto meshRenderer = arrow_->addComponent<Separity::MeshRenderer>();
@@ -30,23 +32,21 @@ CrazyU::GameManager::GameManager()
 	    Separity::_grp_GENERAL);
 	particleSysTr_ = particleSysEnt->getComponent<Separity::Transform>();
 	particleSys_ = particleSysEnt->addComponent<Separity::ParticleSystem>();
-	particleSys_->setParticleSystem("ParticulasParadas", "particles/ExplosionB");
+	particleSys_->setParticleSystem("ParticulasParadas",
+	                                "particles/ExplosionB");
 	particleSys_->setEmitting(true);
 }
 
-CrazyU::GameManager::~GameManager() {
-
-}
+CrazyU::GameManager::~GameManager() {}
 
 void CrazyU::GameManager::start() {
-
 	addParadas("SM_Prop_BusStop_01");
 	nextParada();
 
-	auto players = Separity::EntityManager::getInstance()->getEntitiesByTag("Player");
+	auto players =
+	    Separity::EntityManager::getInstance()->getEntitiesByTag("Player");
 
-	if(players.size() < 1) 
-	{
+	if(players.size() < 1) {
 		std::cout << "[CRAZY U] GameManager: No hay player en la escena\n";
 		return;
 	}
@@ -58,13 +58,15 @@ void CrazyU::GameManager::start() {
 void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 	currTime_ += deltaTime;
 	if(timeLeft() <= 0) {
-		isPlaying_ = false;
+		//isPlaying_ = false;
 		Separity::SceneManager* sm = Separity::SceneManager::getInstance();
+		writeFinalScore();
 		sm->changeScene("finalScene.lua");
 	}
-	
+
 	if(player_ != nullptr)
-		arrowTr_->setPosition(playerTr_->getPosition() + Spyutils::Vector3(0, 5, 0));
+		arrowTr_->setPosition(playerTr_->getPosition() +
+		                      Spyutils::Vector3(0, 5, 0));
 
 	if(paradaActualTr_ != nullptr)
 		arrowTr_->lookAt(paradaActualTr_->getPosition());
@@ -75,7 +77,7 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 
 void CrazyU::GameManager::addScore(int score) {
 	score_ += score;
-	if (timeBetweenStops_ + (score_ * 1000) > maxTime_) {
+	if(timeBetweenStops_ + (score_ * 1000) > maxTime_) {
 		timeBetweenStops_ = maxTime_;
 	}
 	timeBetweenStops_ += score * 1000;
@@ -101,9 +103,7 @@ void CrazyU::GameManager::addParadas(std::string tagParada) {
 }
 
 void CrazyU::GameManager::nextParada() {
-
-	if(paradas_.size() <= 0) 
-	{
+	if(paradas_.size() <= 0) {
 		std::cout << "[CRAZY U] GameManager: No hay paradas en la escena\n";
 		return;
 	}
@@ -118,22 +118,19 @@ void CrazyU::GameManager::nextParada() {
 
 	repositionParticleSys();
 
-	//indica al script de Lua de la siguiente parada que esta activo
+	// indica al script de Lua de la siguiente parada que esta activo
 	auto behaviour = paradaActual_->getComponent<Separity::Behaviour>();
 	auto scriptLua = behaviour->getBehaviourLua();
 
 	auto setActiveLua = (*scriptLua)["setActive"];
 
-	if(setActiveLua.isFunction()) 
-	{
+	if(setActiveLua.isFunction()) {
 		setActiveLua();
 	}
 }
 
 void CrazyU::GameManager::repositionParticleSys() {
-	
-	if(particleSys_ == nullptr) 
-	{
+	if(particleSys_ == nullptr) {
 		std::cout << "[CRAZY U] GameManager: No existe Particle System\n";
 		return;
 	}
@@ -147,7 +144,33 @@ float CrazyU::GameManager::timeLeft() {
 	return timeSecs;
 }
 
-int CrazyU::GameManager::getPercentageofTime() { auto time=timeLeft();
+int CrazyU::GameManager::getPercentageofTime() {
+	auto time = timeLeft();
 	int percentage = (time / (maxTime_ / 1000)) * 100;
 	return percentage;
+}
+
+int CrazyU::GameManager::getBusNum() {
+	int buses = 0;
+	int i = 1;
+	while(i < 6) { 
+		if (finalPoints_ < sumScore_ * i) {
+			buses = i - 1;
+			break;
+		} else {
+			++i;
+		}
+	}
+	return buses;
+}
+
+void CrazyU::GameManager::writeFinalScore() {
+	std::ofstream fich;
+	fich.open("puntuacion.txt");
+	if(!fich.is_open()) {
+		std::cout << "[CRAZY U] : Error al abrir el archivo de puntuación\n";
+		return;
+	}
+	fich << getBusNum();
+	fich.close();
 }
