@@ -19,7 +19,7 @@ namespace CrazyU {
 		__CMPTYPE_DECL__(Separity::_SCRIPT)
 		__CMPID_DECL__(Separity::_GAME_COMPONENT)
 
-		GameManager();
+		GameManager(bool inGameScene = true);
 		~GameManager();
 
 		void start() override;
@@ -85,10 +85,8 @@ namespace CrazyU {
 		/// Crea las imagenes de los autobuses
 		/// </summary>
 		void drawBuses();
-		private:
-	
-	
-
+		
+	private:
 		int score_;
 
 		bool paradasInitialized_;
@@ -113,7 +111,8 @@ namespace CrazyU {
 		const int sumScore_;
 		const int maxBusScore_=5;
 		std::string scoreFileName_ = "puntuacion.txt";
-		// bool isPlaying_;
+		
+		bool isPlaying_;
 	};
 }  // namespace CrazyU
 #endif

@@ -1,6 +1,8 @@
 Entities = {
 	GameManager = {
-        manager = {},
+        manager = {
+            inGameScene = false
+        },
 		script={
 			name="showBus"
 		}

@@ -24,7 +24,11 @@ void CrazyU::GameManagerCreator::registerInLua() {
 
 bool CrazyU::GameManagerCreator::createComponent(lua_State* L,
                                                  Separity::Entity* ent) {
-	auto gm = ent->addComponent<GameManager>();
+	bool inGameScene = true;
+
+	readParam("inGameScene", L, inGameScene);
+
+	auto gm = ent->addComponent<GameManager>(inGameScene);
 
 	auto L_Scripting = Separity::LuaManager::getInstance()->getLuaState();
 	luabridge::setGlobal(L_Scripting, gm, "GameManager");

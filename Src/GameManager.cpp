@@ -15,32 +15,41 @@
 #include <lua.hpp>
 #include <LuaBridge.h>  //MANTENER EN ULTIMA POSICION
 
-CrazyU::GameManager::GameManager()
+CrazyU::GameManager::GameManager(bool inGameScene)
     : paradaActual_(nullptr), paradaActualTr_(nullptr),
       paradas_(std::vector<Separity::Entity*>()), score_(0),
       paradasInitialized_(false), timeBetweenStops_(30000), currTime_(0),
       player_(nullptr), playerTr_(nullptr), indexParada_(-1),
       particleSys_(nullptr), particleSysTr_(nullptr), finalPoints_(0),
-      sumScore_(20) {
-	arrow_ = Separity::EntityManager::getInstance()->addEntity(
-	    Separity::_grp_GENERAL);
-	arrowTr_ = arrow_->getComponent<Separity::Transform>();
+      sumScore_(20), isPlaying_(inGameScene) {
 
-	auto meshRenderer = arrow_->addComponent<Separity::MeshRenderer>();
-	meshRenderer->setMesh("flecha.mesh");
+	if(isPlaying_) 
+	{
+		//los componentes se crean aqui para que se inicialicen con el ciclo del motor
+		arrow_ = Separity::EntityManager::getInstance()->addEntity(
+			Separity::_grp_GENERAL);
+		arrowTr_ = arrow_->getComponent<Separity::Transform>();
+		
+		auto meshRenderer = arrow_->addComponent<Separity::MeshRenderer>();
+		meshRenderer->setMesh("flecha.mesh");
 
-	auto particleSysEnt = Separity::EntityManager::getInstance()->addEntity(
-	    Separity::_grp_GENERAL);
-	particleSysTr_ = particleSysEnt->getComponent<Separity::Transform>();
-	particleSys_ = particleSysEnt->addComponent<Separity::ParticleSystem>();
-	particleSys_->setParticleSystem("ParticulasParadas",
-	                                "particles/ExplosionB");
-	particleSys_->setEmitting(true);
+		auto particleSysEnt = Separity::EntityManager::getInstance()->addEntity(
+			Separity::_grp_GENERAL);
+		particleSysTr_ = particleSysEnt->getComponent<Separity::Transform>();
+		particleSys_ = particleSysEnt->addComponent<Separity::ParticleSystem>();
+		particleSys_->setParticleSystem("ParticulasParadas",
+										"particles/ExplosionB");
+		particleSys_->setEmitting(true);
+	}
 }
 
 CrazyU::GameManager::~GameManager() {}
 
 void CrazyU::GameManager::start() {
+
+	if(!isPlaying_)
+		return;
+
 	addParadas("SM_Prop_BusStop_01");
 	nextParada();
 
@@ -57,6 +66,12 @@ void CrazyU::GameManager::start() {
 }
 
 void CrazyU::GameManager::update(const uint32_t& deltaTime) {
+	
+	if(!isPlaying_) 
+	{
+		return;
+	}
+	
 	currTime_ += deltaTime;
 	if(timeLeft() <= 0) {
 		// isPlaying_ = false;
@@ -169,7 +184,7 @@ int CrazyU::GameManager::readFinalScore(const std::string& fileName) {
 	std::ifstream fich;
 	fich.open(fileName, std::ofstream::in);
 	if(!fich.is_open()) {
-		std::cout << "[CRAZY U] : Error al abrir el archivo de puntuación\n";
+		std::cout << "[CRAZY U] GameManager : Error al abrir el archivo de puntuación\n";
 		return -1;
 	}
 	int num = 0;
@@ -182,7 +197,7 @@ void CrazyU::GameManager::writeFinalScore(const std::string& fileName) {
 	std::ofstream fich;
 	fich.open(fileName, std::ofstream::out);
 	if(!fich.is_open()) {
-		std::cout << "[CRAZY U] : Error al abrir el archivo de puntuación\n";
+		std::cout << "[CRAZY U] GameManager Clar: Error al abrir el archivo de puntuación\n";
 		return;
 	}
 	fich << getBusNum();
