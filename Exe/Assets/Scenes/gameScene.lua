@@ -14397,7 +14397,9 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
+
 		}
 	},
 	Josecarlos = {
@@ -14425,7 +14427,9 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
+
 		}
 	},
 	Patricia = {
@@ -14454,7 +14458,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,+
+			mass=0.05
 		}
 	},
 	Juana = {
@@ -14481,7 +14486,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	Yonke = {
@@ -14509,7 +14515,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	MIRIAM = {
@@ -14535,7 +14542,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	PAULA = {
@@ -14561,7 +14569,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	LAURA = {
@@ -14587,7 +14596,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	Guille = {
@@ -14607,7 +14617,8 @@ Entities = {
         },
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	Alejandro={
@@ -14627,7 +14638,8 @@ Entities = {
 		},
 		rigidbody = {
 			dim = {1, 1, 1},
-			type = 0
+			type = 0,
+			mass=0.05
 		}
 	},
 	Barra={
