@@ -21,7 +21,7 @@ CrazyU::VehicleMovement::~VehicleMovement() {}
 
 void CrazyU::VehicleMovement::girar(int dir) {
 	rb_->applyTorque(Spyutils::Vector3(
-	    0, dir * -1 * rb_->getLinearVelocity().magnitude() * 2, 0));
+	    0, dir * -1 * rb_->getLinearVelocity().magnitude() * ROTATION_SPEED, 0));
 
 	// Calcular la dirección de la fuerza en función de la rotación del
 	// objeto
@@ -93,7 +93,7 @@ void CrazyU::VehicleMovement::frenar() {
 
 void CrazyU::VehicleMovement::update(const uint32_t& deltaTime) {
 	float dt = deltaTime / 1000.0f;
-	
+
 	if(inputManager->isKeyHeld('w') ||
 	   inputManager->isControllerButtonHeld(InputManager::GAMEPADBUTTON::RT)) {
 		acelerar(1);
