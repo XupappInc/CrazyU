@@ -4,8 +4,8 @@
 particle_system particles/Smoke
 {
 	material        	Practica1/Smoke
-	particle_width  	50
-	particle_height 	50
+	particle_width  	5000
+	particle_height 	5000
 	cull_each       	true
 	quota           	500
 	billboard_type  	point
@@ -47,8 +47,8 @@ particle_system particles/Smoke
 particle_system particles/ExplosionAv
 {
 	material        	Practica1/Smoke
-	particle_width  	2
-	particle_height 	2
+	particle_width  	200
+	particle_height 	200
 	cull_each       	true
 	quota           	500
 	billboard_type  	point
@@ -79,8 +79,8 @@ particle_system particles/ExplosionAv
 particle_system particles/ExplosionB
 {
 	material        	Practica1/Smoke
-	particle_width  	2
-	particle_height 	2
+	particle_width  	1
+	particle_height 	1
 	cull_each       	true
 	quota           	2000
 	billboard_type  	point
@@ -90,7 +90,7 @@ particle_system particles/ExplosionB
 	emitter Point
 	{
 		position 0 0 0
-		angle 0
+		angle 45
 		emission_rate 30
 		time_to_live 10
 		direction  0 1 0	
