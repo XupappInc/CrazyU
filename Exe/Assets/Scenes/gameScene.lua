@@ -2861,6 +2861,14 @@ Entities = {
 		},
 		audioListener ={
 			
+		},
+		audioSource ={
+			route = "callmemaybe.mp3",
+			name = "callmemaybe",
+			isMusic = true
+		}, 
+		script = {
+			name = "musica"
 		}
 	},
 	SM_Prop_LightPole_Base_01_045 = {
@@ -14734,6 +14742,6 @@ Entities = {
 				waypoint1 = {-290, 1, 75},
 				vel = 20.0
 			}
-		}
+		},
 	
 }
