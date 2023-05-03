@@ -17,7 +17,6 @@ end
 
 --Metodo Start, llamado tras Awake
 function monoAnim:start()
-	print('ANIMAME ESTA KSTNIEHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 	local anim = monoAnim.entity:getAnimator();
 	anim:playAnim("Breakdance",true);
 	audioName = this.entity:getAudio():getAudioName();
