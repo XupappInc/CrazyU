@@ -1,7 +1,7 @@
 # CRAZY-U
 
 
- **PARTICIPANTES:** Daniel Martín Gómez(damart24@ucm.es), Miriam Martín Sánchez (mirima10@ucm.es), Javier Callejo Herrero(jacall02@ucm.es), Laura Gómez Bodego(lgomez25@ucm.es), Victor Manuel Estremera Herranz(vestre01@ucm.es),Paula Morillas Alonso(pamorill@ucm.es), Rodrigo Sánchez Torres(rodsan05@ucm.es), Sergio Baña Marchante(sebana@ucm.es)
+ **PARTICIPANTES:</br>** Daniel Martín Gómez(damart24@ucm.es), Miriam Martín Sánchez (mirima10@ucm.es), Javier Callejo Herrero(jacall02@ucm.es), Laura Gómez Bodego(lgomez25@ucm.es), Victor Manuel Estremera Herranz(vestre01@ucm.es),Paula Morillas Alonso(pamorill@ucm.es), Rodrigo Sánchez Torres(rodsan05@ucm.es), Sergio Baña Marchante(sebana@ucm.es)
 
 | Resumen  |   |   
 |:-:|:--|
