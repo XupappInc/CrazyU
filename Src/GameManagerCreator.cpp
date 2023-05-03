@@ -18,6 +18,7 @@ void CrazyU::GameManagerCreator::registerInLua() {
 	    .addFunction("getScore", &GameManager::getScore)
 	    .addFunction("getPercentage", &GameManager::getPercentageofTime)
 	    .addFunction("nextParada", &GameManager::nextParada)
+	    .addFunction("drawBuses", &GameManager::drawBuses)
 		.endClass();
 }
 

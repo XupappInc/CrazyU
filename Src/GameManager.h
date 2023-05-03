@@ -71,13 +71,23 @@ namespace CrazyU {
 		/// </summary>
 		/// <returns>Devuelve en int el numero de autobuses</returns>
 		int getBusNum();
-
-		private:
+		/// <summary>
+		/// Metodo que lee en un fichero la putuacion (en autobuses) del
+		/// jugador
+		/// </summary>
+		int readFinalScore(const std::string& fileName);
 		/// <summary>
 		/// Metodo que escribe en un fichero la putuacion (en autobuses) del
 		/// jugador
 		/// </summary>
-		void writeFinalScore();
+		void writeFinalScore(const std::string& fileName);
+		/// <summary>
+		/// Crea las imagenes de los autobuses
+		/// </summary>
+		void drawBuses();
+		private:
+	
+	
 
 		int score_;
 
@@ -101,6 +111,8 @@ namespace CrazyU {
 		float maxTime_ = 45000;
 		int finalPoints_;
 		const int sumScore_;
+		const int maxBusScore_=5;
+		std::string scoreFileName_ = "puntuacion.txt";
 		// bool isPlaying_;
 	};
 }  // namespace CrazyU

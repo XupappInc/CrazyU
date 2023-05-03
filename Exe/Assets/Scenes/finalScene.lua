@@ -1,4 +1,10 @@
 Entities = {
+	GameManager = {
+        manager = {},
+		script={
+			name="showBus"
+		}
+    },
 	FondoUI={
 		image = {
 			overlay = "FondoFinal",
@@ -41,57 +47,5 @@ Entities = {
 		script = {
 			name = "buttonMenu"
 		}
-	},
-		Bus1={
-			image = {
-				overlay = "Bus1",
-				x = 10,
-				y = 70,
-				width = 1400*0.15,
-				height = 1080*0.15,
-				texture = "busScore",
-				zorder=3
-			}
-		},Bus2={
-			image = {
-				overlay = "Bus2",
-				x = 30,
-				y = 70,
-				width = 1400*0.15,
-				height = 1080*0.15,
-				texture = "busScore",
-				zorder=3
-			}
-		},Bus3={
-			image = {
-				overlay = "Bus3",
-				x = 50,
-				y = 70,
-				width = 1400*0.15,
-				height = 1080*0.15,
-				texture = "busScore",
-				zorder=3
-			}
-		},Bus4={
-			image = {
-				overlay = "Bus4",
-				x = 70,
-				y = 70,
-				width = 1400*0.15,
-				height = 1080*0.15,
-				texture = "busScore",
-				zorder=3
-			}
-		},Bus5={
-			image = {
-				overlay = "Bus5",
-				x = 90,
-				y = 70,
-				width = 1400*0.15,
-				height = 1080*0.15,
-				texture = "busScore",
-				zorder=3
-			}
-		}
-	
+	}
 }

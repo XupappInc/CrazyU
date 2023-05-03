@@ -9,16 +9,17 @@
 #include <RenderEngine/MeshRenderer.h>
 #include <RenderEngine/ParticleSystem.h>
 #include <SceneEngine/SceneManager.h>
+#include <UIEngine/Image.h>
+#include <fstream>
 #include <iostream>
 #include <lua.hpp>
-#include <LuaBridge.h> //MANTENER EN ESTA POSICION
-#include <fstream>
+#include <LuaBridge.h>  //MANTENER EN ULTIMA POSICION
 
 CrazyU::GameManager::GameManager()
     : paradaActual_(nullptr), paradaActualTr_(nullptr),
       paradas_(std::vector<Separity::Entity*>()), score_(0),
-      paradasInitialized_(false), timeBetweenStops_(30000),
-      currTime_(0), player_(nullptr), playerTr_(nullptr), indexParada_(-1),
+      paradasInitialized_(false), timeBetweenStops_(30000), currTime_(0),
+      player_(nullptr), playerTr_(nullptr), indexParada_(-1),
       particleSys_(nullptr), particleSysTr_(nullptr), finalPoints_(0),
       sumScore_(20) {
 	arrow_ = Separity::EntityManager::getInstance()->addEntity(
@@ -58,9 +59,9 @@ void CrazyU::GameManager::start() {
 void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 	currTime_ += deltaTime;
 	if(timeLeft() <= 0) {
-		//isPlaying_ = false;
+		// isPlaying_ = false;
 		Separity::SceneManager* sm = Separity::SceneManager::getInstance();
-		writeFinalScore();
+		writeFinalScore(scoreFileName_);
 		sm->changeScene("finalScene.lua");
 	}
 
@@ -153,8 +154,8 @@ int CrazyU::GameManager::getPercentageofTime() {
 int CrazyU::GameManager::getBusNum() {
 	int buses = 0;
 	int i = 1;
-	while(i < 6) { 
-		if (finalPoints_ < sumScore_ * i) {
+	while(i < maxBusScore_ + 1) {
+		if(finalPoints_ < sumScore_ * i) {
 			buses = i - 1;
 			break;
 		} else {
@@ -164,13 +165,41 @@ int CrazyU::GameManager::getBusNum() {
 	return buses;
 }
 
-void CrazyU::GameManager::writeFinalScore() {
+int CrazyU::GameManager::readFinalScore(const std::string& fileName) {
+	std::ifstream fich;
+	fich.open(fileName, std::ofstream::in);
+	if(!fich.is_open()) {
+		std::cout << "[CRAZY U] : Error al abrir el archivo de puntuación\n";
+		return -1;
+	}
+	int num = 0;
+	fich >> num;
+	fich.close();
+	return num;
+}
+
+void CrazyU::GameManager::writeFinalScore(const std::string& fileName) {
 	std::ofstream fich;
-	fich.open("puntuacion.txt");
+	fich.open(fileName, std::ofstream::out);
 	if(!fich.is_open()) {
 		std::cout << "[CRAZY U] : Error al abrir el archivo de puntuación\n";
 		return;
 	}
 	fich << getBusNum();
 	fich.close();
+}
+
+void CrazyU::GameManager::drawBuses() {
+	int num = readFinalScore(scoreFileName_);
+	int offsetX = 20;
+	int iniX = 10;
+	int iniY = 70;
+	int iniW = 210;
+	int iniH = 162;
+
+	for(int i = 0; i < num; i++) {
+		auto busEnt = Separity::EntityManager::getInstance()->addEntity();
+		busEnt->addComponent<Separity::Image>("Bus" + i, iniX + (offsetX * i),
+		                                      iniY, iniW, iniH, "busScore", 3);
+	}
 }

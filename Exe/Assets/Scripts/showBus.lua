@@ -17,7 +17,9 @@ end
 
 --Metodo Start, llamado tras Awake
 function showBus:start()
-print("hola soy un buSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss")
+	GameManager:drawBuses();
+
+
 end
 
 --Metodo Update, llamado en cada frame
