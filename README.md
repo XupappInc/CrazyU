@@ -25,36 +25,34 @@ Crazy-U es un juego frenético en tercera persona en el cual debemos recorrer la
 <details open="open">
   <summary>TABLA DE CONTENIDOS</summary>
   <ol>
-    <li>
-      <a href="#Aspectos-generales">Aspectos generales</a>
+    <li><a href="#aspectos-generales">Aspectos generales</a></li>
       <ul>
-        <li><a href="#Relato">Relato breve y parcial de una partida típica</a></li>
+        <li><a href="#relato-breve-y-parcial-de-una-partida-típica">Relato breve y parcial de una partida típica</a></li>
+      </ul>
+    </li>
+    <li><a href="#menús-y-modos-de-juego">Menús y modos de juego</a></li>
+      <ul>
+        <li><a href="#configuración">Configuración</a></li>
+        <li><a href="#interfaz">Interfaz</a></li>
       </ul>
     </li>
     <li>
-      <a href="#Menús_y_modos_de_juego">Menús y modos de juego</a>
+      <a href="#jugabilidad">Jugabilidad</a>
       <ul>
-        <li><a href="#Config">Configuración</a></li>
-        <li><a href="#interfaz-y-control">Interfaz</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#Jugabilidad">Jugabilidad</a>
-      <ul>
-		<li><a href="#Mecánica">Mecánica</a>
+		<li><a href="#mecánica">Mecánica</a>
 		<ul>
 			<li><a href="#mecánicas-de-personaje">Mecánicas de Personaje</a></li>
 			<li><a href="#mecánicas-de-escenario">Mecánicas de Escenario</a></li>
-			<li><a href="#IA">IA</a></li>
+			<li><a href="#ia">IA</a></li>
 		 </ul>
 		</li>
-		<li><a href="#Estetica">Estética</a>
-		<li><a href="#Camara">Cámara</a>
-		<li><a href="#Controles">Controles</a>
+		<li><a href="#estética">Estética</a>
+		<li><a href="#cámara">Cámara</a>
+		<li><a href="#controles">Controles</a>
       </ul>
     </li>
     <li>
-    <a href="#Contenido">Contenido</a>
+    <a href="#contenido">Contenido</a>
       <ul>
         <li><a href="#historia">Historia</a></li>
         <li><a href="#niveles">Niveles</a></li>
