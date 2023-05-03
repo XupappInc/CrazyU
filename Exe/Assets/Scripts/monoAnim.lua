@@ -20,6 +20,8 @@ function monoAnim:start()
 	print('ANIMAME ESTA KSTNIEHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 	local anim = monoAnim.entity:getAnimator();
 	anim:playAnim("Breakdance",true);
+	audioName = this.entity:getAudio():getAudioName();
+	AudioManager:play(audioName, 1, 100);
 end
 
 --Metodo Update, llamado en cada frame

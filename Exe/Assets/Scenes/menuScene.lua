@@ -51,6 +51,14 @@ Entities = {
 			height = 720,
 			texture = "londres",
 			zorder=0
+		},
+		audioSource ={
+			route = "callmemaybe.mp3",
+			name = "callmemaybe",
+			isMusic = true
+		}, 
+		script = {
+			name = "musica"
 		}
 	}
 	
