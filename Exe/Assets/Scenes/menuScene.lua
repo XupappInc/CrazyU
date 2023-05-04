@@ -63,8 +63,8 @@ Entities = {
 			zorder=0
 		},
 		audioSource ={
-			route = "callmemaybe.mp3",
-			name = "callmemaybe",
+			route = "CiusThemeExtended.mp3",
+			name = "CiusThemeExtended",
 			isMusic = true
 		}, 
 		script = {

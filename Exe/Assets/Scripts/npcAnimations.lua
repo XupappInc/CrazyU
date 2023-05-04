@@ -2,7 +2,6 @@
 npcAnimations = {}
 
 npcAnimations.__index = npcAnimations
-
 --Constructor de la clase en Lua
 function npcAnimations:new()
 	local obj={}
@@ -26,13 +25,14 @@ end
 --Metodo Update, llamado en cada frame
 function npcAnimations:update()
 	audio = this.entity:getAudio();
+
 	if audio then
 		math.randomseed(os.time())
 
     	numeroAleatorio = math.random(0, 100)
 
-		if numeroAleatorio > 85 then
-			AudioManager:play(audio:getAudioName(), 1, 100)
+		if numeroAleatorio > 90 then
+			AudioManager:play(audio:getAudioName(), 1, 50)
 		end
 	end
 

@@ -25,11 +25,11 @@ function sonido:update()
 	
 	math.randomseed(os.time())
 
-    numeroAleatorio = math.random(0, 1000)
+    numeroAleatorio = math.random(0, 100)
     
-    if numeroAleatorio > 900 then
+    if numeroAleatorio > 90 then
         audioName = this.entity:getAudio():getAudioName()
-        AudioManager:play(audioName, 1, 100)
+        AudioManager:play(audioName, 1, 50)
     end
 end
 

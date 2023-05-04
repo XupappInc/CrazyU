@@ -2814,8 +2814,8 @@ Entities = {
 		}
 		,
 		audioSource ={
-			route = "callmemaybe.mp3",
-			name = "callmemaybe",
+			route = "CiusThemeExtended.mp3",
+			name = "CiusThemeExtended",
 			isMusic = true
 		}, 
 		script = {
@@ -14632,7 +14632,7 @@ Entities = {
 		audioSource ={
 			route = "caillou.mp3",
 			name = "caillou",
-			isMusic = false
+			isMusic = true
 		}
 	},
 	Alejandro={
@@ -14653,7 +14653,7 @@ Entities = {
 		audioSource ={
 			route = "shakiraLoba.mp3",
 			name = "shakiraLoba",
-			isMusic = false
+			isMusic = true
 		}, 
 		rigidbody = {
 			dim = {1, 1, 1},
