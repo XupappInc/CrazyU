@@ -185,7 +185,7 @@ int CrazyU::GameManager::readFinalScore(const std::string& fileName) {
 	std::ifstream fich;
 	fich.open(fileName, std::ofstream::in);
 	if(!fich.is_open()) {
-		std::cout << "[CRAZY U] GameManager : Error al abrir el archivo de puntuación\n";
+		std::cout << "[CRAZY U] GameManager : Error al abrir el archivo de puntuacion\n";
 		return -1;
 	}
 	int num = 0;
@@ -198,7 +198,7 @@ void CrazyU::GameManager::writeFinalScore(const std::string& fileName) {
 	std::ofstream fich;
 	fich.open(fileName, std::ofstream::out);
 	if(!fich.is_open()) {
-		std::cout << "[CRAZY U] GameManager Clar: Error al abrir el archivo de puntuación\n";
+		std::cout << "[CRAZY U] GameManager Clar: Error al abrir el archivo de puntuacion\n";
 		return;
 	}
 	fich << getBusNum();
