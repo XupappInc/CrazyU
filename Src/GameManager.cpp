@@ -93,6 +93,7 @@ void CrazyU::GameManager::update(const uint32_t& deltaTime) {
 
 void CrazyU::GameManager::addScore(int score) {
 	score_ += score;
+	maxTime_ = currTime_ + maxTimeAssigned; 
 	if(timeBetweenStops_ + (score_ * 1000) > maxTime_) {
 		timeBetweenStops_ = maxTime_;
 	}

@@ -38,10 +38,8 @@ function paradas:onCollisionStay()
 
 	--Si aún no ha recogido a nadie
 	if active == true then
-		print("Chocando con parada");
 		if other ~= nil then
 			if other:getTag() == "Player" then
-				print("soy el player");
 				rigidbody = other:getRigidBody();
 				if rigidbody then
 					vel = rigidbody:getVelocity();

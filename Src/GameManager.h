@@ -107,6 +107,7 @@ namespace CrazyU {
 		float timeBetweenStops_;
 		float currTime_;
 		float maxTime_ = 45000;
+		const float maxTimeAssigned = 45000;
 		int finalPoints_;
 		const int sumScore_;
 		const int maxBusScore_=5;
